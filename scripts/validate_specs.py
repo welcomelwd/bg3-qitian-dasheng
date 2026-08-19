@@ -48,11 +48,12 @@ for table_uuid, group in subclass_tables.items():
     if any(r["AllowImprovement"] == "Yes" for r in group):
         errors.append(f"Subclass progression {table_uuid} must not duplicate main-class Feat rows")
 
-victorious = [r for r in subclass_rows if r["Name"].startswith("QTD_VictoriousBuddha_")]
-if [int(r["Level"]) for r in victorious] != [3, 6, 10]:
-    errors.append("QTD_VictoriousBuddha progression expected levels 3,6,10")
-if victorious and len({r["TableUUID"] for r in victorious}) != 1:
-    errors.append("QTD_VictoriousBuddha rows must share one TableUUID")
+for prefix in ("QTD_VictoriousBuddha_", "QTD_SeventyTwoChanges_"):
+    group = [r for r in subclass_rows if r["Name"].startswith(prefix)]
+    if [int(r["Level"]) for r in group] != [3, 6, 10]:
+        errors.append(f"{prefix.rstrip('_')} progression expected levels 3,6,10")
+    if group and len({r["TableUUID"] for r in group}) != 1:
+        errors.append(f"{prefix.rstrip('_')} rows must share one TableUUID")
 
 if errors:
     print("SPEC VALIDATION FAILED")
