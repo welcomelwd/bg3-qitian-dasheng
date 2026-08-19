@@ -50,3 +50,5 @@ Status,QTD_STATUS_FATIAN_USED,V0.4,long-rest-marker-draft
 Spell,Zone_QTD_FaTian_Quake,V0.4,thunderwave-aligned-draft
 Spell,Zone_QTD_FaTian_Sweep,V0.4,cleave-aligned-draft
 Spell,Target_QTD_FaTian_Pillar,V0.4,mainhand-attack-aligned-draft
+Feature,QTD_QitianDasheng,V1.0,capstone-passive-draft
+Passive,QTD_Passive_QitianDasheng,V1.0,verified-boost-pattern-draft
