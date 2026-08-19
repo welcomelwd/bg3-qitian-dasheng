@@ -27,6 +27,7 @@ Passive,QTD_Passive_TransformUnlock_L5,V0.2,container-wired-draft
 Feature,QTD_HairClones,V0.2,level-scaling-weapon-draft
 Spell,Target_QTD_HairClones,V0.2,level-scaling-weapon-draft
 Status,QTD_STATUS_HAIR_CLONE,V0.2,summon-functor-draft
+Status,QTD_STATUS_HAIR_CLONES_ACTIVE,V0.2,mutual-exclusion-marker-draft
 Character,QTD_HairCloneCharacter_L6,V0.2,level-scaling-draft
 Character,QTD_HairCloneCharacter_L8,V0.2,level-scaling-draft
 Character,QTD_HairCloneCharacter_L10,V0.2,level-scaling-draft
@@ -41,4 +42,11 @@ Feature,QTD_ThreeHeadsSixArms,V0.3,active-status-draft
 Passive,QTD_Passive_ThreeHeadsSixArms,V0.3,unlock-passive-draft
 Spell,Shout_QTD_ThreeHeadsSixArms,V0.3,verified-applystatus-draft
 Status,QTD_STATUS_THREE_HEADS_SIX_ARMS,V0.3,extraattack2-status-draft
-Feature,QTD_FaTianXiangDi,V0.4,planned
+Feature,QTD_FaTianXiangDi,V0.4,active-giant-form-draft
+Passive,QTD_Passive_FaTianXiangDi,V0.4,unlock-passive-draft
+Spell,Shout_QTD_FaTianXiangDi,V0.4,active-form-spell-draft
+Status,QTD_STATUS_FATIAN_XIANG_DI,V0.4,enlarge-aligned-giant-status-draft
+Status,QTD_STATUS_FATIAN_USED,V0.4,long-rest-marker-draft
+Spell,Zone_QTD_FaTian_Quake,V0.4,thunderwave-aligned-draft
+Spell,Zone_QTD_FaTian_Sweep,V0.4,cleave-aligned-draft
+Spell,Target_QTD_FaTian_Pillar,V0.4,mainhand-attack-aligned-draft
