@@ -4,7 +4,7 @@ INT-002,P0,V0.1,Resource,QTD_SageQi,1,Base,Passive,0,toolkit-entry-package-ready
 INT-003,P0,V0.1,Passive,QTD_Passive_MonkeyAgility,1,Base,Passive,0,vanilla-pattern-aligned-draft,Unarmored AC armor-shield toggling plus 50-percent fall damage runtime behavior,1,yes
 INT-004,P0,V0.1,Passive,QTD_Passive_RuyiMastery,1,Base,Passive,0,monk-weapon-pattern-aligned-draft,DEX-greater-than-STR switching plus Quarterstaff Jingu and non-quarterstaff scope controls,3,yes
 INT-005,P0,V0.1,Passive,QTD_Passive_CopperHeadIronArm,2,Base,Reaction,0,interrupt-pattern-aligned-draft,OnPreDamage prompt plus Reaction cost B-P-S-only 1d8-plus-WIS reduction cleanup zero-damage and mixed-rider behavior,2,yes
-INT-006,P0,V0.1,Spell,Target_QTD_SomersaultCloud,2,Base,BonusAction,1,parent-aligned-draft,Cloud Momentum plus level range scaling and targeting flags,2,yes
+INT-006,P0,V0.1,Spell,Target_QTD_SomersaultCloud,2,Base,BonusAction,1,momentum-range-scaling-draft,Teleport-to-SELF status timing first-melee Advantage consumption and cumulative 12-15-18-21m target-radius modifiers,2,yes
 INT-007,P0,V0.1,Spell,Zone_QTD_SeaCalmingStrike,3,Base,Action,2,verified-functor-draft,Weapon damage component plus zone geometry and scaling,2,yes
 INT-008,P0,V0.1,Spell,Target_QTD_FieryGoldenEyes,6,Base,BonusAction,1,mechanics-incomplete,Anti-invisibility plus AC penalty plus attacker-specific advantage,2,yes
 INT-009,P0,V0.1,Weapon,WPN_QTD_RuyiJinguBang,1,Base,Passive,0,toolkit-parent-pending,Quarterstaff Parent plus reach and real weapon-hit behavior,3,yes
