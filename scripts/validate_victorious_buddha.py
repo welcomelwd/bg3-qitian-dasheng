@@ -10,7 +10,7 @@ progressions_text = (ROOT / "data/progressions.csv").read_text(encoding="utf-8")
 class_desc_text = (ROOT / "data/class_descriptions.csv").read_text(encoding="utf-8")
 stats = (ROOT / "src/stats/VictoriousBuddha.txt").read_text(encoding="utf-8")
 spec = (ROOT / "data/victorious_buddha.yaml").read_text(encoding="utf-8")
-localization = (ROOT / "src/stats/Localization.tsv").read_text(encoding="utf-8")
+localization = "\n".join(p.read_text(encoding="utf-8") for p in (ROOT / "src/stats").glob("Localization*.tsv"))
 implementation = (ROOT / "data/implementation_status.csv").read_text(encoding="utf-8")
 manifest = json.loads((ROOT / "data/uuid_manifest.json").read_text(encoding="utf-8"))
 errors = []
