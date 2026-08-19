@@ -17,7 +17,11 @@ new entry "QTD_Passive_RuyiMastery"
 type "PassiveData"
 data "DisplayName" "QTD_Passive_RuyiMastery_DisplayName"
 data "Description" "QTD_Passive_RuyiMastery_Description"
+data "Icon" "PassiveFeature_MartialArts_DextrousUnarmedAttacks"
 data "Properties" "Highlighted"
+data "BoostContext" "OnStatusApply;OnStatusRemove;OnEquip;OnShortRest;OnCreate;OnLongRest;OnInventoryChanged"
+data "BoostConditions" "IsDexterityGreaterThanStrength()"
+data "Boosts" "MonkWeaponAttackOverride()"
 
 new entry "QTD_Passive_CopperHeadIronArm"
 type "PassiveData"
@@ -83,6 +87,11 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // - vanilla conditions require no armour and no shield.
 // - PassiveData supports ActionResource(Movement,...), JumpMaxDistanceMultiplier and FallDamageMultiplier.
 // - mobility/fall behavior is kept in a hidden helper so the AC condition does not disable it.
+// V0.1 Ruyi Mastery source alignment:
+// - mature Monk Martial Arts data uses IsDexterityGreaterThanStrength() as the conditional gate.
+// - MonkWeaponAttackOverride() changes eligible monk-weapon attacks to Dexterity only when Dexterity is higher.
+// - when Strength is equal or higher, the condition is false and the weapon keeps its normal Strength path.
+// - V0.1 intentionally avoids forced WeaponAttackRollAbilityOverride(Dexterity) and avoids adding Finesse to every weapon.
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
@@ -104,4 +113,3 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 
 // TODO_TOOLKIT_CLONE: finalize physical mitigation for Copper Head / Iron Arm by cloning a known-good
 // base-game Reaction reduction chain.
-// TODO_TOOLKIT_CLONE: finalize quarterstaff STR/DEX ability selection for Ruyi Mastery.
