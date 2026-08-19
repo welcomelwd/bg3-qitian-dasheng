@@ -55,3 +55,5 @@ Zone_QTD_FaTian_Sweep_DisplayName	横扫千军	Army-Sweeping Strike
 Zone_QTD_FaTian_Sweep_Description	以巨化金箍棒横扫大片区域，造成主手武器伤害并击退敌人。	Sweep a vast area with your enlarged staff, dealing main-hand weapon damage and knocking enemies back.
 Target_QTD_FaTian_Pillar_DisplayName	擎天一柱	Pillar Upholding Heaven
 Target_QTD_FaTian_Pillar_Description	将金箍棒伸向远处，以主手武器重击单个敌人并将其轰退。	Extend your staff to crush a distant foe with your main-hand weapon and blast it backward.
+QTD_Passive_QitianDasheng_DisplayName	齐天大圣	Great Sage, Equal to Heaven
+QTD_Passive_QitianDasheng_Description	大圣神通圆满：仙力上限增加2点，移动距离增加3米，并免疫魅惑与恐惧。	Your Great Sage powers reach perfection: increase maximum Sage Qi by 2, gain 3m Movement, and become immune to Charmed and Frightened effects.
