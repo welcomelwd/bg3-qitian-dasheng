@@ -89,7 +89,7 @@ for token in (
     "STR 16 / DEX 12",
     "STR 12 / DEX 16",
     "WPN_QTD_RuyiJinguBang",
-    "non Quarterstaff",
+    "非 Quarterstaff",
     "toolkit-verified",
 ):
     if token not in doc:
