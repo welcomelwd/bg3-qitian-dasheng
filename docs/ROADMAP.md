@@ -35,6 +35,9 @@
 - 评估自定义变化模型
 
 ## V1.0 — 西游完整体验
+- L12 `QTD_Passive_QitianDasheng` 齐天大圣封顶被动
+- 仙力上限从 6 提升至 8、常驻移动 +3m、免疫魅惑与恐惧
+- L12 不新增额外 Action / Bonus Action / 更高 Extra Attack 链
 - 完整汉化/英文本地化
 - 音效/VFX/图标统一
 - 获取任务与彩蛋物品
