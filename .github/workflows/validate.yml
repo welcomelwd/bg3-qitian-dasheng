@@ -38,5 +38,8 @@ jobs:
       - name: Validate Fa Tian Xiang Di
         run: python scripts/validate_fa_tian_xiang_di.py
 
+      - name: Validate Qitian Dasheng capstone
+        run: python scripts/validate_qitian_dasheng.py
+
       - name: Check cross-file consistency
         run: python scripts/check_consistency.py
