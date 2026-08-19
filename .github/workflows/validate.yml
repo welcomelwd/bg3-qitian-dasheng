@@ -41,6 +41,9 @@ jobs:
       - name: Validate Seventy-Two Changes subclass
         run: python scripts/validate_seventy_two_changes.py
 
+      - name: Validate Spiritual Stone Monkey subclass
+        run: python scripts/validate_spiritual_stone_monkey.py
+
       - name: Validate Fa Tian Xiang Di
         run: python scripts/validate_fa_tian_xiang_di.py
 

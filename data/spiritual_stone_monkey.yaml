@@ -1,0 +1,90 @@
+subclass:
+  tech_name: QTD_SpiritualStoneMonkey
+  display_name: 灵明石猴
+  english_name: Spiritual Stone Monkey
+  target_version: V0.3
+  unlock_level: 3
+  role: wisdom_immortal_arts
+  progression_table_uuid: dc1d9370-6736-4197-b805-25b0e00fd355
+  class_description_uuid: 4841a09f-6188-43d0-87ff-cc5c983e41ca
+  primary_ability: Wisdom
+  spellcasting_ability: Wisdom
+  no_spell_slots: true
+  resource: QTD_SageQi
+
+levels:
+  level_3:
+    passive: QTD_Passive_SpiritualStoneMonkey_L3
+    name: 灵台悟法
+    spell_save_dc_bonus: 1
+    melee_spell_attack_bonus: 1
+    ranged_spell_attack_bonus: 1
+    unlocks:
+      - Zone_QTD_SamadhiFire
+    samadhi_fire:
+      base_spell: Zone_BurningHands
+      action_cost: 1
+      sage_qi: 2
+
+  level_6:
+    passive: QTD_Passive_SpiritualStoneMonkey_L6
+    name: 风雷云遁
+    unlocks:
+      - Target_QTD_CloudThunderStep
+      - Projectile_QTD_PalmThunder
+    cloud_thunder_step:
+      base_spell: Target_MistyStep
+      bonus_action_cost: 1
+      sage_qi: 2
+      range_m: 18
+      momentum_status: QTD_STATUS_CLOUD_SPELL_MOMENTUM
+      momentum_rounds: 1
+      momentum_spell_save_dc_bonus: 1
+      momentum_melee_spell_attack_bonus: 1
+      momentum_ranged_spell_attack_bonus: 1
+      momentum_movement_bonus_m: 3
+    palm_thunder:
+      base_spell: Projectile_ChromaticOrb_Lightning
+      action_cost: 1
+      sage_qi: 2
+
+  level_10:
+    passive: QTD_Passive_SpiritualStoneMonkey_L10
+    name: 五行圆融
+    unlocks:
+      - Projectile_QTD_FiveElements
+    five_elements:
+      container_base: Projectile_ChromaticOrb_Monk
+      action_cost: 1
+      sage_qi_per_cast: 3
+      child_power_reference: chromatic_orb_level_4
+      children:
+        fire:
+          tech_name: Projectile_QTD_FiveElements_Fire
+          base_spell: Projectile_ChromaticOrb_Fire_4
+        water:
+          tech_name: Projectile_QTD_FiveElements_Water
+          base_spell: Projectile_ChromaticOrb_Cold_4
+        lightning:
+          tech_name: Projectile_QTD_FiveElements_Lightning
+          base_spell: Projectile_ChromaticOrb_Lightning_4
+        wind:
+          tech_name: Projectile_QTD_FiveElements_Wind
+          base_spell: Projectile_ChromaticOrb_Thunder_4
+        earth:
+          tech_name: Projectile_QTD_FiveElements_Earth
+          base_spell: Projectile_ChromaticOrb_Acid_4
+
+balance_guardrails:
+  do_not_grant_spell_slots: true
+  do_not_grant_extra_action: true
+  do_not_grant_extra_attack_2: true
+  do_not_refresh_fa_tian: true
+  do_not_reduce_all_sage_qi_costs: true
+  cloud_momentum_does_not_stack: true
+  final_truth_is_local_patch8_toolkit: true
+
+compatibility:
+  no_script_extender_required: true
+  do_not_override_vanilla_spells: true
+  qitian_entries_use_own_uuids: true

@@ -1,0 +1,29 @@
+Key	zh-CN	en-US
+QTD_SpiritualStoneMonkey_DisplayName	灵明石猴	Spiritual Stone Monkey
+QTD_SpiritualStoneMonkey_Description	返本归元，以智慧驾驭仙力、风雷云火与五行仙法。	Return to the stone-born source and wield Sage Qi through Wisdom, cloud, thunder, fire, and fivefold immortal arts.
+QTD_Passive_SpiritualStoneMonkey_L3_DisplayName	灵台悟法	Awakened Spiritual Insight
+QTD_Passive_SpiritualStoneMonkey_L3_Description	仙术豁免 DC 与法术攻击 +1，并掌握三昧真火。	Gain +1 Spell Save DC and +1 spell attack rolls, and learn Samadhi Fire.
+Zone_QTD_SamadhiFire_DisplayName	三昧真火	Samadhi Fire
+Zone_QTD_SamadhiFire_Description	以仙力喷吐灼烈真火，沿锥形区域焚烧敌人。	Exhale immortal flame in a cone, burning enemies with Sage Qi.
+QTD_Passive_SpiritualStoneMonkey_L6_DisplayName	风雷云遁	Cloudstep of Wind and Thunder
+QTD_Passive_SpiritualStoneMonkey_L6_Description	掌握强化筋斗云与掌心雷。风雷云遁后短暂提升仙术威力与移动。	Learn an empowered cloud step and Palm Thunder. After cloudstepping, briefly sharpen your immortal arts and movement.
+Target_QTD_CloudThunderStep_DisplayName	风雷云遁	Cloud-Thunder Step
+Target_QTD_CloudThunderStep_Description	化云而行，瞬移至远处，并在 1 回合内获得仙术命中、豁免 DC 与移动强化。	Ride wind and thunder to teleport, then gain stronger spell attacks, spell save DC, and movement for 1 round.
+QTD_STATUS_CLOUD_SPELL_MOMENTUM_DisplayName	云雷道势	Cloud-Thunder Momentum
+QTD_STATUS_CLOUD_SPELL_MOMENTUM_Description	法术攻击与法术豁免 DC +1，移动 +3m。	Gain +1 spell attack rolls, +1 Spell Save DC, and +3m movement.
+Projectile_QTD_PalmThunder_DisplayName	掌心雷	Palm Thunder
+Projectile_QTD_PalmThunder_Description	以仙力凝聚雷霆，轰击单个目标。	Condense thunderous lightning in your palm and strike a single target.
+QTD_Passive_SpiritualStoneMonkey_L10_DisplayName	五行圆融	Fivefold Harmony
+QTD_Passive_SpiritualStoneMonkey_L10_Description	掌握五行仙法，可在火、水、雷、风、土五种法门间选择。	Master fivefold immortal arts and choose between fire, water, lightning, wind, and earth manifestations.
+Projectile_QTD_FiveElements_DisplayName	五行仙法	Fivefold Immortal Arts
+Projectile_QTD_FiveElements_Description	选择一种五行显化，以 3 点仙力施展高阶元素法术。	Choose one of five elemental manifestations and spend 3 Sage Qi to cast it.
+Projectile_QTD_FiveElements_Fire_DisplayName	火行·真焰	Fire Art: True Flame
+Projectile_QTD_FiveElements_Fire_Description	凝聚火行仙力轰击目标。	Strike the target with concentrated fire-aspected immortal power.
+Projectile_QTD_FiveElements_Water_DisplayName	水行·玄冰	Water Art: Mystic Ice
+Projectile_QTD_FiveElements_Water_Description	以玄寒水行仙力冻结目标。	Freeze the target with water-aspected immortal power.
+Projectile_QTD_FiveElements_Lightning_DisplayName	雷行·天雷	Lightning Art: Heavenly Thunder
+Projectile_QTD_FiveElements_Lightning_Description	引落雷行仙力贯穿目标。	Call down lightning-aspected immortal power upon the target.
+Projectile_QTD_FiveElements_Wind_DisplayName	风行·震空	Wind Art: Skyshock
+Projectile_QTD_FiveElements_Wind_Description	以震荡风压轰击目标。	Blast the target with concussive wind-aspected immortal power.
+Projectile_QTD_FiveElements_Earth_DisplayName	土行·蚀地	Earth Art: Eroding Earth
+Projectile_QTD_FiveElements_Earth_Description	以蚀地之力腐蚀目标与脚下地面。	Erode the target and ground with earth-aspected immortal power.

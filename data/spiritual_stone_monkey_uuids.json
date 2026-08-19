@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-19",
+  "policy": "Planning UUID supplement for QTD_SpiritualStoneMonkey. Toolkit-generated UUIDs are authoritative and must replace these values consistently.",
+  "uuids": {
+    "subclass_spiritual_stone_monkey_table_uuid": "dc1d9370-6736-4197-b805-25b0e00fd355",
+    "subclass_spiritual_stone_monkey_classdesc_uuid": "4841a09f-6188-43d0-87ff-cc5c983e41ca",
+    "subclass_spiritual_stone_monkey_l3_uuid": "8f270ba4-dafd-4b95-be6a-a3163087e780",
+    "subclass_spiritual_stone_monkey_l6_uuid": "0e6b8ba8-a0df-4af9-8227-b28201d014b6",
+    "subclass_spiritual_stone_monkey_l10_uuid": "07c9a473-2a5c-4ef7-bae2-12f9448c37e8",
+    "passive_spiritual_l3_uuid": "98f6048d-6cdd-4495-b061-7fedefbbe54c",
+    "passive_spiritual_l6_uuid": "4499cd72-482f-41bf-bada-b6eacfdfdaae",
+    "passive_spiritual_l10_uuid": "28548534-18d9-47d5-a520-9a7bbcd4d4cc",
+    "spell_samadhi_fire_uuid": "2507d921-90b1-4a65-aaff-1157a4ec8c67",
+    "spell_cloud_thunder_step_uuid": "65b823b0-c164-46d1-9aa0-27e3480eeaca",
+    "status_cloud_spell_momentum_uuid": "c0f2e033-ac02-45e4-bae9-e39d946fa74c",
+    "spell_palm_thunder_uuid": "42f0b565-4246-4023-83ba-8f571f09a971",
+    "five_elements_container_uuid": "2f3393a6-439d-435d-abed-476d8e6aa110",
+    "five_elements_fire_uuid": "3d0c89bd-401c-44f2-a86b-22b369ebfbf5",
+    "five_elements_water_uuid": "0a6c32ea-da33-4816-bf7c-f32052c2c991",
+    "five_elements_lightning_uuid": "bc965ab3-2574-4000-824d-038f6c52d532",
+    "five_elements_wind_uuid": "cfcb10e8-9f70-48f6-9941-c426365ace88",
+    "five_elements_earth_uuid": "32c178b2-e971-410c-bc0a-49d5972caf8b"
+  }
+}

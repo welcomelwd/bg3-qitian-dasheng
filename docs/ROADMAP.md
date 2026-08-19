@@ -22,7 +22,8 @@
 ## V0.3 — 大闹天宫
 - `QTD_VictoriousBuddha` 斗战胜佛：L3/L6/L10 已接入
 - `QTD_SeventyTwoChanges` 七十二变：L3 蜘蛛、L6 黑豹、L10 枭熊/双脊龙已接入
-- 后续子职业：`QTD_SpiritualStoneMonkey` 灵明石猴
+- `QTD_SpiritualStoneMonkey` 灵明石猴：L3 灵台悟法/三昧真火、L6 风雷云遁/掌心雷、L10 五行仙法已接入
+- 三个子职业均使用独立 Progression Table，并在主职业 L3 同时开放
 - 扩展巨猿、石像、妖王等更高阶视觉变化
 - 三头六臂
 - 武器专属动作与强化 VFX

@@ -48,12 +48,25 @@ for table_uuid, group in subclass_tables.items():
     if any(r["AllowImprovement"] == "Yes" for r in group):
         errors.append(f"Subclass progression {table_uuid} must not duplicate main-class Feat rows")
 
-for prefix in ("QTD_VictoriousBuddha_", "QTD_SeventyTwoChanges_"):
+for prefix in (
+    "QTD_VictoriousBuddha_",
+    "QTD_SeventyTwoChanges_",
+    "QTD_SpiritualStoneMonkey_",
+):
     group = [r for r in subclass_rows if r["Name"].startswith(prefix)]
     if [int(r["Level"]) for r in group] != [3, 6, 10]:
         errors.append(f"{prefix.rstrip('_')} progression expected levels 3,6,10")
     if group and len({r["TableUUID"] for r in group}) != 1:
         errors.append(f"{prefix.rstrip('_')} rows must share one TableUUID")
+
+main_l3 = next((r for r in main_rows if r["Level"] == "3"), None)
+expected_subclasses = {"QTD_VictoriousBuddha", "QTD_SeventyTwoChanges", "QTD_SpiritualStoneMonkey"}
+if not main_l3:
+    errors.append("Missing main class L3 progression")
+else:
+    actual_subclasses = {s for s in (main_l3["SubClasses"] or "").split(";") if s}
+    if actual_subclasses != expected_subclasses:
+        errors.append(f"Main L3 subclasses mismatch: {sorted(actual_subclasses)}")
 
 if errors:
     print("SPEC VALIDATION FAILED")

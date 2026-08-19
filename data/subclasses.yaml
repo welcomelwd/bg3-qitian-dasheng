@@ -15,7 +15,7 @@ subclasses:
 
   - tech_name: QTD_SpiritualStoneMonkey
     display_name: 灵明石猴
-    target_version: V0.3+
+    target_version: V0.3
     unlock_level: 3
-    status: planned
+    status: subclass-wired-draft
     role: wisdom_immortal_arts

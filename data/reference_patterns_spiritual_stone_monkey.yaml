@@ -1,0 +1,44 @@
+references:
+  arcane_enchantment:
+    source_pattern: MAG_ArcaneEnchantment_Lesser_Passive
+    verified_boosts:
+      - SpellSaveDC(1)
+      - RollBonus(MeleeSpellAttack,1)
+      - RollBonus(RangedSpellAttack,1)
+    use_for:
+      - QTD_Passive_SpiritualStoneMonkey_L3
+      - QTD_STATUS_CLOUD_SPELL_MOMENTUM
+
+  samadhi_fire:
+    base_spell: Zone_BurningHands
+    rationale: stable cone-fire spell template with spellcasting-ability save DC
+    use_for:
+      - Zone_QTD_SamadhiFire
+
+  cloud_thunder_step:
+    base_spell: Target_MistyStep
+    verified_functor:
+      - TeleportSource()
+    toolkit_gate:
+      - ApplyStatus(SELF,QTD_STATUS_CLOUD_SPELL_MOMENTUM,100,1)
+      - post_teleport_status_timing
+
+  palm_thunder:
+    base_spell: Projectile_ChromaticOrb_Lightning
+    use_for:
+      - Projectile_QTD_PalmThunder
+
+  five_elements:
+    container_base: Projectile_ChromaticOrb_Monk
+    rationale: vanilla-derived resource-backed Chromatic Orb container using Ki rather than spell slots
+    child_bases:
+      - Projectile_ChromaticOrb_Fire_4
+      - Projectile_ChromaticOrb_Cold_4
+      - Projectile_ChromaticOrb_Lightning_4
+      - Projectile_ChromaticOrb_Thunder_4
+      - Projectile_ChromaticOrb_Acid_4
+    qitian_policy:
+      use_sage_qi: true
+      never_use_ki: true
+      never_use_spell_slots: true
+      never_override_vanilla: true

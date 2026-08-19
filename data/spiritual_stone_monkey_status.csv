@@ -1,0 +1,15 @@
+Type,TechName,TargetVersion,Status
+Subclass,QTD_SpiritualStoneMonkey,V0.3,subclass-wired-draft
+Passive,QTD_Passive_SpiritualStoneMonkey_L3,V0.3,verified-spell-boost-pattern-draft
+Spell,Zone_QTD_SamadhiFire,V0.3,burning-hands-aligned-draft
+Passive,QTD_Passive_SpiritualStoneMonkey_L6,V0.3,unlock-passive-draft
+Spell,Target_QTD_CloudThunderStep,V0.3,teleport-status-draft
+Status,QTD_STATUS_CLOUD_SPELL_MOMENTUM,V0.3,verified-spell-boost-pattern-draft
+Spell,Projectile_QTD_PalmThunder,V0.3,chromatic-orb-aligned-draft
+Passive,QTD_Passive_SpiritualStoneMonkey_L10,V0.3,unlock-passive-draft
+SpellContainer,Projectile_QTD_FiveElements,V0.3,resource-container-draft
+Spell,Projectile_QTD_FiveElements_Fire,V0.3,chromatic-orb-l4-aligned-draft
+Spell,Projectile_QTD_FiveElements_Water,V0.3,chromatic-orb-l4-aligned-draft
+Spell,Projectile_QTD_FiveElements_Lightning,V0.3,chromatic-orb-l4-aligned-draft
+Spell,Projectile_QTD_FiveElements_Wind,V0.3,chromatic-orb-l4-aligned-draft
+Spell,Projectile_QTD_FiveElements_Earth,V0.3,chromatic-orb-l4-aligned-draft
