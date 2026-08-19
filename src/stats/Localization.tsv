@@ -17,3 +17,9 @@ QTD_STATUS_DEMON_REVEALED_DisplayName	妖邪显形	Demon Revealed
 QTD_STATUS_DEMON_REVEALED_Description	目标的伪装被火眼金睛看破，护甲等级降低。	The target's disguise is pierced by Fiery Golden Eyes, reducing Armour Class.
 Target_QTD_RuyiExtend_DisplayName	如意伸长	Ruyi Extension
 Target_QTD_RuyiExtend_Description	令金箍棒骤然伸长，打击远处的敌人。	Extend the Ruyi Jingu Bang to strike a distant foe.
+QTD_Transform_Insect_DisplayName	七十二变：小虫	Seventy-Two Transformations: Tiny Creature
+QTD_Transform_Insect_Description	化作微小生灵，用于潜入狭窄区域与探索。首个技术原型暂借用猫形态验证变身链路。	Assume a tiny exploratory form for infiltration and traversal. The first technical prototype uses the Cat Wild Shape chain.
+QTD_Transform_Eagle_DisplayName	七十二变：苍鹰	Seventy-Two Transformations: Eagle
+QTD_Transform_Eagle_Description	借飞禽之形腾空而起，跨越高低差与复杂地形。首个技术原型使用恐鸦形态验证飞行链路。	Take wing to cross vertical terrain and obstacles. The first technical prototype uses the Dire Raven Wild Shape chain.
+QTD_Transform_Tiger_DisplayName	七十二变：猛虎	Seventy-Two Transformations: Tiger
+QTD_Transform_Tiger_Description	化作猛虎扑杀近敌，获得野兽形态的近战能力与耐久。首个技术原型使用剑齿虎形态。	Transform into a tiger-like combat form with beast melee attacks and durability. The first technical prototype uses the Sabre-Toothed Tiger Wild Shape chain.
