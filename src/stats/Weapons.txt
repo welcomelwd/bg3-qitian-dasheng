@@ -1,13 +1,20 @@
 new entry "WPN_QTD_RuyiJinguBang"
 type "Weapon"
-using "TODO_TOOLKIT_CLONE_QUARTERSTAFF_TEMPLATE"
+using "WPN_Quarterstaff"
+data "RootTemplate" "521284c4-3d7b-4642-9c26-3677198f5a69"
 data "Rarity" "Legendary"
 data "ValueLevel" "5"
-data "DefaultBoosts" "WeaponEnchantment(2);Ability(Strength,1);JumpMaxDistance(1.5)"
-data "Boosts" "UnlockSpell(Target_QTD_RuyiExtend)"
+data "Damage" "1d8"
+data "VersatileDamage" "1d10"
+data "WeaponRange" "300"
+data "Weapon Properties" "Versatile;Melee;Dippable;Reach;Magical"
+data "DefaultBoosts" "WeaponEnchantment(2);WeaponProperty(Magical);WeaponDamage(1d4,Force)"
+data "Boosts" "Ability(Strength,1);JumpMaxDistanceMultiplier(1.5);UnlockSpell(Target_QTD_RuyiExtend)"
+data "Unique" "1"
 
 new entry "Target_QTD_RuyiExtend"
 type "SpellData"
+using "Target_MainHandAttack"
 data "SpellType" "Target"
 data "Level" "0"
 data "SpellSchool" "None"
@@ -15,13 +22,27 @@ data "TargetRadius" "9"
 data "UseCosts" "ActionPoint:1"
 data "DisplayName" "Target_QTD_RuyiExtend_DisplayName"
 data "Description" "Target_QTD_RuyiExtend_Description"
-data "SpellProperties" "DealDamage(1d8,Force)"
+data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
+data "TooltipAttackSave" "MeleeWeaponAttack"
+data "TargetConditions" "not Self() and Enemy() and not Dead()"
+data "RequirementConditions" "IsProficientWithEquippedWeapon()"
 
-// TODO_TOOLKIT_CLONE: replace the placeholder inherited weapon entry with a
-// validated quarterstaff template from the user's Toolkit data.
-// Ruyi Mastery owns the STR/DEX choice through IsDexterityGreaterThanStrength()
-// + MonkWeaponAttackOverride(). Do not add a blanket Finesse property here just
-// to solve ability selection. During Toolkit validation, confirm the real
-// quarterstaff Parent keeps WPN_QTD_RuyiJinguBang monk-weapon eligible.
-// TODO_TOOLKIT_CLONE: Ruyi Extension still needs the inherited weapon hit and
-// validated knockback logic before runtime use.
+// V0.1 source alignment:
+// - WPN_QTD_RuyiJinguBang inherits WPN_Quarterstaff so it remains a real quarterstaff for
+//   proficiency and QTD_Passive_RuyiMastery / MonkWeaponAttackOverride() behavior.
+// - vanilla reach weapons use WeaponRange plus the Reach weapon property; this draft uses
+//   WeaponRange 300 (3m total melee reach) to realize the planned +1.5m over standard melee range.
+// - vanilla magical weapons use WeaponEnchantment(n), WeaponProperty(Magical), and WeaponDamage(...).
+// - JumpMaxDistanceMultiplier(1.5) is a vanilla-backed jump boost; the old unverified
+//   JumpMaxDistance(1.5) form has been removed.
+// - Target_QTD_RuyiExtend now follows Target_MainHandAttack instead of dealing standalone Force damage.
+//
+// RootTemplate gate:
+// - 521284c4-3d7b-4642-9c26-3677198f5a69 is the project planning UUID for the custom weapon root.
+// - In BG3 Toolkit, clone the vanilla Quarterstaff root template
+//   96e2abaf-78ff-4dcb-a6a3-a5f0c348bd9f and set its Stats field to WPN_QTD_RuyiJinguBang.
+// - Keep the vanilla quarterstaff visual/physics for V0.1; custom mesh work is deferred.
+// - If Toolkit assigns a different UUID, update this RootTemplate field and data/uuid_manifest.json together.
+// Runtime verification is intentionally left to the project owner.
