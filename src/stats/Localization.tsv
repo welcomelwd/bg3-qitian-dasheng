@@ -2,7 +2,7 @@ Key	zh-CN	en-US
 QTD_Passive_MonkeyAgility_DisplayName	灵猴身法	Monkey Agility
 QTD_Passive_MonkeyAgility_Description	不着重甲时保持灵猴般的迅捷，提升移动与跳跃能力。	Move and leap with simian agility while fighting light.
 QTD_Passive_RuyiMastery_DisplayName	如意兵法	Ruyi Mastery
-QTD_Passive_RuyiMastery_Description	精通棍棒与如意金箍棒的战斗技巧。	Master the staff and the Ruyi Jingu Bang.
+QTD_Passive_RuyiMastery_Description	精通长棍与如意金箍棒；当敏捷高于力量时，符合武僧武器规则的攻击改用敏捷，否则保持力量。	Master the quarterstaff and Ruyi Jingu Bang; when Dexterity exceeds Strength, monk-eligible weapon attacks use Dexterity, otherwise they retain Strength.
 QTD_Passive_CopperHeadIronArm_DisplayName	铜头铁臂	Copper Head, Iron Arms
 QTD_Passive_CopperHeadIronArm_Description	以仙躯硬撼刀兵，强化近战防御。	Harden your immortal body against physical blows.
 Target_QTD_SomersaultCloud_DisplayName	筋斗云	Somersault Cloud
