@@ -1,0 +1,16 @@
+new entry "ARM_QTD_GoldenArmor"
+type "Armor"
+using "TODO_TOOLKIT_CLONE_ARMOR_PARENT"
+data "Rarity" "VeryRare"
+
+new entry "BOOTS_QTD_CloudWalking"
+type "Armor"
+using "TODO_TOOLKIT_CLONE_BOOTS_PARENT"
+data "Rarity" "VeryRare"
+data "Boosts" "MovementSpeed(3);JumpMaxDistanceMultiplier(1.5)"
+
+// TODO_TOOLKIT_CLONE: choose actual GustavDev/base-game Parent records in Stats Editor.
+// TODO_TOOLKIT_CLONE: Golden Armor physical mitigation and low-HP defensive trigger
+// require validated base-game/passive patterns.
+// TODO_TOOLKIT_CLONE: the boots' once-per-short-rest free Somersault Cloud needs a
+// validated spell cooldown/unlock pattern before being enabled.

@@ -16,6 +16,8 @@ EXPECTED = {
     "Zone_QTD_SeaCalmingStrike",
     "WPN_QTD_RuyiJinguBang",
     "Target_QTD_RuyiExtend",
+    "ARM_QTD_GoldenArmor",
+    "BOOTS_QTD_CloudWalking",
 }
 
 found = set()
@@ -28,10 +30,15 @@ if missing:
     print("Missing draft entries:", ", ".join(sorted(missing)))
     sys.exit(1)
 
-weapons = (STATS / "Weapons.txt").read_text(encoding="utf-8")
-if "TODO_TOOLKIT_CLONE_QUARTERSTAFF_TEMPLATE" not in weapons:
-    print("Expected safe placeholder for unverified quarterstaff inheritance")
-    sys.exit(1)
+combined = "\n".join(p.read_text(encoding="utf-8") for p in STATS.glob("*.txt"))
+for marker in (
+    "TODO_TOOLKIT_CLONE_QUARTERSTAFF_TEMPLATE",
+    "TODO_TOOLKIT_CLONE_ARMOR_PARENT",
+    "TODO_TOOLKIT_CLONE_BOOTS_PARENT",
+):
+    if marker not in combined:
+        print(f"Expected safe placeholder missing: {marker}")
+        sys.exit(1)
 
 print(f"STATS DRAFT VALIDATION OK: {len(found)} entries found")
 print("Runtime readiness: NO (Toolkit clone gates remain by design)")
