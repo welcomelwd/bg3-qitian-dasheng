@@ -1,20 +1,35 @@
 system:
   container: QTD_TransformContainer
+  container_uuid: 1f3a673b-dc8b-4eca-9097-c6605a3de947
   resource: QTD_SageQi
   overwrite_vanilla_wildshape: false
-  delivery: unlock_passives
+  delivery: unlock_passives_addchildren
   revert_on_zero_hp: true
   manual_revert: true
   required_status_group: SG_Polymorph_BeastShape
   shared_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
   shared_rules_name: WildShapeKeepName
+  clear_inherited_resource_requirements: true
 
 unlock_passives:
-  level_3: QTD_Passive_TransformUnlock_L3
-  level_5: QTD_Passive_TransformUnlock_L5
+  level_3:
+    tech_name: QTD_Passive_TransformUnlock_L3
+    unlock_container: QTD_TransformContainer
+    add_children:
+      - QTD_Transform_Insect
+  level_5:
+    tech_name: QTD_Passive_TransformUnlock_L5
+    add_children:
+      - QTD_Transform_Eagle
+      - QTD_Transform_Tiger
   level_7: QTD_Passive_TransformUnlock_L7
   level_9: QTD_Passive_TransformUnlock_L9
   level_11: QTD_Passive_TransformUnlock_L11
+
+container_delivery:
+  pattern: UnlockSpell(child,AddChildren,container_uuid)
+  source_confidence: observed_in_current_open_source_bg3_stats
+  toolkit_rule: if_toolkit_assigns_different_container_uuid_update_manifest_and_all_addchildren_refs
 
 prototypes:
   - tech_name: QTD_Transform_Insect

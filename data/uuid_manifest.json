@@ -39,6 +39,15 @@
     "item_ruyi_jingu_bang_uuid": "521284c4-3d7b-4642-9c26-3677198f5a69",
     "item_golden_armor_uuid": "08f9068f-e067-442c-9fc6-1fcc5af7ef4a",
     "item_cloud_boots_uuid": "a4650270-0cd2-431c-b22c-e929019916f0",
-    "equipment_starting_uuid": "3dc9d807-9227-4cbb-a5c1-47c868b6af12"
+    "equipment_starting_uuid": "3dc9d807-9227-4cbb-a5c1-47c868b6af12",
+    "transform_container_uuid": "1f3a673b-dc8b-4eca-9097-c6605a3de947",
+    "transform_insect_spell_uuid": "61617335-65d5-4364-b24c-465d0e7e0a4b",
+    "transform_eagle_spell_uuid": "25b06798-2841-48e6-9014-b5027c633f78",
+    "transform_tiger_spell_uuid": "9087497e-0940-40c5-bed3-71c3acd2e8c4",
+    "transform_insect_status_uuid": "e93bddd4-1163-4413-b127-8a3cdd0cfe55",
+    "transform_eagle_status_uuid": "11d50958-f691-4e3c-ad88-1090c9dd10ef",
+    "transform_tiger_status_uuid": "9bdcfa7f-2f77-4395-90dc-eb8849cb03eb",
+    "passive_transform_unlock_l3_uuid": "231bf64e-7b75-4655-947c-0a16a0139bf7",
+    "passive_transform_unlock_l5_uuid": "658fc694-7840-41ee-b2c8-efa61c7a9f41"
   }
 }

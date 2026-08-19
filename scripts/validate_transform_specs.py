@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 transforms = (ROOT / "data" / "transforms.yaml").read_text(encoding="utf-8")
 spells = (ROOT / "src" / "stats" / "Transforms.txt").read_text(encoding="utf-8")
 statuses = (ROOT / "src" / "stats" / "TransformStatuses.txt").read_text(encoding="utf-8")
+passives = (ROOT / "src" / "stats" / "Passives.txt").read_text(encoding="utf-8")
+progressions = (ROOT / "data" / "progressions.csv").read_text(encoding="utf-8")
+manifest = json.loads((ROOT / "data" / "uuid_manifest.json").read_text(encoding="utf-8"))
+
+CONTAINER = "QTD_TransformContainer"
+CONTAINER_UUID = "1f3a673b-dc8b-4eca-9097-c6605a3de947"
 
 expected = {
     "QTD_Transform_Insect": {
@@ -13,22 +20,33 @@ expected = {
         "qtd_status": "QTD_POLYMORPH_INSECT",
         "base_status": "WILDSHAPE_CAT_PLAYER",
         "template": "398887ea-5013-4c9b-8f89-37f44efef8dc",
+        "cost": "BonusActionPoint:1;QTD_SageQi:1",
     },
     "QTD_Transform_Eagle": {
         "base_spell": "Shout_WildShape_Combat_Raven",
         "qtd_status": "QTD_POLYMORPH_EAGLE",
         "base_status": "WILDSHAPE_RAVEN_PLAYER",
         "template": "6c2fc745-20b3-44c0-9032-97e97a5368eb",
+        "cost": "BonusActionPoint:1;QTD_SageQi:1",
     },
     "QTD_Transform_Tiger": {
         "base_spell": "Shout_Wildshape_Combat_SaberTooth_Tiger",
         "qtd_status": "QTD_POLYMORPH_TIGER",
         "base_status": "WILDSHAPE_SABERTOOTH_TIGER_PLAYER",
         "template": "007a0a64-d763-4daf-9697-21765a4c2d4d",
+        "cost": "BonusActionPoint:1;QTD_SageQi:2",
     },
 }
 
 errors = []
+
+if f'new entry "{CONTAINER}"' not in spells:
+    errors.append("Missing QTD transform linked container")
+if 'data "SpellFlags" "IsLinkedSpellContainer"' not in spells:
+    errors.append("Transform container must be IsLinkedSpellContainer")
+if manifest["uuids"].get("transform_container_uuid") != CONTAINER_UUID:
+    errors.append("Container UUID mismatch between validator and uuid_manifest")
+
 for tech_name, ref in expected.items():
     if tech_name not in transforms:
         errors.append(f"Missing transform spec: {tech_name}")
@@ -36,6 +54,10 @@ for tech_name, ref in expected.items():
         errors.append(f"Missing transform SpellData draft: {tech_name}")
     if f'using "{ref["base_spell"]}"' not in spells:
         errors.append(f"Missing base spell inheritance for {tech_name}: {ref['base_spell']}")
+    if f'data "SpellContainerID" "{CONTAINER}"' not in spells:
+        errors.append(f"Missing linked container membership: {tech_name}")
+    if ref["cost"] not in spells:
+        errors.append(f"Missing Sage Qi cost for {tech_name}: {ref['cost']}")
     if f'ApplyStatus({ref["qtd_status"]},100,-1)' not in spells:
         errors.append(f"Missing QTD polymorph application for {tech_name}: {ref['qtd_status']}")
     if f'new entry "{ref["qtd_status"]}"' not in statuses:
@@ -45,12 +67,43 @@ for tech_name, ref in expected.items():
     if ref["template"] not in transforms and ref["template"] not in statuses:
         errors.append(f"Missing reference TemplateID for {tech_name}: {ref['template']}")
 
+if spells.count('data "Requirements" ""') < 3:
+    errors.append("All three QTD transform children must clear inherited Requirements")
+if spells.count('data "RequirementConditions" ""') < 3:
+    errors.append("All three QTD transform children must clear inherited RequirementConditions")
+if spells.count('data "RequirementEvents" ""') < 3:
+    errors.append("All three QTD transform children must clear inherited RequirementEvents")
+
+l3_required = (
+    'new entry "QTD_Passive_TransformUnlock_L3"',
+    'UnlockSpell(QTD_TransformContainer)',
+    f'UnlockSpell(QTD_Transform_Insect,AddChildren,{CONTAINER_UUID})',
+)
+for token in l3_required:
+    if token not in passives:
+        errors.append(f"Missing L3 transform unlock token: {token}")
+
+l5_required = (
+    'new entry "QTD_Passive_TransformUnlock_L5"',
+    f'UnlockSpell(QTD_Transform_Eagle,AddChildren,{CONTAINER_UUID})',
+    f'UnlockSpell(QTD_Transform_Tiger,AddChildren,{CONTAINER_UUID})',
+)
+for token in l5_required:
+    if token not in passives:
+        errors.append(f"Missing L5 transform unlock token: {token}")
+
+if "QTD_GreatSage_3" not in progressions or "QTD_Passive_TransformUnlock_L3" not in progressions:
+    errors.append("Level 3 progression must grant QTD_Passive_TransformUnlock_L3")
+if "QTD_GreatSage_5" not in progressions or "QTD_Passive_TransformUnlock_L5" not in progressions:
+    errors.append("Level 5 progression must grant QTD_Passive_TransformUnlock_L5")
+
 required_policy = (
     "overwrite_vanilla_wildshape: false",
     "never_override_shared_wildshape_spell: true",
     "never_override_shared_polymorph_status: true",
     "required_status_group: SG_Polymorph_BeastShape",
     "shared_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0",
+    "clear_inherited_resource_requirements: true",
     "final_truth_is_local_patch8_toolkit: true",
 )
 for policy in required_policy:
@@ -75,5 +128,5 @@ if errors:
     sys.exit(1)
 
 print("TRANSFORM SPEC VALIDATION OK")
-print("Validated 3 QTD transform spells and 3 inherited polymorph statuses.")
-print("Runtime readiness: BASE-CHAIN-ALIGNED; local Patch 8 Toolkit verification still required.")
+print("Validated linked container + L3/L5 AddChildren unlocks + 3 inherited polymorph chains.")
+print("Runtime readiness: CONTAINER-WIRED-DRAFT; local Patch 8 Toolkit verification still required.")

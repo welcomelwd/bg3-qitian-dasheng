@@ -23,3 +23,9 @@ QTD_Transform_Eagle_DisplayName	七十二变：苍鹰	Seventy-Two Transformation
 QTD_Transform_Eagle_Description	借飞禽之形腾空而起，跨越高低差与复杂地形。首个技术原型使用恐鸦形态验证飞行链路。	Take wing to cross vertical terrain and obstacles. The first technical prototype uses the Dire Raven Wild Shape chain.
 QTD_Transform_Tiger_DisplayName	七十二变：猛虎	Seventy-Two Transformations: Tiger
 QTD_Transform_Tiger_Description	化作猛虎扑杀近敌，获得野兽形态的近战能力与耐久。首个技术原型使用剑齿虎形态。	Transform into a tiger-like combat form with beast melee attacks and durability. The first technical prototype uses the Sabre-Toothed Tiger Wild Shape chain.
+QTD_TransformContainer_DisplayName	七十二变	Seventy-Two Transformations
+QTD_TransformContainer_Description	开启变化菜单，选择当前等级已经领悟的变化形态。	Open the transformation menu and choose a form learned at your current level.
+QTD_Passive_TransformUnlock_L3_DisplayName	七十二变	Seventy-Two Transformations
+QTD_Passive_TransformUnlock_L3_Description	领悟变化之术，获得七十二变菜单并解锁小虫变化。	Learn the art of transformation, gaining the Seventy-Two Transformations menu and Tiny Creature form.
+QTD_Passive_TransformUnlock_L5_DisplayName	七十二变·进境	Seventy-Two Transformations: Advancement
+QTD_Passive_TransformUnlock_L5_Description	变化之术更进一步，解锁苍鹰变化与猛虎变化。	Advance your transformation art, unlocking Eagle and Tiger forms.
