@@ -23,23 +23,35 @@ data "SpellProperties" "ApplyStatus(QTD_STATUS_DEMON_REVEALED,100,3)"
 
 new entry "Zone_QTD_SeaCalmingStrike"
 type "SpellData"
+using "Zone_Cleave"
 data "SpellType" "Zone"
 data "Level" "0"
 data "SpellSchool" "None"
-data "TargetRadius" "3"
-data "UseCosts" "ActionPoint:1;QTD_SageQi:2"
+data "Cooldown" ""
+data "SpellProperties" "GROUND:ExecuteWeaponFunctors(MainHand)"
+data "SpellRoll" "not SavingThrow(Ability.Strength, SourceSpellDC())"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon,MainWeaponDamageType);IF(not ClassLevelHigherOrEqualThan(5,'QTD_GreatSage')):DealDamage(2d8,Thunder,Magical);IF(ClassLevelHigherOrEqualThan(5,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(11,'QTD_GreatSage')):DealDamage(3d8,Thunder,Magical);IF(ClassLevelHigherOrEqualThan(11,'QTD_GreatSage')):DealDamage(4d8,Thunder,Magical);ApplyStatus(PRONE,100,1);Force(3,OriginToEntity,Aggressive,true)"
+data "SpellFail" "DealDamage(MainMeleeWeapon,MainWeaponDamageType);IF(not ClassLevelHigherOrEqualThan(5,'QTD_GreatSage')):DealDamage(2d8/2,Thunder,Magical);IF(ClassLevelHigherOrEqualThan(5,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(11,'QTD_GreatSage')):DealDamage(3d8/2,Thunder,Magical);IF(ClassLevelHigherOrEqualThan(11,'QTD_GreatSage')):DealDamage(4d8/2,Thunder,Magical)"
+data "TargetConditions" "Character() and not Self() and not Dead() and not Ally()"
+data "CycleConditions" "Enemy() and not Dead()"
 data "DisplayName" "Zone_QTD_SeaCalmingStrike_DisplayName"
 data "Description" "Zone_QTD_SeaCalmingStrike_Description"
-data "SpellRoll" "not SavingThrow(Ability.Strength, SourceSpellDC())"
-data "SpellSuccess" "IF(not Self()):DealDamage(2d8,Thunder,Magical);IF(not Self()):ApplyStatus(PRONE,100,1);IF(not Self()):Force(3,OriginToEntity,Aggressive,true)"
-data "SpellFail" "IF(not Self()):DealDamage(2d8/2,Thunder,Magical)"
-data "TooltipDamageList" "DealDamage(2d8,Thunder)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon,MainWeaponDamageType);DealDamage(2d8,Thunder)"
 data "TooltipAttackSave" "Strength"
+data "Shape" "Cone"
+data "FrontOffset" "-2"
+data "Range" "3"
+data "Angle" "120"
+data "UseCosts" "ActionPoint:1;QTD_SageQi:2"
+data "MaximumTargets" ""
+data "SpellFlags" "IsHarmful;CanAreaDamageEvade"
+data "RequirementConditions" "IsProficientWithEquippedWeapon()"
+data "RechargeValues" ""
 
-// Verified from official/public BG3 Stats patterns:
-// - Target_MistyStep is the behavioral reference for a selectable teleport.
-// - TeleportSource(), ApplyStatus(), DealDamage() and Force() are supported functors.
-// - SavingThrow(Ability.Strength, SourceSpellDC()) is a supported spell-roll pattern.
-// - Somersault Cloud range scaling is applied by hidden UnlockSpellVariant + ModifyTargetRadius passives.
-// Toolkit gates remain for Misty Step target-floor flags/VFX and TeleportSource -> SELF status timing.
-// Sea-Calming Strike still needs its intended weapon-damage component and final Zone geometry/animation pass.
+// Pattern alignment notes:
+// - Target_MistyStep + TeleportSource() back Somersault Cloud.
+// - Zone_QTD_SeaCalmingStrike inherits vanilla Zone_Cleave geometry/weapon-AoE behavior,
+//   then replaces the attack roll with a Strength save and adds Thunder/control effects.
+// - Zone_Cleave demonstrates MainMeleeWeapon damage plus GROUND:ExecuteWeaponFunctors(MainHand).
+// - ClassLevelHigherOrEqualThan(...) already drives fixed class-level tiers elsewhere in this project.
+// Runtime gates are intentionally left for local Toolkit/game validation by the project owner.
