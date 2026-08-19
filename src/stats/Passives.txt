@@ -32,6 +32,28 @@ data "Icon" "PassiveFeature_Parry"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockInterrupt(QTD_Interrupt_CopperHeadIronArm)"
 
+new entry "QTD_Passive_CloudMomentum_Consume"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnAttack"
+data "Conditions" "IsMeleeAttack()"
+data "StatsFunctors" "RemoveStatus(SELF,QTD_STATUS_CLOUD_MOMENTUM)"
+
+new entry "QTD_Passive_SomersaultCloud_Range_L5"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_QTD_SomersaultCloud'),ModifyTargetRadius(Multiplicative,1.25),)"
+
+new entry "QTD_Passive_SomersaultCloud_Range_L9"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_QTD_SomersaultCloud'),ModifyTargetRadius(Multiplicative,1.2),)"
+
+new entry "QTD_Passive_SomersaultCloud_Range_L12"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "UnlockSpellVariant(SpellId('Target_QTD_SomersaultCloud'),ModifyTargetRadius(Multiplicative,1.1666667),)"
+
 new entry "QTD_Passive_TransformUnlock_L3"
 type "PassiveData"
 data "DisplayName" "QTD_Passive_TransformUnlock_L3_DisplayName"
@@ -100,6 +122,10 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // - the interrupt is restricted to Bludgeoning/Piercing/Slashing primary damage types.
 // - a temporary BOOST status applies flat 1d8+WisdomModifier reduction only to B/P/S damage.
 // - a hidden cleanup passive removes that status on OnDamaged or OnDamagedPrevented so it cannot leak to later hits.
+// V0.1 Somersault Cloud source alignment:
+// - Cloud Momentum uses IF(IsMeleeAttack()):Advantage(AttackRoll) and a hidden OnAttack cleanup passive.
+// - range growth uses cumulative UnlockSpellVariant + ModifyTargetRadius(Multiplicative,...) boosts.
+// - planned range curve is 12m at L2, 15m at L5, 18m at L9, and 21m at L12.
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
