@@ -1,0 +1,50 @@
+subclass:
+  tech_name: QTD_VictoriousBuddha
+  display_name: 斗战胜佛
+  english_name: Victorious Fighting Buddha
+  parent_class: QTD_GreatSage
+  unlock_level: 3
+  progression_table_uuid: 7761cb09-7c56-4ff5-b4eb-8860683eed61
+  progression_type: 1
+  target_version: V0.3
+
+identity:
+  role: melee_staff_critical
+  pillars:
+    - critical_damage
+    - critical_range
+    - armor_break_finisher
+  no_script_extender_required: true
+
+features:
+  level_3:
+    passive: QTD_Passive_VictoriousBuddha_StaffFury
+    effect: CriticalHitExtraDice(1,MeleeWeaponAttack)
+    note: first draft affects all melee weapon attacks; narrow to staff/Ruyi after Toolkit weapon-condition validation
+
+  level_6:
+    passive: QTD_Passive_VictoriousBuddha_ImprovedCritical
+    parent: ImprovedCritical
+    effect: ReduceCriticalAttackThreshold(1)
+    expected_critical_range: 19-20
+
+  level_10:
+    passive: QTD_Passive_VictoriousBuddha_HeavenBreaker
+    unlocks: Target_QTD_HeavenBreakingStrike
+    cost:
+      action: 1
+      sage_qi: 2
+    cooldown: OncePerTurn
+    hit:
+      weapon_damage: MainMeleeWeapon
+      force_damage: 2d8
+      armor_break_status: QTD_STATUS_HEAVEN_BREAK_ARMOR
+      armor_class_delta: -2
+      duration_rounds: 2
+
+balance_guards:
+  do_not_grant_extra_action: true
+  do_not_grant_extra_attack_2: true
+  do_not_change_sage_qi_capacity: true
+  do_not_stack_additional_critical_threshold_reduction_at_level_10: true
+  heaven_breaking_strike_once_per_turn: true
