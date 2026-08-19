@@ -1,13 +1,14 @@
-new entry "Shout_QTD_SomersaultCloud"
+new entry "Target_QTD_SomersaultCloud"
 type "SpellData"
-data "SpellType" "Shout"
+using "Target_MistyStep"
+data "SpellType" "Target"
 data "Level" "0"
 data "SpellSchool" "None"
 data "TargetRadius" "12"
 data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
-data "DisplayName" "Shout_QTD_SomersaultCloud_DisplayName"
-data "Description" "Shout_QTD_SomersaultCloud_Description"
-data "SpellProperties" "ApplyStatus(QTD_STATUS_CLOUD_MOMENTUM,100,1)"
+data "DisplayName" "Target_QTD_SomersaultCloud_DisplayName"
+data "Description" "Target_QTD_SomersaultCloud_Description"
+data "SpellProperties" "TeleportSource()"
 
 new entry "Target_QTD_FieryGoldenEyes"
 type "SpellData"
@@ -29,8 +30,18 @@ data "TargetRadius" "3"
 data "UseCosts" "ActionPoint:1;QTD_SageQi:2"
 data "DisplayName" "Zone_QTD_SeaCalmingStrike_DisplayName"
 data "Description" "Zone_QTD_SeaCalmingStrike_Description"
-data "SpellProperties" "DealDamage(2d8,Thunder);ApplyStatus(PRONE,100,1)"
+data "SpellRoll" "not SavingThrow(Ability.Strength, SourceSpellDC())"
+data "SpellSuccess" "IF(not Self()):DealDamage(2d8,Thunder,Magical);IF(not Self()):ApplyStatus(PRONE,100,1);IF(not Self()):Force(3,OriginToEntity,Aggressive,true)"
+data "SpellFail" "IF(not Self()):DealDamage(2d8/2,Thunder,Magical)"
+data "TooltipDamageList" "DealDamage(2d8,Thunder)"
+data "TooltipAttackSave" "Strength"
 
-// TODO_TOOLKIT_CLONE: Somersault Cloud requires a validated teleport spell/template.
-// TODO_TOOLKIT_CLONE: Sea-Calming Strike still needs weapon damage, STR save and
-// knockback using a known-good base-game spell/functor pattern.
+// Verified from official BG3 modding docs:
+// - Target_MistyStep exists and is the behavioral reference for a selectable teleport.
+// - TeleportSource(), ApplyStatus(), DealDamage() and Force() are documented functors.
+// - SavingThrow(Ability.Strength, SourceSpellDC()) is documented spell-roll syntax.
+// TODO_TOOLKIT_CLONE: copy/verify Misty Step target-floor flags, animation and VFX in Toolkit.
+// TODO_TOOLKIT_CLONE: append QTD_STATUS_CLOUD_MOMENTUM to the caster after teleport using
+// a known-good caster-status pattern; do not guess target context.
+// TODO_TOOLKIT_CLONE: Sea-Calming Strike still needs its intended weapon-damage component
+// and a final Zone geometry/animation pass in Toolkit.
