@@ -48,3 +48,13 @@ passives:
   - tech_name: QTD_Passive_QitianDasheng
     display_name: 齐天大圣
     v0_1: false
+    unlock_level: 12
+    target_version: V1.0
+    role: capstone_passive
+    intent:
+      - 仙力上限 +2，使 L12 预期总上限达到 8
+      - Movement +3m
+      - 免疫魅惑状态组
+      - 免疫恐惧状态组
+      - 不新增主动大招，不增加 Action/Bonus Action，不继续提升 Extra Attack 链
+    implementation_note: "使用 PassiveData Boosts：ActionResource(QTD_SageQi,2,0);MovementSpeed(3);StatusImmunity(SG_Charmed);StatusImmunity(SG_Frightened)。"
