@@ -1,0 +1,37 @@
+// Qitian Dasheng polymorph status drafts.
+// Each QTD status inherits a known-good vanilla player Wild Shape status, so the
+// mature revert / dismiss / hotbar / template / rule chain is reused without
+// overriding the vanilla entry itself.
+
+new entry "QTD_POLYMORPH_INSECT"
+type "StatusData"
+using "WILDSHAPE_CAT_PLAYER"
+data "DisplayName" "QTD_Transform_Insect_DisplayName"
+data "StackId" "WILDSHAPE"
+
+new entry "QTD_POLYMORPH_EAGLE"
+type "StatusData"
+using "WILDSHAPE_RAVEN_PLAYER"
+data "DisplayName" "QTD_Transform_Eagle_DisplayName"
+data "StackId" "WILDSHAPE"
+
+new entry "QTD_POLYMORPH_TIGER"
+type "StatusData"
+using "WILDSHAPE_SABERTOOTH_TIGER_PLAYER"
+data "DisplayName" "QTD_Transform_Tiger_DisplayName"
+data "StackId" "WILDSHAPE"
+
+// Verified reference chain (do not copy these fields unless customization is needed):
+// WILDSHAPE_CAT_PLAYER
+//   TemplateID 398887ea-5013-4c9b-8f89-37f44efef8dc
+//   Rules      9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+// WILDSHAPE_RAVEN_PLAYER
+//   TemplateID 6c2fc745-20b3-44c0-9032-97e97a5368eb
+//   Rules      9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+// WILDSHAPE_SABERTOOTH_TIGER_PLAYER
+//   TemplateID 007a0a64-d763-4daf-9697-21765a4c2d4d
+//   Rules      9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+//
+// The shared WildShapeKeepName rule applies visual/template spells, tags, AI,
+// race, AC, unarmed ability, scale/weight and Wild Shape hotbar behavior while
+// disabling equipment slots and removing previous template spells.
