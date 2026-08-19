@@ -26,6 +26,9 @@ jobs:
       - name: Validate Monkey Agility
         run: python scripts/validate_monkey_agility.py
 
+      - name: Validate Ruyi Mastery
+        run: python scripts/validate_ruyi_mastery.py
+
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 
