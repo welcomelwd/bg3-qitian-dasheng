@@ -4,16 +4,46 @@ items:
     rarity: Legendary
     type: Quarterstaff
     v0_1: true
+    runtime_state: quarterstaff-reach-root-draft
+    parent_stats: WPN_Quarterstaff
+    root_template:
+      planning_uuid: 521284c4-3d7b-4642-9c26-3677198f5a69
+      vanilla_clone_source: 96e2abaf-78ff-4dcb-a6a3-a5f0c348bd9f
+      vanilla_stats: WPN_Quarterstaff
+      asset_strategy: reuse-vanilla-quarterstaff-v0.1
     enhancement: 2
+    magical: true
     damage:
       one_handed: "1d8 Bludgeoning + 1d4 Force"
       two_handed: "1d10 Bludgeoning + 1d4 Force"
-    intent:
-      - Strength +1
-      - Jump +1.5m
-      - Reach +1.5m
-      - 后续增加 Target_QTD_RuyiExtend
-    asset_plan: "V0.1 复用现有 Quarterstaff mesh；自定义 3D 延后。"
+    weapon_range_m: 3
+    weapon_properties:
+      - Versatile
+      - Melee
+      - Dippable
+      - Reach
+      - Magical
+    wearer_bonuses:
+      strength: +1
+      jump_distance_multiplier: 1.5
+    active:
+      tech_name: Target_QTD_RuyiExtend
+      display_name: 如意伸长
+      action_cost: Action
+      range_m: 9
+      behavior: main-hand melee weapon attack at extended range
+    interactions:
+      - QTD_Passive_RuyiMastery keeps STR/DEX best-stat monk-weapon handling
+      - Zone_QTD_SeaCalmingStrike reads MainMeleeWeapon and MainWeaponDamageType
+      - Target_QTD_RuyiExtend reads the equipped main-hand weapon instead of standalone Force damage
+    toolkit_gates:
+      - clone the vanilla Quarterstaff root and point Stats to WPN_QTD_RuyiJinguBang
+      - verify 3m WeaponRange plus Reach behaves as intended for attacks and opportunity attacks
+      - verify 1d4 Force appears exactly once on ordinary attacks, Sea-Calming Strike, and Ruyi Extension
+      - verify STR +1 and jump x1.5 apply only while equipped
+      - verify Ruyi Mastery still treats the custom weapon as monk-eligible
+      - verify the 9m Ruyi Extension inherits correct weapon animation and attack resolution
+    asset_plan: "V0.1 复用原版 Quarterstaff mesh/physics；自定义金箍棒模型与伸长动画延后。"
 
   - tech_name: ARM_QTD_GoldenArmor
     display_name: 锁子黄金甲
