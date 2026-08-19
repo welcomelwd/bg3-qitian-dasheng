@@ -1,0 +1,27 @@
+name: Validate mod specs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate design specs
+        run: python scripts/validate_specs.py
+
+      - name: Validate Stats drafts
+        run: python scripts/validate_stats_drafts.py
+
+      - name: Check cross-file consistency
+        run: python scripts/check_consistency.py
