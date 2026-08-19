@@ -1,0 +1,30 @@
+references:
+  spider:
+    spell: Shout_WildShape_Combat_Spider
+    parent_spell: Shout_WildShape_Spider
+    status: WILDSHAPE_SPIDER_GIANT_PLAYER
+    template_id: e0e6f504-8114-46c8-834a-186466edbd87
+    rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+  panther:
+    spell: Shout_WildShape_Combat_Panther
+    status: WILDSHAPE_PANTHER_PLAYER
+    template_id: e7780038-d09c-48e1-8bb8-db86538a3cb9
+    rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+  owlbear:
+    spell: Shout_WildShape_Combat_Owlbear
+    parent_spell: Shout_WildShape_Owlbear
+    status: WILDSHAPE_OWLBEAR_PLAYER_10
+    base_status: WILDSHAPE_OWLBEAR_PLAYER
+    template_id_level_10: 940514fe-e16b-4e2f-b034-be0d52709466
+    helper_status: OWLBEAR_WILDSHAPE_RAGE
+    rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+  dilophosaurus:
+    spell: Shout_WildShape_Combat_Dilophosaurus
+    status: WILDSHAPE_DILOPHOSAURUS_PLAYER
+    template_id: fca74933-fb42-45c0-af31-c9f806368453
+    rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+policy:
+  source: public BG3-derived Stats data
+  reference_only: true
+  never_override_vanilla: true
+  local_patch8_toolkit_is_final_truth: true
