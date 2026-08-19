@@ -23,5 +23,8 @@ jobs:
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 
+      - name: Validate transform prototypes
+        run: python scripts/validate_transform_specs.py
+
       - name: Check cross-file consistency
         run: python scripts/check_consistency.py
