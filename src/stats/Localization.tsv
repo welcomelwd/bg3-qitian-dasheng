@@ -5,12 +5,12 @@ QTD_Passive_RuyiMastery_DisplayName	如意兵法	Ruyi Mastery
 QTD_Passive_RuyiMastery_Description	精通棍棒与如意金箍棒的战斗技巧。	Master the staff and the Ruyi Jingu Bang.
 QTD_Passive_CopperHeadIronArm_DisplayName	铜头铁臂	Copper Head, Iron Arms
 QTD_Passive_CopperHeadIronArm_Description	以仙躯硬撼刀兵，强化近战防御。	Harden your immortal body against physical blows.
-Shout_QTD_SomersaultCloud_DisplayName	筋斗云	Somersault Cloud
-Shout_QTD_SomersaultCloud_Description	驾云突进至战场另一处，并为下一次近战攻击蓄势。	Ride a cloud across the battlefield and build momentum for your next melee strike.
+Target_QTD_SomersaultCloud_DisplayName	筋斗云	Somersault Cloud
+Target_QTD_SomersaultCloud_Description	驾云跃至选定落点，迅速重定位战场位置。	Ride the cloud to a chosen point and rapidly reposition on the battlefield.
 Target_QTD_FieryGoldenEyes_DisplayName	火眼金睛	Fiery Golden Eyes
 Target_QTD_FieryGoldenEyes_Description	看破妖邪与幻象，使目标显形并削弱其防御。	Pierce disguises and illusions, revealing and weakening the target.
 Zone_QTD_SeaCalmingStrike_DisplayName	定海一棒	Sea-Calming Strike
-Zone_QTD_SeaCalmingStrike_Description	以金箍棒震击地面，对附近敌人造成雷鸣伤害并将其击倒。	Smash the ground with the staff, dealing Thunder damage and knocking nearby foes prone.
+Zone_QTD_SeaCalmingStrike_Description	以金箍棒震击地面，对附近敌人造成雷鸣伤害，弱者更会被击倒并震退。	Smash the ground with the staff, dealing Thunder damage and knocking failed saves prone and away.
 QTD_STATUS_CLOUD_MOMENTUM_DisplayName	云势	Cloud Momentum
 QTD_STATUS_CLOUD_MOMENTUM_Description	筋斗云带来的冲势强化下一次近战攻击。	Momentum from the Somersault Cloud empowers the next melee attack.
 QTD_STATUS_DEMON_REVEALED_DisplayName	妖邪显形	Demon Revealed
