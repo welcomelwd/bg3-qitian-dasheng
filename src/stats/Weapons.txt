@@ -1,0 +1,23 @@
+new entry "WPN_QTD_RuyiJinguBang"
+type "Weapon"
+using "TODO_TOOLKIT_CLONE_QUARTERSTAFF_TEMPLATE"
+data "Rarity" "Legendary"
+data "ValueLevel" "5"
+data "DefaultBoosts" "WeaponEnchantment(2);Ability(Strength,1);JumpMaxDistance(1.5)"
+data "Boosts" "UnlockSpell(Target_QTD_RuyiExtend)"
+
+new entry "Target_QTD_RuyiExtend"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetRadius" "9"
+data "UseCosts" "ActionPoint:1"
+data "DisplayName" "Target_QTD_RuyiExtend_DisplayName"
+data "Description" "Target_QTD_RuyiExtend_Description"
+data "SpellProperties" "DealDamage(1d8,Force)"
+
+// TODO_TOOLKIT_CLONE: replace the placeholder inherited weapon entry with a
+// validated quarterstaff template from the user's Toolkit data.
+// TODO_TOOLKIT_CLONE: Ruyi Extension still needs the inherited weapon hit and
+// validated knockback logic before runtime use.

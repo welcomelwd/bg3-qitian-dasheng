@@ -1,0 +1,22 @@
+new entry "QTD_Passive_MonkeyAgility"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_MonkeyAgility_DisplayName"
+data "Description" "QTD_Passive_MonkeyAgility_Description"
+data "Properties" "Highlighted"
+data "Boosts" "MovementSpeed(3);JumpMaxDistanceMultiplier(1.5)"
+
+new entry "QTD_Passive_RuyiMastery"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_RuyiMastery_DisplayName"
+data "Description" "QTD_Passive_RuyiMastery_Description"
+data "Properties" "Highlighted"
+
+new entry "QTD_Passive_CopperHeadIronArm"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_CopperHeadIronArm_DisplayName"
+data "Description" "QTD_Passive_CopperHeadIronArm_Description"
+data "Properties" "Highlighted"
+
+// TODO_TOOLKIT_CLONE: finalize armour conditions, AC calculation and physical
+// mitigation by cloning known-good base-game passives. Do not ship guessed syntax.
+// TODO_TOOLKIT_CLONE: finalize quarterstaff STR/DEX ability selection for Ruyi Mastery.

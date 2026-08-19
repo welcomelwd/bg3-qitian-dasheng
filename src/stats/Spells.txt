@@ -1,0 +1,36 @@
+new entry "Shout_QTD_SomersaultCloud"
+type "SpellData"
+data "SpellType" "Shout"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetRadius" "12"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
+data "DisplayName" "Shout_QTD_SomersaultCloud_DisplayName"
+data "Description" "Shout_QTD_SomersaultCloud_Description"
+data "SpellProperties" "ApplyStatus(QTD_STATUS_CLOUD_MOMENTUM,100,1)"
+
+new entry "Target_QTD_FieryGoldenEyes"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetRadius" "18"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
+data "DisplayName" "Target_QTD_FieryGoldenEyes_DisplayName"
+data "Description" "Target_QTD_FieryGoldenEyes_Description"
+data "SpellProperties" "ApplyStatus(QTD_STATUS_DEMON_REVEALED,100,3)"
+
+new entry "Zone_QTD_SeaCalmingStrike"
+type "SpellData"
+data "SpellType" "Zone"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetRadius" "3"
+data "UseCosts" "ActionPoint:1;QTD_SageQi:2"
+data "DisplayName" "Zone_QTD_SeaCalmingStrike_DisplayName"
+data "Description" "Zone_QTD_SeaCalmingStrike_Description"
+data "SpellProperties" "DealDamage(2d8,Thunder);ApplyStatus(PRONE,100,1)"
+
+// TODO_TOOLKIT_CLONE: Somersault Cloud requires a validated teleport spell/template.
+// TODO_TOOLKIT_CLONE: Sea-Calming Strike still needs weapon damage, STR save and
+// knockback using a known-good base-game spell/functor pattern.

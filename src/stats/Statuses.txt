@@ -1,0 +1,19 @@
+new entry "QTD_STATUS_CLOUD_MOMENTUM"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_CLOUD_MOMENTUM_DisplayName"
+data "Description" "QTD_STATUS_CLOUD_MOMENTUM_Description"
+data "Properties" "DisableOverhead;DisableCombatlog"
+
+new entry "QTD_STATUS_DEMON_REVEALED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_DEMON_REVEALED_DisplayName"
+data "Description" "QTD_STATUS_DEMON_REVEALED_Description"
+data "Properties" "DisableOverhead"
+data "Boosts" "AC(-2)"
+
+// TODO_TOOLKIT_CLONE: Cloud Momentum should grant Advantage to the next melee
+// attack and then remove itself using a validated condition/functor pattern.
+// TODO_TOOLKIT_CLONE: Demon Revealed still needs validated invisibility suppression
+// and attacker-specific Advantage semantics.
