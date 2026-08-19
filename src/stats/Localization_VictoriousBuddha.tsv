@@ -1,0 +1,13 @@
+Key	zh-CN	en-US
+QTD_VictoriousBuddha_DisplayName	斗战胜佛	Victorious Fighting Buddha
+QTD_VictoriousBuddha_Description	舍繁变化而取斗战极致，以棍势、暴击与破甲压垮强敌。	Abandon complexity for martial supremacy, crushing foes through staff combat, critical strikes, and armour breaking.
+QTD_Passive_VictoriousBuddha_StaffFury_DisplayName	斗战棍法	Battle Staff Art
+QTD_Passive_VictoriousBuddha_StaffFury_Description	近战武器暴击时，额外增加一个武器伤害骰。	When you score a critical hit with a melee weapon, roll one additional weapon damage die.
+QTD_Passive_VictoriousBuddha_ImprovedCritical_DisplayName	战意无双	Peerless Battle Intent
+QTD_Passive_VictoriousBuddha_ImprovedCritical_Description	你的暴击阈值降低1，通常可在自然骰19或20时造成暴击。	Your critical hit threshold is reduced by 1, normally allowing critical hits on a natural 19 or 20.
+QTD_Passive_VictoriousBuddha_HeavenBreaker_DisplayName	破天一棒	Heaven Breaker
+QTD_Passive_VictoriousBuddha_HeavenBreaker_Description	领悟破天一棒，以仙力驱动金箍棒重创并撕开敌人防御。	Learn Heaven-Breaking Strike, driving your staff with Sage Qi to crush a foe and tear open its defence.
+Target_QTD_HeavenBreakingStrike_DisplayName	破天一棒	Heaven-Breaking Strike
+Target_QTD_HeavenBreakingStrike_Description	消耗2点仙力发动主手武器重击，额外造成2d8力场伤害，并使目标护甲等级降低2点，持续2回合。	Spend 2 Sage Qi on a main-hand weapon strike that deals an additional 2d8 Force damage and reduces the target's Armour Class by 2 for 2 rounds.
+QTD_STATUS_HEAVEN_BREAK_ARMOR_DisplayName	破甲	Heaven-Broken Armour
+QTD_STATUS_HEAVEN_BREAK_ARMOR_Description	护势被破，护甲等级降低2点。	Its defence has been shattered, reducing Armour Class by 2.
