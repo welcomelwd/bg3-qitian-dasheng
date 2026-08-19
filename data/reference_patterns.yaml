@@ -1,0 +1,55 @@
+references:
+  soulshifter:
+    source: "https://www.nexusmods.com/baldursgate3/mods/11534"
+    patterns:
+      custom_action_resource: true
+      progressive_form_unlocks: true
+      variable_transform_costs: true
+      revert_on_zero_hp: true
+    apply_to:
+      - QTD_SageQi
+      - QTD_SeventyTwoTransformations
+
+  cloudshift:
+    source: "https://www.nexusmods.com/baldursgate3/mods/18920"
+    patterns:
+      target_teleport_variant: true
+      teleportation_spell_variant: true
+      landing_effects_supported: true
+    apply_to:
+      - Target_QTD_SomersaultCloud
+
+  druid_wild_shape_overhaul:
+    source: "https://www.nexusmods.com/baldursgate3/mods/1148"
+    patterns:
+      independent_entries: true
+      unlock_passive_delivery: true
+      form_progression: true
+      avoid_vanilla_overwrite: true
+    apply_to:
+      - QTD_TransformContainer
+      - QTD_TransformUnlockPassives
+
+  sunscream_custom_wildshape:
+    source: "https://www.nexusmods.com/baldursgate3/mods/15724"
+    patterns:
+      toolkit_native_custom_wildshape: true
+    apply_to:
+      - QTD_TransformPrototype
+
+  polymath:
+    source: "https://www.nexusmods.com/baldursgate3/mods/6318"
+    patterns:
+      patch8_reference_tables: true
+      existing_spell_export: true
+      custom_resource_generation: true
+      custom_equipment_generation: true
+    usage: "Reference only; source available but not open source."
+
+  legendary_blood_of_lathander:
+    source: "https://www.nexusmods.com/baldursgate3/mods/14596"
+    patterns:
+      finesse_highest_str_dex: true
+    apply_to:
+      - QTD_Passive_RuyiMastery
+      - WPN_QTD_RuyiJinguBang
