@@ -29,6 +29,9 @@ jobs:
       - name: Validate Ruyi Mastery
         run: python scripts/validate_ruyi_mastery.py
 
+      - name: Validate Copper Head Iron Arm
+        run: python scripts/validate_copper_head_iron_arm.py
+
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 

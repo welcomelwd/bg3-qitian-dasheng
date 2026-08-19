@@ -4,7 +4,9 @@ Resource,QTD_SageQi,V0.1,toolkit-definition-ready
 Passive,QTD_Passive_MonkeyAgility,V0.1,vanilla-pattern-aligned-draft
 Passive,QTD_Passive_MonkeyAgility_Mobility,V0.1,hidden-helper-draft
 Passive,QTD_Passive_RuyiMastery,V0.1,monk-weapon-pattern-aligned-draft
-Passive,QTD_Passive_CopperHeadIronArm,V0.1,stats-draft
+Passive,QTD_Passive_CopperHeadIronArm,V0.1,interrupt-pattern-aligned-draft
+Interrupt,QTD_Interrupt_CopperHeadIronArm,V0.1,onpredamage-reaction-draft
+Status,QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION,V0.1,physical-flat-reduction-draft
 Passive,QTD_Passive_ExtraAttack,V0.1,spec-ready
 Spell,Target_QTD_SomersaultCloud,V0.1,parent-aligned-draft
 Spell,Zone_QTD_SeaCalmingStrike,V0.1,verified-functor-draft

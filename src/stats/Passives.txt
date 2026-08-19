@@ -26,8 +26,11 @@ data "Boosts" "MonkWeaponAttackOverride()"
 new entry "QTD_Passive_CopperHeadIronArm"
 type "PassiveData"
 data "DisplayName" "QTD_Passive_CopperHeadIronArm_DisplayName"
-data "Description" "QTD_Passive_CopperHeadIronArm_Description"
+data "Description" "QTD_Passive_CopperHeadIronArm_V2_Description"
+data "TooltipUseCosts" "ReactionActionPoint:1"
+data "Icon" "PassiveFeature_Parry"
 data "Properties" "Highlighted"
+data "Boosts" "UnlockInterrupt(QTD_Interrupt_CopperHeadIronArm)"
 
 new entry "QTD_Passive_TransformUnlock_L3"
 type "PassiveData"
@@ -92,6 +95,11 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // - MonkWeaponAttackOverride() changes eligible monk-weapon attacks to Dexterity only when Dexterity is higher.
 // - when Strength is equal or higher, the condition is false and the weapon keeps its normal Strength path.
 // - V0.1 intentionally avoids forced WeaponAttackRollAbilityOverride(Dexterity) and avoids adding Finesse to every weapon.
+// V0.1 Copper Head / Iron Arm source alignment:
+// - passive unlocks a Yes/No OnPreDamage Interrupt and spends ReactionActionPoint:1 only when accepted.
+// - the interrupt is restricted to Bludgeoning/Piercing/Slashing primary damage types.
+// - a temporary BOOST status applies flat 1d8+WisdomModifier reduction only to B/P/S damage.
+// - a hidden cleanup passive removes that status on OnDamaged or OnDamagedPrevented so it cannot leak to later hits.
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
@@ -110,6 +118,3 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // - no extra ActionPoint, BonusActionPoint, ExtraAttack_2 or new active spell is granted by the capstone.
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
-
-// TODO_TOOLKIT_CLONE: finalize physical mitigation for Copper Head / Iron Arm by cloning a known-good
-// base-game Reaction reduction chain.

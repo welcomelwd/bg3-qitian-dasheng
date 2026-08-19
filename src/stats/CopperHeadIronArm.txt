@@ -1,0 +1,42 @@
+// V0.1 Copper Head / Iron Arms reaction chain.
+// Pattern basis:
+// - OnPreDamage + YesNoDecision + ReactionActionPoint from established reaction InterruptData.
+// - Temporary pre-damage BOOST status, then cleanup after OnDamaged/OnDamagedPrevented.
+// - DamageReduction(..., Flat, dice+ability modifier) is a supported Stats expression pattern.
+
+new entry "QTD_Interrupt_CopperHeadIronArm"
+type "InterruptData"
+data "DisplayName" "QTD_Passive_CopperHeadIronArm_DisplayName"
+data "Description" "QTD_Passive_CopperHeadIronArm_V2_Description"
+data "Icon" "PassiveFeature_Parry"
+data "InterruptContext" "OnPreDamage"
+data "InterruptContextScope" "Self"
+data "Container" "YesNoDecision"
+data "Conditions" "IsAbleToReact(context.Observer) and Self(context.Target,context.Observer) and IsAttack() and HasDamageEffectFlag(DamageFlags.Hit) and (SpellDamageTypeIs(DamageType.Bludgeoning) or SpellDamageTypeIs(DamageType.Piercing) or SpellDamageTypeIs(DamageType.Slashing)) and not AnyEntityIsItem()"
+data "Properties" "ApplyStatus(OBSERVER_TARGET,QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION,100,1)"
+data "Cost" "ReactionActionPoint:1"
+data "InterruptDefaultValue" "Ask;Enabled"
+data "EnableCondition" "not HasStatus('SG_Polymorph')"
+data "EnableContext" "OnStatusApplied;OnStatusRemoved"
+
+new entry "QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Icon" "PassiveFeature_Parry"
+data "Boosts" "DamageReduction(Bludgeoning, Flat, 1d8+WisdomModifier);DamageReduction(Piercing, Flat, 1d8+WisdomModifier);DamageReduction(Slashing, Flat, 1d8+WisdomModifier)"
+data "StatusPropertyFlags" "DisableOverhead;DisablePortraitIndicator;DisableCombatlog"
+data "Passives" "QTD_Passive_CopperHeadIronArm_Cleanup"
+
+new entry "QTD_Passive_CopperHeadIronArm_Cleanup"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnDamaged;OnDamagedPrevented"
+data "Conditions" "HasLastAttackTriggered()"
+data "StatsFunctors" "RemoveStatus(QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION)"
+
+// Runtime gates still required in Patch 8 Toolkit:
+// - confirm SpellDamageTypeIs() reports the primary B/P/S type for normal weapon and unarmed attacks;
+// - confirm elemental riders are NOT reduced by the temporary B/P/S-only status;
+// - confirm a hit reduced to zero still triggers OnDamagedPrevented cleanup;
+// - confirm multi-component physical hits do not roll the flat reduction more than intended;
+// - confirm polymorphed forms do not expose the reaction.

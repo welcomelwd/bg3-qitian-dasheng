@@ -46,9 +46,27 @@ passives:
   - tech_name: QTD_Passive_CopperHeadIronArm
     display_name: 铜头铁臂
     v0_1: true
-    intent:
-      - Reaction 降低物理伤害
-      - 建议减伤 1d8 + WIS Modifier，随等级再扩展
+    runtime_state: interrupt-pattern-aligned-draft
+    unlock_level: 2
+    interrupt: QTD_Interrupt_CopperHeadIronArm
+    reaction_cost: ReactionActionPoint:1
+    interrupt_context: OnPreDamage
+    damage_types:
+      - Bludgeoning
+      - Piercing
+      - Slashing
+    reduction: 1d8 + WisdomModifier
+    temporary_status: QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION
+    cleanup_passive: QTD_Passive_CopperHeadIronArm_Cleanup
+    polymorph_behavior: disabled
+    runtime_controls:
+      - decline must not spend Reaction or reduce damage
+      - accept must spend exactly one Reaction
+      - elemental rider damage must not be reduced
+      - zero-damage prevention must still clean up the temporary status
+      - multi-component physical attacks must not receive unintended repeated reduction
+      - verify ordering with L9 Diamond Body resistance
+    implementation_note: "使用 OnPreDamage YesNoDecision Interrupt，在接受时临时施加只含 Bludgeoning/Piercing/Slashing DamageReduction 的 BOOST 状态；OnDamaged/OnDamagedPrevented 后清理。仍需 Patch 8 Toolkit 实机验证。"
 
   - tech_name: QTD_Passive_ExtraAttack
     display_name: 额外攻击
