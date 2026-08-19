@@ -76,13 +76,29 @@ spells:
     display_name: 火眼金睛
     level: 6
     v0_1: true
+    runtime_state: source-bound-reveal-draft
     action_cost: BonusAction
     sage_qi_cost: 1
     range_m: 18
     duration_turns: 3
     target_status: QTD_STATUS_DEMON_REVEALED
-    intent:
-      - 显形/反隐身
-      - 目标 AC -2
-      - 本体攻击目标获得 Advantage
-      - 对指定妖邪类型预留 +1d6 Radiant 扩展
+    reveal_behavior:
+      on_apply: RemoveStatus(SG_Invisible)
+      invisibility_immunity: StatusImmunity(SG_Invisible)
+      ac_penalty: -2
+    attacker_advantage:
+      passive: QTD_Passive_FieryGoldenEyes_TargetAdvantage
+      unlock_level: 6
+      source_bound_condition: "HasStatus('QTD_STATUS_DEMON_REVEALED',context.Target,context.Source)"
+      effect: Advantage(AttackRoll)
+      party_wide: false
+    deferred_extensions:
+      - 对明确妖邪类型的 +1d6 Radiant 暂不进入 V0.1，避免先引入未定义 creature tag 范围
+    runtime_controls:
+      - confirm casting on an already invisible target immediately reveals it
+      - confirm target cannot gain a normal SG_Invisible status again for 3 turns
+      - confirm AC is reduced by exactly 2 for 3 turns
+      - confirm only the Great Sage who applied the reveal receives attack Advantage
+      - confirm a second Great Sage does not inherit the first caster's Advantage
+      - confirm recasting from another source transfers/replaces status ownership predictably
+    implementation_note: "显形状态负责 RemoveStatus(SG_Invisible) + StatusImmunity(SG_Invisible) + AC(-2)。L6 隐藏被动沿用 Hunter's Mark / True Strike 的 source-bound HasStatus(status,target,source) 语义，仅给施术者对自己标记目标的攻击优势。实机验证由项目所有者完成。"
