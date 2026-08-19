@@ -20,6 +20,9 @@ jobs:
       - name: Validate design specs
         run: python scripts/validate_specs.py
 
+      - name: Validate class/resource spine
+        run: python scripts/validate_class_resource_spine.py
+
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 
