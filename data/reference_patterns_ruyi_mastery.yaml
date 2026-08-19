@@ -1,0 +1,38 @@
+feature: QTD_Passive_RuyiMastery
+status: monk-weapon-pattern-aligned-draft
+
+patterns:
+  - source_repo: BG3-Community-Library-Team/BG3-Community-Library
+    source_path: CommunityLibrary/Public/CommunityLibrary/Stats/Generated/Data/OneDnD/OneDnD_Class_Specific/OneDnD_Monk/CL_Passive_OneDnD_MartialArts.txt
+    source_entry: CL_Passive_OneDnD_MartialArts_DextrousAttacks
+    verified_condition: IsDexterityGreaterThanStrength()
+    verified_boost: MonkWeaponAttackOverride()
+    purpose: conditional DEX override for monk-eligible weapon attacks
+
+  - source_repo: BG3-Community-Library-Team/BG3-Community-Library
+    source_path: CommunityLibrary/Public/CommunityLibrary/Stats/Generated/Data/CL_Status/CL_Status_PactBlade_Attribute.txt
+    source_entries:
+      - CL_PACT_BLADE_STR
+      - CL_PACT_BLADE_DEX
+    verified_boost_family:
+      - WeaponAttackRollAbilityOverride(Strength)
+      - WeaponAttackRollAbilityOverride(Dexterity)
+    purpose: confirms explicit ability override boost family exists, but Ruyi Mastery deliberately avoids forcing DEX unconditionally
+
+decision:
+  use:
+    - IsDexterityGreaterThanStrength()
+    - MonkWeaponAttackOverride()
+  avoid:
+    - blanket Finesse on WPN_QTD_RuyiJinguBang solely for ability selection
+    - unconditional WeaponAttackRollAbilityOverride(Dexterity)
+    - invented max(STR,DEX) expressions
+
+runtime_gates:
+  - ordinary Quarterstaff with STR greater than DEX
+  - ordinary Quarterstaff with DEX greater than STR
+  - equal STR and DEX
+  - WPN_QTD_RuyiJinguBang after real Quarterstaff Parent assignment
+  - non-quarterstaff monk-eligible simple weapon control
+  - heavy or otherwise non-monk weapon negative control
+  - save-load respec multiclass and status-driven ability changes
