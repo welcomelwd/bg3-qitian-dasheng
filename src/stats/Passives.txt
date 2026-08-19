@@ -62,6 +62,14 @@ data "Icon" "Spell_Transmutation_Enlarge"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 
+new entry "QTD_Passive_QitianDasheng"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_QitianDasheng_DisplayName"
+data "Description" "QTD_Passive_QitianDasheng_Description"
+data "Icon" "PassiveFeature_Generic"
+data "Properties" "Highlighted"
+data "Boosts" "ActionResource(QTD_SageQi,2,0);MovementSpeed(3);StatusImmunity(SG_Charmed);StatusImmunity(SG_Frightened)"
+
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
@@ -74,6 +82,10 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // V0.4 Fa Tian Xiang Di source alignment:
 // - vanilla ENLARGE uses ObjectSize(+1) and ScaleMultiplier(1.33).
 // - the active form is unlocked by this passive; its cooldown and giant mechanics live in FaTianXiangDi.txt.
+// V1.0 Qitian Dasheng capstone source alignment:
+// - public BG3 PassiveData uses ActionResource(...) for permanent resource-capacity changes.
+// - StatusImmunity(SG_Charmed) and StatusImmunity(SG_Frightened) are public-data-aligned status-group immunities.
+// - no extra ActionPoint, BonusActionPoint, ExtraAttack_2 or new active spell is granted by the capstone.
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
 
