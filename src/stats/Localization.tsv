@@ -6,13 +6,13 @@ QTD_Passive_RuyiMastery_Description	精通长棍与如意金箍棒；当敏捷�
 QTD_Passive_CopperHeadIronArm_DisplayName	铜头铁臂	Copper Head, Iron Arms
 QTD_Passive_CopperHeadIronArm_Description	以仙躯硬撼刀兵，强化近战防御。	Harden your immortal body against physical blows.
 Target_QTD_SomersaultCloud_DisplayName	筋斗云	Somersault Cloud
-Target_QTD_SomersaultCloud_Description	驾云跃至选定落点，迅速重定位战场位置。	Ride the cloud to a chosen point and rapidly reposition on the battlefield.
+Target_QTD_SomersaultCloud_Description	消耗1点仙力，以附赠动作驾云传送至选定落点。落地后获得1回合云势，使下一次近战攻击获得优势；传送距离随大圣等级提升。	Spend 1 Sage Qi and a Bonus Action to ride the cloud to a chosen point. After landing, gain Cloud Momentum for 1 turn, granting Advantage on your next melee attack; range increases with Great Sage level.
 Target_QTD_FieryGoldenEyes_DisplayName	火眼金睛	Fiery Golden Eyes
 Target_QTD_FieryGoldenEyes_Description	看破妖邪与幻象，使目标显形并削弱其防御。	Pierce disguises and illusions, revealing and weakening the target.
 Zone_QTD_SeaCalmingStrike_DisplayName	定海一棒	Sea-Calming Strike
 Zone_QTD_SeaCalmingStrike_Description	以金箍棒震击地面，对附近敌人造成雷鸣伤害，弱者更会被击倒并震退。	Smash the ground with the staff, dealing Thunder damage and knocking failed saves prone and away.
 QTD_STATUS_CLOUD_MOMENTUM_DisplayName	云势	Cloud Momentum
-QTD_STATUS_CLOUD_MOMENTUM_Description	筋斗云带来的冲势强化下一次近战攻击。	Momentum from the Somersault Cloud empowers the next melee attack.
+QTD_STATUS_CLOUD_MOMENTUM_Description	筋斗云带来的冲势使下一次近战攻击获得优势；首次近战攻击后云势消散。	Momentum from the Somersault Cloud grants Advantage on your next melee attack, then dissipates after that attack.
 QTD_STATUS_DEMON_REVEALED_DisplayName	妖邪显形	Demon Revealed
 QTD_STATUS_DEMON_REVEALED_Description	目标的伪装被火眼金睛看破，护甲等级降低。	The target's disguise is pierced by Fiery Golden Eyes, reducing Armour Class.
 Target_QTD_RuyiExtend_DisplayName	如意伸长	Ruyi Extension
