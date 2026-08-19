@@ -23,6 +23,9 @@ jobs:
       - name: Validate class/resource spine
         run: python scripts/validate_class_resource_spine.py
 
+      - name: Validate Monkey Agility
+        run: python scripts/validate_monkey_agility.py
+
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 

@@ -1,7 +1,7 @@
 ID,Priority,TargetVersion,Area,TechName,UnlockLevel,Subclass,ActionCost,SageQiCost,RuntimeState,PrimaryGate,IssueNumber,ReleaseBlocking
 INT-001,P0,V0.1,Class,QTD_GreatSage,1,Base,Passive,0,toolkit-entry-package-ready,ClassDescriptions and Progressions real Toolkit rows plus Basic_Level_A,1,yes
 INT-002,P0,V0.1,Resource,QTD_SageQi,1,Base,Passive,0,toolkit-entry-package-ready,ActionResourceDefinitions serialization and short-rest recovery,2,yes
-INT-003,P0,V0.1,Passive,QTD_Passive_MonkeyAgility,1,Base,Passive,0,mechanics-incomplete,Unarmored AC and fall-damage behavior,1,yes
+INT-003,P0,V0.1,Passive,QTD_Passive_MonkeyAgility,1,Base,Passive,0,vanilla-pattern-aligned-draft,Unarmored AC armor-shield toggling plus 50-percent fall damage runtime behavior,1,yes
 INT-004,P0,V0.1,Passive,QTD_Passive_RuyiMastery,1,Base,Passive,0,mechanics-incomplete,Quarterstaff and Ruyi STR-DEX weapon condition,3,yes
 INT-005,P0,V0.1,Passive,QTD_Passive_CopperHeadIronArm,2,Base,Reaction,0,mechanics-incomplete,Validated reaction physical-damage reduction chain,2,yes
 INT-006,P0,V0.1,Spell,Target_QTD_SomersaultCloud,2,Base,BonusAction,1,parent-aligned-draft,Cloud Momentum plus level range scaling and targeting flags,2,yes

@@ -2,12 +2,18 @@ passives:
   - tech_name: QTD_Passive_MonkeyAgility
     display_name: 灵猴身法
     v0_1: true
-    intent:
-      - 无中甲、重甲或盾牌时，AC 由 10 + DEX 修正 + WIS 修正构成
-      - Movement +3m
-      - Jump Distance +50%
-      - 降低坠落伤害
-    implementation_note: "优先克隆/组合原版未着甲防御、移动与坠落相关被动，在 Toolkit 中确认 Boost/Functor。"
+    runtime_state: vanilla-pattern-aligned-draft
+    visible_effect:
+      unarmored_ac: 10 + DEX modifier + WIS modifier
+      conditions:
+        - not WearingArmor(context.Source)
+        - not HasShieldEquipped(context.Source)
+    helper: QTD_Passive_MonkeyAgility_Mobility
+    helper_effects:
+      movement_bonus_m: 3
+      jump_distance_multiplier: 1.5
+      fall_damage_multiplier: 0.5
+    implementation_note: "可见被动使用 ACOverrideFormula(10,true,Dexterity,Wisdom) + OnEquip/OnCreate 条件；隐藏 helper 使用 ActionResource(Movement,3,0)、JumpMaxDistanceMultiplier(1.5)、FallDamageMultiplier(0.5)。仍需 Patch 8 Toolkit 实测装备切换与坠落伤害。"
 
   - tech_name: QTD_Passive_RuyiMastery
     display_name: 如意兵法

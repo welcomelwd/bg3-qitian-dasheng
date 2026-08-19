@@ -1,9 +1,17 @@
 new entry "QTD_Passive_MonkeyAgility"
 type "PassiveData"
 data "DisplayName" "QTD_Passive_MonkeyAgility_DisplayName"
-data "Description" "QTD_Passive_MonkeyAgility_Description"
+data "Description" "QTD_Passive_MonkeyAgility_V2_Description"
+data "Icon" "PassiveFeature_UnarmoredDefense"
 data "Properties" "Highlighted"
-data "Boosts" "MovementSpeed(3);JumpMaxDistanceMultiplier(1.5)"
+data "Boosts" "ACOverrideFormula(10,true,Dexterity,Wisdom)"
+data "BoostContext" "OnEquip;OnCreate"
+data "BoostConditions" "not WearingArmor(context.Source) and not HasShieldEquipped(context.Source)"
+
+new entry "QTD_Passive_MonkeyAgility_Mobility"
+type "PassiveData"
+data "Properties" "IsHidden"
+data "Boosts" "ActionResource(Movement,3,0);JumpMaxDistanceMultiplier(1.5);FallDamageMultiplier(0.5)"
 
 new entry "QTD_Passive_RuyiMastery"
 type "PassiveData"
@@ -70,6 +78,11 @@ data "Icon" "Spell_Transmutation_Enlarge"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 
+// V0.1 Monkey Agility source alignment:
+// - vanilla Unarmoured Defence uses ACOverrideFormula(10,true,Dexterity,Wisdom).
+// - vanilla conditions require no armour and no shield.
+// - PassiveData supports ActionResource(Movement,...), JumpMaxDistanceMultiplier and FallDamageMultiplier.
+// - mobility/fall behavior is kept in a hidden helper so the AC condition does not disable it.
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
@@ -89,6 +102,6 @@ data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
 
-// TODO_TOOLKIT_CLONE: finalize armour conditions, AC calculation and physical
-// mitigation for Copper Head / Iron Arm by cloning known-good base-game passives.
+// TODO_TOOLKIT_CLONE: finalize physical mitigation for Copper Head / Iron Arm by cloning a known-good
+// base-game Reaction reduction chain.
 // TODO_TOOLKIT_CLONE: finalize quarterstaff STR/DEX ability selection for Ruyi Mastery.

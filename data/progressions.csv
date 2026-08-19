@@ -1,5 +1,5 @@
 Name,UUID,TableUUID,Level,ProgressionType,AllowImprovement,Boosts,PassivesAdded,Selectors,SubClasses,Notes
-QTD_GreatSage_1,335a76f6-1e0e-405e-ab3c-bd3af45bbe27,8b1758f9-46a7-4865-8c49-d7283fb5f456,1,0,No,"ActionResource(QTD_SageQi,2,0)",QTD_Passive_MonkeyAgility;QTD_Passive_RuyiMastery,,,建立仙力池；资源序列化参数需在 Toolkit 中最终确认。
+QTD_GreatSage_1,335a76f6-1e0e-405e-ab3c-bd3af45bbe27,8b1758f9-46a7-4865-8c49-d7283fb5f456,1,0,No,"ActionResource(QTD_SageQi,2,0)",QTD_Passive_MonkeyAgility;QTD_Passive_MonkeyAgility_Mobility;QTD_Passive_RuyiMastery,,,建立仙力池；灵猴身法隐藏 helper 提供移动/跳跃/坠落减伤。
 QTD_GreatSage_2,a18427c7-cfcf-4852-8cf9-5ce4b6e705e4,8b1758f9-46a7-4865-8c49-d7283fb5f456,2,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_CopperHeadIronArm,AddSpells(94df744f-3f21-4f27-9585-4893be7529c3),,
 QTD_GreatSage_3,4529b727-e392-477d-bff3-573773f30fdc,8b1758f9-46a7-4865-8c49-d7283fb5f456,3,0,No,,QTD_Passive_TransformUnlock_L3,AddSpells(0ccd84c3-24f1-4d09-b9f7-47ef1e40a11f),QTD_VictoriousBuddha;QTD_SeventyTwoChanges;QTD_SpiritualStoneMonkey,解锁七十二变入口与小虫变化，并开放三个子职业。
 QTD_GreatSage_4,53c107ab-75b6-4cd3-9497-e51068329f86,8b1758f9-46a7-4865-8c49-d7283fb5f456,4,0,Yes,,,,,
