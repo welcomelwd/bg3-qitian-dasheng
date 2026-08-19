@@ -43,3 +43,15 @@ Shout_QTD_ThreeHeadsSixArms_DisplayName	三头六臂	Three Heads, Six Arms
 Shout_QTD_ThreeHeadsSixArms_Description	消耗4点仙力进入三头六臂形态，持续3回合：攻击动作可完成三次武器攻击，护甲等级+2，力量与敏捷豁免获得优势，并免疫恐惧状态组。	Spend 4 Sage Qi to enter Three Heads, Six Arms for 3 rounds: your Attack action can make three weapon attacks, you gain +2 Armour Class, Advantage on Strength and Dexterity saves, and immunity to the Frightened status group.
 QTD_STATUS_THREE_HEADS_SIX_ARMS_DisplayName	三头六臂	Three Heads, Six Arms
 QTD_STATUS_THREE_HEADS_SIX_ARMS_Description	多臂神通强化近战攻防，但不会获得额外完整动作，也不会复制额外武器槽。	The multi-armed form strengthens melee offense and defense without granting a full extra action or duplicating weapon slots.
+QTD_Passive_FaTianXiangDi_DisplayName	法天象地	Law of Heaven and Earth
+QTD_Passive_FaTianXiangDi_Description	领悟法天象地神通，可消耗仙力化作巨灵战躯。	Learn the Law of Heaven and Earth, allowing you to spend Sage Qi to assume a colossal divine combat form.
+Shout_QTD_FaTianXiangDi_DisplayName	法天象地	Law of Heaven and Earth
+Shout_QTD_FaTianXiangDi_Description	消耗5点仙力进入法天象地，持续3回合且每长休只能使用一次。力量至少提升至25，体型巨化，并强化所有武器攻击。	Spend 5 Sage Qi to enter the Law of Heaven and Earth for 3 rounds, once per Long Rest. Your Strength becomes at least 25, your body grows, and your weapon attacks are empowered.
+QTD_STATUS_FATIAN_XIANG_DI_DisplayName	法天象地	Law of Heaven and Earth
+QTD_STATUS_FATIAN_XIANG_DI_Description	巨化神躯使武器攻击额外造成2d8力场与2d8雷鸣伤害，并开放三种巨灵战技。	Your giant divine body adds 2d8 Force and 2d8 Thunder damage to weapon attacks and unlocks three colossal combat techniques.
+Zone_QTD_FaTian_Quake_DisplayName	撼地	Earthshaker
+Zone_QTD_FaTian_Quake_Description	震裂前方大地，造成雷鸣伤害；未通过力量豁免的敌人倒地并被震退。	Shatter the ground ahead with thunder; enemies that fail a Strength save are knocked Prone and hurled back.
+Zone_QTD_FaTian_Sweep_DisplayName	横扫千军	Army-Sweeping Strike
+Zone_QTD_FaTian_Sweep_Description	以巨化金箍棒横扫大片区域，造成主手武器伤害并击退敌人。	Sweep a vast area with your enlarged staff, dealing main-hand weapon damage and knocking enemies back.
+Target_QTD_FaTian_Pillar_DisplayName	擎天一柱	Pillar Upholding Heaven
+Target_QTD_FaTian_Pillar_Description	将金箍棒伸向远处，以主手武器重击单个敌人并将其轰退。	Extend your staff to crush a distant foe with your main-hand weapon and blast it backward.
