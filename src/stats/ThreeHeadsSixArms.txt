@@ -14,6 +14,7 @@ data "Description" "Shout_QTD_ThreeHeadsSixArms_Description"
 data "Icon" "PassiveFeature_ExtraAttack"
 data "SpellProperties" "ApplyStatus(QTD_STATUS_THREE_HEADS_SIX_ARMS,100,3)"
 data "TooltipStatusApply" "ApplyStatus(QTD_STATUS_THREE_HEADS_SIX_ARMS,100,3)"
+data "RequirementConditions" "not HasStatus('QTD_STATUS_FATIAN_XIANG_DI')"
 
 new entry "QTD_STATUS_THREE_HEADS_SIX_ARMS"
 type "StatusData"
@@ -31,6 +32,7 @@ data "Passives" "ExtraAttack_2"
 // - Advantage on Strength and Dexterity saving throws only.
 // - immunity to the SG_Frightened status group.
 // - no extra ActionPoint, no free spell-casting action, no ExtraAttack_3.
+// - cannot activate while Fa Tian Xiang Di is already active.
 //
 // VFX gate:
 // Keep the mechanics independent from visuals. Add translucent extra-arm/head VFX only
