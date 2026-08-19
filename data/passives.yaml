@@ -18,10 +18,30 @@ passives:
   - tech_name: QTD_Passive_RuyiMastery
     display_name: 如意兵法
     v0_1: true
-    intent:
-      - 长棍/法杖/金箍棒使用 STR 或 DEX 中更合适的攻击属性
-      - 为后续金箍棒专属 Weapon Action 提供入口
-    implementation_note: "不要在未验证前硬编码原版内部 passive 名。"
+    runtime_state: monk-weapon-pattern-aligned-draft
+    behavior:
+      dexterity_gate: IsDexterityGreaterThanStrength()
+      attack_override: MonkWeaponAttackOverride()
+      strength_when_not_higher: natural_weapon_path
+    boost_context:
+      - OnStatusApply
+      - OnStatusRemove
+      - OnEquip
+      - OnShortRest
+      - OnCreate
+      - OnLongRest
+      - OnInventoryChanged
+    intended_primary_weapons:
+      - Quarterstaff
+      - WPN_QTD_RuyiJinguBang
+    runtime_controls:
+      - STR higher than DEX must remain STR
+      - DEX higher than STR must switch eligible monk-weapon attack and damage to DEX
+      - equal STR and DEX must remain on the natural STR path
+      - verify a normal Quarterstaff is treated as monk-eligible
+      - verify WPN_QTD_RuyiJinguBang remains monk-eligible after real Quarterstaff Parent is assigned
+      - test a non-quarterstaff monk-eligible simple weapon to measure the built-in scope before deciding whether V0.1 needs a narrower weapon predicate
+    implementation_note: "首版复用成熟 Martial Arts 模式：IsDexterityGreaterThanStrength() + MonkWeaponAttackOverride()。不强制 WeaponAttackRollAbilityOverride(Dexterity)，也不向所有武器写入 Finesse。真正 Quarterstaff-only 条件仅在找到可靠 Toolkit/Stats 谓词后再考虑。"
 
   - tech_name: QTD_Passive_CopperHeadIronArm
     display_name: 铜头铁臂
