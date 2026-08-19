@@ -16,17 +16,14 @@
 - 使用隐藏 Unlock Passive 按等级开放形态
 - 统一使用 Sage Qi：工具形态 1 / 战斗形态 2 / 高级形态 3
 - 第一批原型：苍鹰、猛虎、小虫
-- 形态等级成长 Passive
 - 验证 0 HP 恢复原形、装备与状态恢复
 - 毫毛分身原型
 
 ## V0.3 — 大闹天宫
-- 首个子职业 `QTD_VictoriousBuddha` 斗战胜佛：L3 / L6 / L10 progression 草案已接入
-- L3 斗战棍法：暴击额外 1 个近战武器伤害骰
-- L6 战意无双：继承 `ImprovedCritical`，暴击阈值降低 1
-- L10 破天一棒：2 仙力主手重击 + 2d8 Force + 2 回合破甲草案
-- 后续子职业：七十二变、灵明石猴
-- 扩展巨猿、石像、妖王等高级变化
+- `QTD_VictoriousBuddha` 斗战胜佛：L3/L6/L10 已接入
+- `QTD_SeventyTwoChanges` 七十二变：L3 蜘蛛、L6 黑豹、L10 枭熊/双脊龙已接入
+- 后续子职业：`QTD_SpiritualStoneMonkey` 灵明石猴
+- 扩展巨猿、石像、妖王等更高阶视觉变化
 - 三头六臂
 - 武器专属动作与强化 VFX
 - 筋斗云落点 VFX / Cloud Momentum 完整联动
