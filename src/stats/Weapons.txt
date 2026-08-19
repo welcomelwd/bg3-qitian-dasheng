@@ -19,5 +19,9 @@ data "SpellProperties" "DealDamage(1d8,Force)"
 
 // TODO_TOOLKIT_CLONE: replace the placeholder inherited weapon entry with a
 // validated quarterstaff template from the user's Toolkit data.
+// TODO_TOOLKIT_VERIFY_FINESSE: Nexus reference research shows a released weapon
+// mod using the Finesse property to select the higher STR/DEX modifier. Prefer
+// validating a weapon-scoped Finesse implementation for Jingu Bang over inventing
+// a custom max(STR,DEX) passive formula.
 // TODO_TOOLKIT_CLONE: Ruyi Extension still needs the inherited weapon hit and
 // validated knockback logic before runtime use.
