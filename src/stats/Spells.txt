@@ -8,7 +8,7 @@ data "TargetRadius" "12"
 data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
 data "DisplayName" "Target_QTD_SomersaultCloud_DisplayName"
 data "Description" "Target_QTD_SomersaultCloud_Description"
-data "SpellProperties" "TeleportSource()"
+data "SpellProperties" "TeleportSource();ApplyStatus(SELF,QTD_STATUS_CLOUD_MOMENTUM,100,1)"
 
 new entry "Target_QTD_FieryGoldenEyes"
 type "SpellData"
@@ -36,12 +36,10 @@ data "SpellFail" "IF(not Self()):DealDamage(2d8/2,Thunder,Magical)"
 data "TooltipDamageList" "DealDamage(2d8,Thunder)"
 data "TooltipAttackSave" "Strength"
 
-// Verified from official BG3 modding docs:
-// - Target_MistyStep exists and is the behavioral reference for a selectable teleport.
-// - TeleportSource(), ApplyStatus(), DealDamage() and Force() are documented functors.
-// - SavingThrow(Ability.Strength, SourceSpellDC()) is documented spell-roll syntax.
-// TODO_TOOLKIT_CLONE: copy/verify Misty Step target-floor flags, animation and VFX in Toolkit.
-// TODO_TOOLKIT_CLONE: append QTD_STATUS_CLOUD_MOMENTUM to the caster after teleport using
-// a known-good caster-status pattern; do not guess target context.
-// TODO_TOOLKIT_CLONE: Sea-Calming Strike still needs its intended weapon-damage component
-// and a final Zone geometry/animation pass in Toolkit.
+// Verified from official/public BG3 Stats patterns:
+// - Target_MistyStep is the behavioral reference for a selectable teleport.
+// - TeleportSource(), ApplyStatus(), DealDamage() and Force() are supported functors.
+// - SavingThrow(Ability.Strength, SourceSpellDC()) is a supported spell-roll pattern.
+// - Somersault Cloud range scaling is applied by hidden UnlockSpellVariant + ModifyTargetRadius passives.
+// Toolkit gates remain for Misty Step target-floor flags/VFX and TeleportSource -> SELF status timing.
+// Sea-Calming Strike still needs its intended weapon-damage component and final Zone geometry/animation pass.
