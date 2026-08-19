@@ -1,32 +1,39 @@
 // V0.2 transform prototypes.
-// These entries intentionally retain TODO_TOOLKIT_CLONE placeholders until the
-// corresponding vanilla SpellData + POLYMORPHED StatusData + RootTemplate have
-// been cloned and verified inside BG3 Toolkit.
+// The base spell/status chain has been verified from a current open-source BG3 mod
+// that overrides the corresponding vanilla Wild Shape entries. Runtime readiness
+// still requires local BG3 Toolkit / retail validation before release.
 
 new entry "QTD_Transform_Insect"
 type "SpellData"
-using "TODO_TOOLKIT_CLONE_WILDSHAPE_CAT_SPELL"
+using "Shout_WildShape_Combat_Cat"
 data "Level" "0"
 data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
 data "DisplayName" "QTD_Transform_Insect_DisplayName"
 data "Description" "QTD_Transform_Insect_Description"
+data "SpellProperties" "ApplyStatus(QTD_POLYMORPH_INSECT,100,-1)"
 
 new entry "QTD_Transform_Eagle"
 type "SpellData"
-using "TODO_TOOLKIT_CLONE_WILDSHAPE_DIRE_RAVEN_SPELL"
+using "Shout_WildShape_Combat_Raven"
 data "Level" "0"
 data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
 data "DisplayName" "QTD_Transform_Eagle_DisplayName"
 data "Description" "QTD_Transform_Eagle_Description"
+data "SpellProperties" "ApplyStatus(QTD_POLYMORPH_EAGLE,100,-1)"
 
 new entry "QTD_Transform_Tiger"
 type "SpellData"
-using "TODO_TOOLKIT_CLONE_WILDSHAPE_SABRETOOTH_SPELL"
+using "Shout_Wildshape_Combat_SaberTooth_Tiger"
 data "Level" "0"
 data "UseCosts" "BonusActionPoint:1;QTD_SageQi:2"
 data "DisplayName" "QTD_Transform_Tiger_DisplayName"
 data "Description" "QTD_Transform_Tiger_Description"
+data "SpellProperties" "ApplyStatus(QTD_POLYMORPH_TIGER,100,-1)"
 
-// Do not author guessed POLYMORPHED StatusData by hand.
-// Toolkit clone must preserve the validated polymorph status groups, stack/revert
-// behavior and RootTemplate relationship of each vanilla reference before QTD edits.
+// Important:
+// - These QTD spells do not override vanilla Wild Shape spells.
+// - UseCosts intentionally replace the inherited WildShape resource with Sage Qi.
+// - If the inherited vanilla spell has resource-gated Requirements in the user's
+//   installed Patch 8 data, those must be explicitly cleared/rewritten in Toolkit.
+// - Final animation, VFX, spell flags and hotbar behavior must be compared against
+//   the user's installed Shared/GustavDev records before marking toolkit-verified.
