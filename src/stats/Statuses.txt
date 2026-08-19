@@ -3,7 +3,10 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "QTD_STATUS_CLOUD_MOMENTUM_DisplayName"
 data "Description" "QTD_STATUS_CLOUD_MOMENTUM_Description"
-data "Properties" "DisableOverhead;DisableCombatlog"
+data "StackId" "QTD_STATUS_CLOUD_MOMENTUM"
+data "Boosts" "IF(IsMeleeAttack()):Advantage(AttackRoll)"
+data "Passives" "QTD_Passive_CloudMomentum_Consume"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog"
 
 new entry "QTD_STATUS_DEMON_REVEALED"
 type "StatusData"
@@ -13,7 +16,7 @@ data "Description" "QTD_STATUS_DEMON_REVEALED_Description"
 data "Properties" "DisableOverhead"
 data "Boosts" "AC(-2)"
 
-// TODO_TOOLKIT_CLONE: Cloud Momentum should grant Advantage to the next melee
-// attack and then remove itself using a validated condition/functor pattern.
-// TODO_TOOLKIT_CLONE: Demon Revealed still needs validated invisibility suppression
-// and attacker-specific Advantage semantics.
+// Cloud Momentum is intentionally narrow: only melee attacks receive Advantage.
+// A hidden passive removes the status on the first melee attack event; ranged attacks do not consume it.
+// Patch 8 Toolkit must confirm OnAttack cleanup occurs after the roll has read the Advantage boost.
+// Demon Revealed still needs validated invisibility suppression and attacker-specific Advantage semantics.
