@@ -1,0 +1,72 @@
+system:
+  container: QTD_TransformContainer
+  resource: QTD_SageQi
+  overwrite_vanilla_wildshape: false
+  delivery: unlock_passives
+  revert_on_zero_hp: true
+  manual_revert: true
+
+unlock_passives:
+  level_3: QTD_Passive_TransformUnlock_L3
+  level_5: QTD_Passive_TransformUnlock_L5
+  level_7: QTD_Passive_TransformUnlock_L7
+  level_9: QTD_Passive_TransformUnlock_L9
+  level_11: QTD_Passive_TransformUnlock_L11
+
+prototypes:
+  - tech_name: QTD_Transform_Insect
+    display_name: 小虫变化
+    unlock_level: 3
+    sage_qi_cost: 1
+    role: exploration
+    validation_targets:
+      - tiny_body_size
+      - pathing_through_small_spaces
+      - manual_revert
+      - gear_restore
+    combat_priority: low
+    model_plan: reuse_base_game_creature
+
+  - tech_name: QTD_Transform_Eagle
+    display_name: 苍鹰变化
+    unlock_level: 5
+    sage_qi_cost: 1
+    role: mobility
+    validation_targets:
+      - flying_movement
+      - vertical_navigation
+      - manual_revert
+      - gear_restore
+    combat_priority: medium
+    model_plan: reuse_base_game_giant_eagle_or_raven_reference
+
+  - tech_name: QTD_Transform_Tiger
+    display_name: 猛虎变化
+    unlock_level: 5
+    sage_qi_cost: 2
+    role: combat
+    validation_targets:
+      - transformed_hp
+      - melee_attacks
+      - zero_hp_revert
+      - gear_restore
+      - status_cleanup
+    combat_priority: high
+    model_plan: reuse_base_game_sabertooth_or_displacer-compatible_beast_reference
+
+future_forms:
+  - QTD_Transform_Stone
+  - QTD_Transform_GiantApe
+  - QTD_Transform_DemonKing
+
+scaling_passives:
+  - QTD_Passive_FormScaling_L5
+  - QTD_Passive_FormScaling_L8
+  - QTD_Passive_FormScaling_L11
+
+ability_whitelist_policy:
+  default: deny
+  candidates:
+    - fiery_golden_eyes_passive_component
+    - selected_mobility_abilities
+    - form_specific_qitian_passives
