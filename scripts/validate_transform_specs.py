@@ -13,6 +13,7 @@ manifest = json.loads((ROOT / "data" / "uuid_manifest.json").read_text(encoding=
 
 CONTAINER = "QTD_TransformContainer"
 CONTAINER_UUID = "1f3a673b-dc8b-4eca-9097-c6605a3de947"
+FATIAN_GATE = "not HasStatus('QTD_STATUS_FATIAN_XIANG_DI')"
 
 expected = {
     "QTD_Transform_Insect": {
@@ -69,8 +70,8 @@ for tech_name, ref in expected.items():
 
 if spells.count('data "Requirements" ""') < 3:
     errors.append("All three QTD transform children must clear inherited Requirements")
-if spells.count('data "RequirementConditions" ""') < 3:
-    errors.append("All three QTD transform children must clear inherited RequirementConditions")
+if spells.count(f'data "RequirementConditions" "{FATIAN_GATE}"') < 3:
+    errors.append("All three QTD transform children must replace inherited RequirementConditions with the Fa Tian mutual-exclusion gate")
 if spells.count('data "RequirementEvents" ""') < 3:
     errors.append("All three QTD transform children must clear inherited RequirementEvents")
 
@@ -128,5 +129,5 @@ if errors:
     sys.exit(1)
 
 print("TRANSFORM SPEC VALIDATION OK")
-print("Validated linked container + L3/L5 AddChildren unlocks + 3 inherited polymorph chains.")
+print("Validated linked container + L3/L5 AddChildren unlocks + 3 inherited polymorph chains + Fa Tian mutual-exclusion gates.")
 print("Runtime readiness: CONTAINER-WIRED-DRAFT; local Patch 8 Toolkit verification still required.")
