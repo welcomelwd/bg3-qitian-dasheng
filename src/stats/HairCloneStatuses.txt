@@ -7,5 +7,13 @@ data "DisplayName" "QTD_STATUS_HAIR_CLONE_DisplayName"
 data "Description" "QTD_STATUS_HAIR_CLONE_Description"
 data "Properties" "DisableOverhead;DisableCombatlog"
 
-// Keep this status mechanically light in the first prototype.
+// Hidden marker on the caster. Its lifetime matches the 3-round clone window and lets
+// other major forms enforce mutual exclusion without scanning summon ownership.
+new entry "QTD_STATUS_HAIR_CLONES_ACTIVE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "QTD_HAIR_CLONES_ACTIVE"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+
+// Keep clone statuses mechanically light in the first prototype.
 // Damage/HP/action economy belong to the clone Character/RootTemplate, not to guessed boosts.
