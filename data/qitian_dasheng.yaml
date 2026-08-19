@@ -1,0 +1,42 @@
+feature: QTD_QitianDasheng
+passive: QTD_Passive_QitianDasheng
+unlock_level: 12
+target_version: V1.0
+
+role: capstone_passive
+active_spell: none
+
+sage_qi:
+  base_max_before_capstone: 6
+  bonus_max_from_capstone: 2
+  expected_max_at_level_12: 8
+  recovery_policy: keep_existing_short_rest_recovery
+  do_not_add_free_mid_combat_restore: true
+
+mobility:
+  movement_bonus_m: 3
+  jump_bonus: none
+
+mental_resilience:
+  charm_immunity: true
+  frightened_immunity: true
+
+balance_guards:
+  do_not_grant_extra_action_point: true
+  do_not_grant_bonus_action_point: true
+  do_not_grant_extra_attack_2: true
+  do_not_grant_extra_attack_3: true
+  do_not_reset_fa_tian_long_rest_marker: true
+  do_not_add_new_active_capstone_spell: true
+  no_script_extender_required: true
+
+implementation:
+  boosts:
+    - ActionResource(QTD_SageQi,2,0)
+    - MovementSpeed(3)
+    - StatusImmunity(SG_Charmed)
+    - StatusImmunity(SG_Frightened)
+  notes:
+    - "ActionResource(...) in PassiveData Boosts is a verified vanilla pattern for permanent resource-capacity changes."
+    - "SG_Charmed and SG_Frightened StatusImmunity patterns are present in public BG3-derived data."
+    - "Capstone deliberately strengthens the existing kit instead of creating another burst-form action."
