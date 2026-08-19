@@ -18,7 +18,9 @@ Spell,Zone_QTD_SeaCalmingStrike,V0.1,weapon-zone-scaling-draft
 Spell,Target_QTD_FieryGoldenEyes,V0.1,source-bound-reveal-draft
 Status,QTD_STATUS_DEMON_REVEALED,V0.1,invisibility-lock-ac-draft
 Passive,QTD_Passive_FieryGoldenEyes_TargetAdvantage,V0.1,source-bound-target-advantage-draft
-Item,WPN_QTD_RuyiJinguBang,V0.1,stats-draft
+Item,WPN_QTD_RuyiJinguBang,V0.1,quarterstaff-root-draft
+RootTemplate,QTD_RuyiJinguBang_Root,V0.1,toolkit-clone-recording-pending
+Spell,Target_QTD_RuyiExtend,V0.1,mainhand-extended-attack-draft
 Item,ARM_QTD_GoldenArmor,V0.1,stats-draft
 Item,BOOTS_QTD_CloudWalking,V0.1,stats-draft
 Equipment,EQP_CC_QTD_GreatSage,V0.1,toolkit-definition-ready
