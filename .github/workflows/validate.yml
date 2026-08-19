@@ -35,5 +35,8 @@ jobs:
       - name: Validate Three Heads Six Arms
         run: python scripts/validate_three_heads_six_arms.py
 
+      - name: Validate Fa Tian Xiang Di
+        run: python scripts/validate_fa_tian_xiang_di.py
+
       - name: Check cross-file consistency
         run: python scripts/check_consistency.py
