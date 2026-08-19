@@ -54,14 +54,6 @@ data "Icon" "PassiveFeature_ExtraAttack"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockSpell(Shout_QTD_ThreeHeadsSixArms)"
 
-new entry "QTD_Passive_FaTianXiangDi"
-type "PassiveData"
-data "DisplayName" "QTD_Passive_FaTianXiangDi_DisplayName"
-data "Description" "QTD_Passive_FaTianXiangDi_Description"
-data "Icon" "Spell_Transmutation_Enlarge"
-data "Properties" "Highlighted"
-data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
-
 new entry "QTD_Passive_QitianDasheng"
 type "PassiveData"
 data "DisplayName" "QTD_Passive_QitianDasheng_DisplayName"
@@ -69,6 +61,14 @@ data "Description" "QTD_Passive_QitianDasheng_Description"
 data "Icon" "PassiveFeature_Generic"
 data "Properties" "Highlighted"
 data "Boosts" "ActionResource(QTD_SageQi,2,0);MovementSpeed(3);StatusImmunity(SG_Charmed);StatusImmunity(SG_Frightened)"
+
+new entry "QTD_Passive_FaTianXiangDi"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_FaTianXiangDi_DisplayName"
+data "Description" "QTD_Passive_FaTianXiangDi_Description"
+data "Icon" "Spell_Transmutation_Enlarge"
+data "Properties" "Highlighted"
+data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
 
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
