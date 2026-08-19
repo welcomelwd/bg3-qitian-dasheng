@@ -7,7 +7,7 @@ resource:
     name: 仙力
     description: 施展仙术、棒法与神通所消耗的力量。
 spells:
-  Shout_QTD_SomersaultCloud:
+  Target_QTD_SomersaultCloud:
     name: 筋斗云
   Zone_QTD_SeaCalmingStrike:
     name: 定海一棒
