@@ -2,81 +2,103 @@
 
 ## Goal
 
-Implement **身外身法 / Hair Clones** as a stable no-Script-Extender prototype before attempting true runtime duplication of the player character.
+Implement **身外身法 / Hair Clones** as a stable no-Script-Extender summon that grows with the Great Sage class level.
 
-## V0.2 prototype
+The project no longer targets 100% runtime duplication of the caster. HP, equipment, appearance and arbitrary passive state are not copied at cast time.
+
+## V0.2 behavior
 
 - Unlock: Great Sage level 6
 - TechName: `Target_QTD_HairClones`
 - Cost: Bonus Action + 3 Sage Qi
-- Count: 2 controlled summons
-- Lifetime: 3 rounds
-- Recast: replaces the previous pair through two unique Stack IDs
-- Runtime inventory cloning: disabled
-- Story/origin character templates: forbidden
-- Script Extender: not required for the base prototype
+- Count: always 2 controlled summons
+- Lifetime: always 3 rounds
+- Recast: replaces the previous pair through `QTD_HairClone_A` / `QTD_HairClone_B`
+- Script Extender: not required
+- Scaling: fixed RootTemplate tiers selected by `QTD_GreatSage` class level
 
-## Summon chain
+## Level scaling
+
+| Great Sage level | Character Stats | HP | AC | STR | DEX | CON | Extra Attack |
+|---|---|---:|---:|---:|---:|---:|---|
+| 6-7 | `QTD_HairCloneCharacter_L6` | 24 | 14 | 16 | 16 | 12 | No |
+| 8-9 | `QTD_HairCloneCharacter_L8` | 32 | 15 | 18 | 18 | 12 | No |
+| 10-11 | `QTD_HairCloneCharacter_L10` | 40 | 16 | 18 | 18 | 14 | No |
+| 12 | `QTD_HairCloneCharacter_L12` | 48 | 17 | 20 | 20 | 14 | No |
+
+The clones intentionally never gain Extra Attack in this V0.2 track. Their number, duration and Sage Qi cost also stay fixed, so scaling improves survivability and accuracy/damage without multiplying the action economy.
+
+## RootTemplate tiers
 
 ```text
-Target_QTD_HairClones
-  ├─ GROUND:Summon(QTD_HairClone_Root_L6, 3, ..., 'QTD_HairClone_A', QTD_STATUS_HAIR_CLONE, ..., UseCasterPassives=true)
-  └─ GROUND:Summon(QTD_HairClone_Root_L6, 3, ..., 'QTD_HairClone_B', QTD_STATUS_HAIR_CLONE, ..., UseCasterPassives=true)
+L6-7
+  QTD_HairClone_Root_L6
+  UUID 8c17bf83-fc1d-4143-b555-46b38003bb49
+  -> QTD_HairCloneCharacter_L6
 
-QTD_HairClone_Root_L6
-  └─ Stats = QTD_HairCloneCharacter_L6
-       ├─ fixed HP/AC/abilities
-       ├─ weak quarterstaff assigned in Toolkit
-       └─ no Extra Attack in first prototype
+L8-9
+  QTD_HairClone_Root_L8
+  UUID 122996e7-46e1-4f04-b64d-30db7c9a47ac
+  -> QTD_HairCloneCharacter_L8
+
+L10-11
+  QTD_HairClone_Root_L10
+  UUID 72fdc168-2ec4-45ed-a230-21df703ff6c0
+  -> QTD_HairCloneCharacter_L10
+
+L12
+  QTD_HairClone_Root_L12
+  UUID b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0
+  -> QTD_HairCloneCharacter_L12
 ```
 
-Planning RootTemplate UUID: `8c17bf83-fc1d-4143-b555-46b38003bb49`.
+All four RootTemplates should use the same visual family, collision footprint and weak-quarterstaff equipment setup. This lets `CanStand()` use the L6 template as a single placement probe.
 
-The UUID above is a project planning value. The local Toolkit object is authoritative. If Toolkit generates another UUID, update `data/uuid_manifest.json`, `data/hair_clones.yaml`, `src/stats/HairClones.txt`, and the validator together.
+Planning UUIDs are not authoritative. If BG3 Toolkit generates different UUIDs, update the manifest, YAML, SpellData and validator together.
 
-## Why fixed stats first
+## Summon selection
 
-True cloning of current HP, equipment, appearance, arbitrary passives and unique-item state is substantially more fragile than a normal summon. A fixed RootTemplate gives us a clean first test for:
+`Target_QTD_HairClones` uses conditional ground functors:
 
-1. summon ownership and player control,
-2. two simultaneous summons,
-3. 3-round cleanup,
-4. recast replacement,
-5. combat turn participation,
-6. staff animation and attacks,
-7. caster-death unsummon behavior.
+```text
+GROUND:IF(level < 8):Summon(L6 root...)
+GROUND:IF(level >= 8 and < 10):Summon(L8 root...)
+GROUND:IF(level >= 10 and < 12):Summon(L10 root...)
+GROUND:IF(level >= 12):Summon(L12 root...)
+```
 
-Once these work, we can decide whether dynamic duplication merits BG3 Script Extender.
+Each tier executes the same two Stack IDs, A and B. Therefore crossing a tier and recasting still replaces the old pair instead of adding another pair.
 
-## Collision fallback
+The exact condition token is drafted as `ClassLevelHigherOrEqualThan(...,'QTD_GreatSage')` and must be confirmed against the local Toolkit class identifier before release.
 
-The first draft executes two `Summon()` functors on the same selected ground point. If local Toolkit testing shows collision/pathing failures, convert the action into a linked container with two child target spells so the player selects two nearby positions. Do not solve this with unverified positioning syntax.
+## Why level tiers instead of true cloning
 
-## Balance
+Runtime duplication would require synchronizing changing player state such as current HP, equipment, unique items, appearance, status effects and arbitrary passives. That creates far more failure modes than this feature needs.
 
-L6 clone stat target:
+The level-tier model gives us:
 
-- HP 24
-- AC 14
-- STR 16 / DEX 16
-- one normal action, one bonus action, one reaction
-- no Extra Attack
-- weak quarterstaff, no legendary item passives
+1. deterministic balance,
+2. no inventory duplication bugs,
+3. no unique-item duplication,
+4. no dependency on BG3 Script Extender,
+5. easy testing at four checkpoints,
+6. simple future tuning through Character Stats only.
 
-Future candidates:
+## Future scope
 
-- L9: improve HP or clone weapon, not both aggressively.
-- L12: allow four weaker clones, with total damage kept close to the upgraded two-clone version.
+`万千毫毛` is no longer an automatic level-12 upgrade to four summons. If added later, it should be a separate high-tier feature with its own cost and balance budget.
 
 ## Toolkit validation checklist
 
-- Create `QTD_HairClone_Root_L6`.
-- Set Stats to `QTD_HairCloneCharacter_L6`.
-- Verify `CanStand()` with the final RootTemplate UUID.
-- Assign a weak quarterstaff.
-- Confirm both Stack IDs can coexist.
-- Confirm recast replaces both old clones.
-- Confirm each clone expires after exactly 3 rounds.
+- Create the four `QTD_HairClone_Root_L*` templates.
+- Point each RootTemplate to its matching Character Stats entry.
+- Keep all four RootTemplates on the same physical footprint.
+- Give each one the same weak quarterstaff equipment setup.
+- Verify the internal custom class token used by `ClassLevelHigherOrEqualThan`.
+- Test at Great Sage levels 6, 8, 10 and 12.
+- Confirm exactly two clones spawn at every tier.
+- Confirm clones expire after exactly 3 rounds.
+- Confirm recast replaces A/B across tier boundaries.
 - Confirm caster death unsummons them.
-- Confirm `bUseCasterPassives=true` causes no unintended passive loops.
-- Verify multiplayer with two Great Sage characters before declaring the Stack IDs safe.
+- Confirm `bUseCasterPassives=true` does not create passive loops.
+- Verify multiplayer with two Great Sage characters.

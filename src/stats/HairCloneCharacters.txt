@@ -1,6 +1,6 @@
-// V0.2 fixed-stat clone prototype.
-// A fixed Character stat is intentionally used instead of dynamically copying the caster.
-// Dynamic HP/inventory/appearance copying is deferred until the no-SE version is proven stable.
+// V0.2 level-scaling clone prototype.
+// Clones do not copy the caster at runtime. Instead, the summon spell selects one
+// of four fixed Character/RootTemplate tiers from the Great Sage class level.
 
 new entry "QTD_HairCloneCharacter_L6"
 type "Character"
@@ -20,8 +20,43 @@ data "DefaultBoosts" "DialogueBlock()"
 data "Passives" "AttackOfOpportunity"
 data "DifficultyStatuses" "STATUS_EASY:PLAYER_BONUSES_EASYMODE"
 
+new entry "QTD_HairCloneCharacter_L8"
+type "Character"
+using "QTD_HairCloneCharacter_L6"
+data "Level" "8"
+data "Strength" "18"
+data "Dexterity" "18"
+data "Armor" "15"
+data "Vitality" "32"
+
+new entry "QTD_HairCloneCharacter_L10"
+type "Character"
+using "QTD_HairCloneCharacter_L8"
+data "Level" "10"
+data "Constitution" "14"
+data "Armor" "16"
+data "Vitality" "40"
+
+new entry "QTD_HairCloneCharacter_L12"
+type "Character"
+using "QTD_HairCloneCharacter_L10"
+data "Level" "12"
+data "Strength" "20"
+data "Dexterity" "20"
+data "Armor" "17"
+data "Vitality" "48"
+
+// Balance invariants:
+// - Two clones at every tier.
+// - No ExtraAttack on clone Character stats.
+// - No runtime inventory/HP/appearance copy.
+// - A weak quarterstaff is assigned by the corresponding RootTemplate in Toolkit.
+//
 // Toolkit RootTemplate plan:
-// - Create QTD_HairClone_Root_L6 and set its Stats to QTD_HairCloneCharacter_L6.
-// - Assign a weak quarterstaff in the template equipment/inventory.
-// - Use a generic humanoid/monkey-like visual only for prototype validation.
-// - Do not derive the template from a story companion or origin character.
+// L6  -> QTD_HairClone_Root_L6  -> QTD_HairCloneCharacter_L6
+// L8  -> QTD_HairClone_Root_L8  -> QTD_HairCloneCharacter_L8
+// L10 -> QTD_HairClone_Root_L10 -> QTD_HairCloneCharacter_L10
+// L12 -> QTD_HairClone_Root_L12 -> QTD_HairCloneCharacter_L12
+//
+// All four RootTemplates should share the same footprint, visual family and weapon
+// setup so the L6 CanStand() probe remains valid for all tiers.

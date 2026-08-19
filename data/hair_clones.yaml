@@ -10,6 +10,9 @@ system:
   no_script_extender_required: true
   use_caster_passives: true
   recast_replaces_existing_pair: true
+  scaling_mode: fixed_templates_by_class_level
+  class_level_key: QTD_GreatSage
+  runtime_copy_caster_state: false
 
 prototype:
   root_template_name: QTD_HairClone_Root_L6
@@ -28,18 +31,61 @@ prototype:
   appearance:
     phase_1: toolkit humanoid monkey-like prototype
     phase_2: dedicated Wukong clone visual
-  balance:
-    level: 6
+
+scaling_tiers:
+  - levels: 6-7
+    root_template_name: QTD_HairClone_Root_L6
+    root_template_uuid: 8c17bf83-fc1d-4143-b555-46b38003bb49
+    character_stats: QTD_HairCloneCharacter_L6
     vitality: 24
     armor: 14
     strength: 16
     dexterity: 16
     constitution: 12
-    intelligence: 8
-    wisdom: 12
-    charisma: 8
-    movement: 9
     extra_attack: false
+
+  - levels: 8-9
+    root_template_name: QTD_HairClone_Root_L8
+    root_template_uuid: 122996e7-46e1-4f04-b64d-30db7c9a47ac
+    character_stats: QTD_HairCloneCharacter_L8
+    vitality: 32
+    armor: 15
+    strength: 18
+    dexterity: 18
+    constitution: 12
+    extra_attack: false
+
+  - levels: 10-11
+    root_template_name: QTD_HairClone_Root_L10
+    root_template_uuid: 72fdc168-2ec4-45ed-a230-21df703ff6c0
+    character_stats: QTD_HairCloneCharacter_L10
+    vitality: 40
+    armor: 16
+    strength: 18
+    dexterity: 18
+    constitution: 14
+    extra_attack: false
+
+  - levels: 12
+    root_template_name: QTD_HairClone_Root_L12
+    root_template_uuid: b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0
+    character_stats: QTD_HairCloneCharacter_L12
+    vitality: 48
+    armor: 17
+    strength: 20
+    dexterity: 20
+    constitution: 14
+    extra_attack: false
+
+balance_invariants:
+  summon_count_stays_two_through_level_12: true
+  lifetime_stays_three_rounds: true
+  sage_qi_cost_stays_three: true
+  no_extra_attack_on_clones: true
+  no_runtime_inventory_copy: true
+  no_runtime_hp_copy: true
+  no_runtime_appearance_copy: true
+  keep_clone_damage_below_main_character: true
 
 summon_functor:
   lifetime: 3
@@ -48,23 +94,18 @@ summon_functor:
   use_caster_passives: true
   status_slots:
     - QTD_STATUS_HAIR_CLONE
-  note: Two Summon functors use separate StackIDs so recasting replaces the prior pair.
+  note: Each level tier summons the same two StackIDs so recasting or crossing a tier still replaces the prior pair.
 
-scaling_plan:
-  level_9:
-    state: planned
-    options:
-      - increase_clone_vitality
-      - improve_clone_staff
-  level_12:
-    state: planned
-    summon_count: 4
-    balance_rule: four_clones_should_be_weaker_than_two_clone_version
+future:
+  four_clone_variant:
+    state: separate_future_feature
+    note: Do not make level 12 automatically summon four clones. If 万千毫毛 is added later, balance it as a separate high-tier action.
 
 compatibility:
   do_not_clone_story_companion_templates: true
   do_not_copy_inventory_at_runtime_in_v02: true
   do_not_copy_unique_items: true
   do_not_require_bg3se_for_base_prototype: true
-  root_template_uuid_must_be_verified_in_local_toolkit: true
+  root_template_uuids_must_be_verified_in_local_toolkit: true
+  all_tier_root_templates_must_share_footprint: true
   if_double_summon_collides_split_into_two_child_target_spells: true

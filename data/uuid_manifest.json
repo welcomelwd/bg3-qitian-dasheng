@@ -51,6 +51,9 @@
     "passive_transform_unlock_l5_uuid": "658fc694-7840-41ee-b2c8-efa61c7a9f41",
     "hair_clone_spell_uuid": "f21cfa22-0072-44ba-9e49-8b63645d4354",
     "hair_clone_status_uuid": "3f8ec9f9-fdfd-4241-9e20-9921e7703e7d",
-    "hair_clone_root_template_uuid": "8c17bf83-fc1d-4143-b555-46b38003bb49"
+    "hair_clone_root_template_uuid": "8c17bf83-fc1d-4143-b555-46b38003bb49",
+    "hair_clone_root_l8_uuid": "122996e7-46e1-4f04-b64d-30db7c9a47ac",
+    "hair_clone_root_l10_uuid": "72fdc168-2ec4-45ed-a230-21df703ff6c0",
+    "hair_clone_root_l12_uuid": "b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0"
   }
 }

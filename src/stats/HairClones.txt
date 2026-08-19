@@ -1,6 +1,6 @@
-// V0.2 Hair Clone / "Body Outside the Body" prototype.
-// Uses the documented Summon() functor twice with separate StackIDs.
-// Runtime readiness still depends on creating/verifying QTD_HairClone_Root_L6 in Toolkit.
+// V0.2 Hair Clone / "Body Outside the Body" level-scaling prototype.
+// Uses fixed RootTemplate tiers selected by QTD_GreatSage class level.
+// No runtime copying of caster HP, inventory, equipment or appearance.
 
 new entry "Target_QTD_HairClones"
 type "SpellData"
@@ -12,11 +12,25 @@ data "UseCosts" "BonusActionPoint:1;QTD_SageQi:3"
 data "DisplayName" "Target_QTD_HairClones_DisplayName"
 data "Description" "Target_QTD_HairClones_Description"
 data "TargetConditions" "CanStand('8c17bf83-fc1d-4143-b555-46b38003bb49')"
-data "SpellProperties" "GROUND:Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true)"
+data "SpellProperties" "GROUND:IF(not ClassLevelHigherOrEqualThan(8,'QTD_GreatSage')):Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(not ClassLevelHigherOrEqualThan(8,'QTD_GreatSage')):Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(8,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(10,'QTD_GreatSage')):Summon(122996e7-46e1-4f04-b64d-30db7c9a47ac,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(8,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(10,'QTD_GreatSage')):Summon(122996e7-46e1-4f04-b64d-30db7c9a47ac,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(10,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(12,'QTD_GreatSage')):Summon(72fdc168-2ec4-45ed-a230-21df703ff6c0,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(10,'QTD_GreatSage') and not ClassLevelHigherOrEqualThan(12,'QTD_GreatSage')):Summon(72fdc168-2ec4-45ed-a230-21df703ff6c0,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(12,'QTD_GreatSage')):Summon(b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:IF(ClassLevelHigherOrEqualThan(12,'QTD_GreatSage')):Summon(b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true)"
 
+// Scaling tiers:
+// Great Sage L6-7   -> QTD_HairClone_Root_L6
+// Great Sage L8-9   -> QTD_HairClone_Root_L8
+// Great Sage L10-11 -> QTD_HairClone_Root_L10
+// Great Sage L12    -> QTD_HairClone_Root_L12
+//
+// Invariants:
+// - Always exactly 2 active clone slots: QTD_HairClone_A / QTD_HairClone_B.
+// - Lifetime remains 3 rounds at every tier.
+// - Cost remains Bonus Action + 3 Sage Qi.
+// - bUseCasterPassives=true remains enabled, but this is not full caster duplication.
+// - RootTemplates must share the same physical footprint so the L6 CanStand() probe
+//   is valid for all tiers.
+//
 // Toolkit validation gates:
-// - QTD_HairClone_Root_L6 must exist and point to QTD_HairCloneCharacter_L6.
-// - Verify whether two summons can resolve around one selected point without collision.
-// - If they overlap/fail, split this action into a linked container with two child target spells.
-// - Verify the inherited/selected humanoid visual can equip and animate a quarterstaff.
-// - bUseCasterPassives=true is intentional; it does not mean every caster passive is copied.
+// - Create/verify all four QTD_HairClone_Root_L* templates and map their Stats.
+// - Confirm ClassLevelHigherOrEqualThan uses the final internal class token QTD_GreatSage.
+// - Verify two summons can resolve around one selected point without collision.
+// - If they overlap/fail, split into a linked container with two child target spells.
+// - Verify humanoid visual + weak quarterstaff animations at every tier.
