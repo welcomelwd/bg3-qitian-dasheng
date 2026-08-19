@@ -1,14 +1,15 @@
 spells:
-  - tech_name: Shout_QTD_SomersaultCloud
+  - tech_name: Target_QTD_SomersaultCloud
     display_name: 筋斗云
     level: 2
     v0_1: true
     action_cost: BonusAction
     sage_qi_cost: 1
     range_m: 12
+    parent_reference: Target_MistyStep
     intent:
-      - 传送到可见地点
-      - 获得 QTD_STATUS_CLOUD_MOMENTUM 1 回合
+      - 选择可见落点并传送至该位置
+      - 后续补充 QTD_STATUS_CLOUD_MOMENTUM 1 回合
       - Cloud Momentum 使下一次近战攻击获得 Advantage
     scaling:
       5: 15
@@ -24,12 +25,14 @@ spells:
     radius_m: 3
     save: Strength
     damage:
-      base: "Weapon Damage + 2d8 Thunder"
+      target: "Weapon Damage + 2d8 Thunder"
+      current_stats_draft: "2d8 Thunder; half on successful save"
       level_5: "Weapon Damage + 3d8 Thunder"
       level_11: "Weapon Damage + 4d8 Thunder"
     on_failed_save:
       - Prone
       - Knockback 3m
+    note: "Weapon-damage component remains a Toolkit validation gate."
 
   - tech_name: Target_QTD_FieryGoldenEyes
     display_name: 火眼金睛
