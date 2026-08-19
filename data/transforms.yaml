@@ -5,6 +5,7 @@ system:
   delivery: unlock_passives
   revert_on_zero_hp: true
   manual_revert: true
+  required_status_group: SG_Polymorph_BeastShape
 
 unlock_passives:
   level_3: QTD_Passive_TransformUnlock_L3
@@ -19,40 +20,53 @@ prototypes:
     unlock_level: 3
     sage_qi_cost: 1
     role: exploration
+    vanilla_reference: Wild Shape Cat
+    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    visual_phase_1: Cat technical placeholder
+    visual_phase_2: insect_or_tiny_creature_root_template_after_toolkit_validation
     validation_targets:
       - tiny_body_size
       - pathing_through_small_spaces
       - manual_revert
       - gear_restore
+      - hotbar_restore
     combat_priority: low
-    model_plan: reuse_base_game_creature
 
   - tech_name: QTD_Transform_Eagle
     display_name: 苍鹰变化
     unlock_level: 5
     sage_qi_cost: 1
     role: mobility
+    vanilla_reference: Wild Shape Dire Raven
+    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    visual_phase_1: Dire Raven technical placeholder
+    visual_phase_2: Giant Eagle root template if polymorph animations and interactions validate
     validation_targets:
       - flying_movement
       - vertical_navigation
+      - landing
       - manual_revert
       - gear_restore
+      - hotbar_restore
     combat_priority: medium
-    model_plan: reuse_base_game_giant_eagle_or_raven_reference
 
   - tech_name: QTD_Transform_Tiger
     display_name: 猛虎变化
     unlock_level: 5
     sage_qi_cost: 2
     role: combat
+    vanilla_reference: Wild Shape Sabre-Toothed Tiger
+    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    visual_phase_1: Sabre-Toothed Tiger
+    visual_phase_2: custom tiger presentation without changing QTD spell/status tech names
     validation_targets:
       - transformed_hp
       - melee_attacks
       - zero_hp_revert
       - gear_restore
       - status_cleanup
+      - hotbar_restore
     combat_priority: high
-    model_plan: reuse_base_game_sabertooth_or_displacer-compatible_beast_reference
 
 future_forms:
   - QTD_Transform_Stone
@@ -70,3 +84,8 @@ ability_whitelist_policy:
     - fiery_golden_eyes_passive_component
     - selected_mobility_abilities
     - form_specific_qitian_passives
+
+compatibility:
+  never_override_shared_wildshape_spell: true
+  never_override_shared_polymorph_status: true
+  qitian_entries_use_own_uuids: true
