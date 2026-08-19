@@ -57,6 +57,13 @@
     "hair_clone_root_l12_uuid": "b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0",
     "hair_clone_staff_root_uuid": "757f581b-683f-40ac-8051-47c10ef651a2",
     "spell_three_heads_uuid": "178e9b7d-4fdb-4860-bd70-08067e6bba36",
-    "status_three_heads_uuid": "66fe80eb-d27c-4f6b-b5a4-c9336dd00b80"
+    "status_three_heads_uuid": "66fe80eb-d27c-4f6b-b5a4-c9336dd00b80",
+    "spell_fa_tian_uuid": "3382a965-a630-4935-9815-a24882576955",
+    "status_fa_tian_uuid": "7447b1dd-ae24-49da-b31f-2020095212e4",
+    "status_fa_tian_used_uuid": "f91e81d4-ef1c-416f-b52c-72c0e327a916",
+    "fa_tian_quake_uuid": "da75352c-7bfb-4acb-962f-d923ef737bd4",
+    "fa_tian_sweep_uuid": "fb182794-1cb0-454f-ac30-3de41d259ac5",
+    "fa_tian_pillar_uuid": "8d7392e5-e842-45e6-952d-6daac48ed364",
+    "status_hair_clones_active_uuid": "08136129-7ecc-401d-81bb-6829c2af1434"
   }
 }
