@@ -37,3 +37,9 @@ QTD_Passive_GreatSageEvasion_DisplayName	大圣闪避	Great Sage Evasion
 QTD_Passive_GreatSageEvasion_Description	面对可通过敏捷豁免减半的伤害时，豁免成功则不受伤害，失败也只承受一半伤害。	When a Dexterity saving throw would halve damage, take no damage on a success and only half damage on a failure.
 QTD_Passive_DiamondBody_DisplayName	金刚不坏	Diamond Body
 QTD_Passive_DiamondBody_Description	仙躯愈发坚不可摧：获得对非魔法钝击、穿刺与挥砍伤害的抗性，并在体质豁免中获得优势。	Your immortal body hardens: gain resistance to non-magical Bludgeoning, Piercing, and Slashing damage, and Advantage on Constitution saving throws.
+QTD_Passive_ThreeHeadsSixArms_DisplayName	三头六臂	Three Heads, Six Arms
+QTD_Passive_ThreeHeadsSixArms_Description	领悟三头六臂神通，可消耗仙力进入短暂的多臂战斗形态。	Learn the Three Heads, Six Arms divine art, allowing you to spend Sage Qi to enter a brief multi-armed combat form.
+Shout_QTD_ThreeHeadsSixArms_DisplayName	三头六臂	Three Heads, Six Arms
+Shout_QTD_ThreeHeadsSixArms_Description	消耗4点仙力进入三头六臂形态，持续3回合：攻击动作可完成三次武器攻击，护甲等级+2，力量与敏捷豁免获得优势，并免疫恐惧状态组。	Spend 4 Sage Qi to enter Three Heads, Six Arms for 3 rounds: your Attack action can make three weapon attacks, you gain +2 Armour Class, Advantage on Strength and Dexterity saves, and immunity to the Frightened status group.
+QTD_STATUS_THREE_HEADS_SIX_ARMS_DisplayName	三头六臂	Three Heads, Six Arms
+QTD_STATUS_THREE_HEADS_SIX_ARMS_Description	多臂神通强化近战攻防，但不会获得额外完整动作，也不会复制额外武器槽。	The multi-armed form strengthens melee offense and defense without granting a full extra action or duplicating weapon slots.

@@ -32,5 +32,8 @@ jobs:
       - name: Validate defense passives
         run: python scripts/validate_defense_passives.py
 
+      - name: Validate Three Heads Six Arms
+        run: python scripts/validate_three_heads_six_arms.py
+
       - name: Check cross-file consistency
         run: python scripts/check_consistency.py

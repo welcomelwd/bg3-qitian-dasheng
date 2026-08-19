@@ -46,12 +46,23 @@ data "Icon" "GenericIcon_DamageType_Physical"
 data "Properties" "Highlighted"
 data "Boosts" "Resistance(Slashing, ResistantToNonMagical);Resistance(Piercing, ResistantToNonMagical);Resistance(Bludgeoning, ResistantToNonMagical);Advantage(SavingThrow, Constitution)"
 
+new entry "QTD_Passive_ThreeHeadsSixArms"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_ThreeHeadsSixArms_DisplayName"
+data "Description" "QTD_Passive_ThreeHeadsSixArms_Description"
+data "Icon" "PassiveFeature_ExtraAttack"
+data "Properties" "Highlighted"
+data "Boosts" "UnlockSpell(Shout_QTD_ThreeHeadsSixArms)"
+
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
 // - Monk_7_Evasion and Rogue_7_Evasion inherit the vanilla Evasion passive.
 // - public BG3 data uses Resistance(<Physical>, ResistantToNonMagical).
 // - public BG3 item data uses Advantage(SavingThrow, Constitution).
+// V0.3 Three Heads, Six Arms source alignment:
+// - public BOOST statuses can attach Passives such as ExtraAttack_2.
+// - ExtraAttack_2 is the improved martial extra-attack chain used by level-11 multiattack creatures.
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
 

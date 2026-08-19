@@ -1,0 +1,50 @@
+feature:
+  tech_name: QTD_ThreeHeadsSixArms
+  passive: QTD_Passive_ThreeHeadsSixArms
+  spell: Shout_QTD_ThreeHeadsSixArms
+  status: QTD_STATUS_THREE_HEADS_SIX_ARMS
+  unlock_level: 10
+  resource: QTD_SageQi
+  sage_qi_cost: 4
+  action_cost: BonusActionPoint:1
+  duration_rounds: 3
+  no_script_extender_required: true
+
+mechanics:
+  extra_attack_chain: ExtraAttack_2
+  intended_weapon_attacks_per_attack_action: 3
+  armor_class_bonus: 2
+  saving_throw_advantage:
+    - Strength
+    - Dexterity
+  status_immunities:
+    - SG_Frightened
+  extra_action_point: false
+  extra_bonus_action_point: false
+  spellcasting_action_not_granted: true
+
+balance_invariants:
+  do_not_use_ExtraAttack_3: true
+  do_not_grant_full_ActionPoint: true
+  do_not_grant_all_saving_throw_advantage: true
+  do_not_add_magic_resistance: true
+  do_not_copy_or_add_weapon_slots: true
+  no_real_six_weapon_equipment: true
+
+visuals:
+  phase_1: mechanics_only
+  phase_2: translucent_extra_arms_and_head_aura
+  custom_skeleton_required_for_v03: false
+  note: VFX must be added from a verified Toolkit effect resource; do not guess an effect UUID.
+
+reach:
+  state: deferred_until_verified
+  note: Do not add a generic melee reach boost until a supported vanilla/Toolkit pattern is verified.
+
+compatibility:
+  should_not_modify_vanilla_extra_attack_entries: true
+  should_not_modify_vanilla_statuses: true
+  local_patch8_toolkit_test_required: true
+  verify_interaction_with_qtd_extra_attack: true
+  verify_interaction_with_haste_and_action_surge: true
+  verify_interaction_with_polymorph: true
