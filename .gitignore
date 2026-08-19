@@ -10,6 +10,7 @@ backup/
 backups/
 build/
 dist/
+local-reference/
 
 # Python
 __pycache__/
