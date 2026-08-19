@@ -1,0 +1,71 @@
+subclass:
+  tech_name: QTD_SeventyTwoChanges
+  display_name: 七十二变
+  english_name: Seventy-Two Changes
+  target_version: V0.3
+  unlock_level: 3
+  role: transformation_control
+  progression_type: 1
+  progression_table_uuid: 4d2f7b28-c2a8-4bde-9df1-04e2e6c6c1b5
+  parent_class: QTD_GreatSage
+  parent_class_description_uuid: db08d3bc-52c1-4141-a7fb-65bc4a2a155f
+
+container:
+  tech_name: QTD_TransformContainer
+  uuid: 1f3a673b-dc8b-4eca-9097-c6605a3de947
+  delivery: UnlockSpell(child,AddChildren,container_uuid)
+  create_second_container: false
+
+progression:
+  level_3:
+    passive: QTD_Passive_SeventyTwoChanges_L3
+    unlocks:
+      - QTD_Transform_Spider
+    role: web_control_and_traversal
+  level_6:
+    passive: QTD_Passive_SeventyTwoChanges_L6
+    unlocks:
+      - QTD_Transform_Panther
+    role: stealth_ambush
+  level_10:
+    passive: QTD_Passive_SeventyTwoChanges_L10
+    unlocks:
+      - QTD_Transform_Owlbear
+      - QTD_Transform_Dilophosaurus
+    role: advanced_control_and_combat
+
+forms:
+  QTD_Transform_Spider:
+    base_spell: Shout_WildShape_Combat_Spider
+    base_status: WILDSHAPE_SPIDER_GIANT_PLAYER
+    qtd_status: QTD_POLYMORPH_SPIDER
+    sage_qi: 1
+    unlock_level: 3
+  QTD_Transform_Panther:
+    base_spell: Shout_WildShape_Combat_Panther
+    base_status: WILDSHAPE_PANTHER_PLAYER
+    qtd_status: QTD_POLYMORPH_PANTHER
+    sage_qi: 2
+    unlock_level: 6
+  QTD_Transform_Owlbear:
+    base_spell: Shout_WildShape_Combat_Owlbear
+    base_status: WILDSHAPE_OWLBEAR_PLAYER_10
+    qtd_status: QTD_POLYMORPH_OWLBEAR
+    sage_qi: 2
+    unlock_level: 10
+    preserve_helper_status: OWLBEAR_WILDSHAPE_RAGE
+  QTD_Transform_Dilophosaurus:
+    base_spell: Shout_WildShape_Combat_Dilophosaurus
+    base_status: WILDSHAPE_DILOPHOSAURUS_PLAYER
+    qtd_status: QTD_POLYMORPH_DILOPHOSAURUS
+    sage_qi: 3
+    unlock_level: 10
+
+balance_guards:
+  no_extra_action_point: true
+  no_bonus_action_point_capacity_bonus: true
+  no_global_sage_qi_cost_reduction: true
+  do_not_override_vanilla_wildshape: true
+  do_not_create_second_transform_container: true
+  no_script_extender_required: true
+  final_truth_is_local_patch8_toolkit: true
