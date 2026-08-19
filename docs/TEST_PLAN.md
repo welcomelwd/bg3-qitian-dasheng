@@ -73,11 +73,32 @@
 
 ## G. 装备
 
-- [ ] 金箍棒单手/双手伤害正确。
-- [ ] 强化等级与额外 Force 伤害正确。
-- [ ] 装备切换不会永久残留被动。
+### G1. 如意金箍棒
+
+- [ ] Toolkit 从原版 Quarterstaff RootTemplate `96e2abaf-78ff-4dcb-a6a3-a5f0c348bd9f` 克隆出自定义 RootTemplate。
+- [ ] 自定义 RootTemplate `Stats` 指向 `WPN_QTD_RuyiJinguBang`。
+- [ ] Toolkit 实际 UUID 已回填 `data/toolkit_item_recording.csv`。
+- [ ] Character Creation 初始装备正确获得金箍棒。
+- [ ] 物品仍被识别为 Quarterstaff / Simple Weapon。
+- [ ] 单手基础伤害为 1d8 Bludgeoning。
+- [ ] 双手基础伤害为 1d10 Bludgeoning。
+- [ ] +2 enchantment 正确影响攻击与伤害。
+- [ ] 普通攻击额外造成且只造成一次 1d4 Force。
+- [ ] 装备时 Strength +1；卸下后恢复。
+- [ ] 跳跃距离 x1.5；卸下后恢复。
+- [ ] 普通近战攻击距离约为 3m。
+- [ ] Reach 不会导致 Opportunity Attack 范围异常或远距攻击错位。
+- [ ] `QTD_Passive_RuyiMastery` 的 STR/DEX 更优值逻辑仍正常。
+- [ ] `Zone_QTD_SeaCalmingStrike` 使用金箍棒时主手伤害与 1d4 Force 不重复结算。
+- [ ] `Target_QTD_RuyiExtend` 可在 9m 发起主手武器攻击。
+- [ ] 如意伸长不会重复主手基础伤害、Force rider 或 WeaponFunctors。
+- [ ] Save/Load、Respec、Multiclass 后不会永久残留 STR/Jump Boost。
+
+### G2. 黄金甲 / 步云履
+
 - [ ] 黄金甲与步云履不会造成错误叠加。
-- [ ] Character Creation 初始装备链正确。
+- [ ] 装备切换不会永久残留被动。
+- [ ] Character Creation 三件初始装备链正确。
 
 ## H. 回归
 
