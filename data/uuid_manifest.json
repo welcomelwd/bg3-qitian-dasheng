@@ -74,6 +74,22 @@
     "passive_victorious_improved_critical_uuid": "c12ba497-5a60-45b7-a0b3-9584dae947f6",
     "passive_victorious_heaven_breaker_uuid": "13876870-a52d-4a2d-a4ba-4d50405e437e",
     "spell_heaven_breaking_strike_uuid": "9bef5fb8-0cb9-4e7d-8031-e496a835dc68",
-    "status_heaven_break_armor_uuid": "bdd23c78-eb83-4e5f-924d-698bbd410cd4"
+    "status_heaven_break_armor_uuid": "bdd23c78-eb83-4e5f-924d-698bbd410cd4",
+    "subclass_seventy_two_changes_table_uuid": "4d2f7b28-c2a8-4bde-9df1-04e2e6c6c1b5",
+    "subclass_seventy_two_changes_classdesc_uuid": "c93bdd88-5de3-41df-9b8c-bbcad3593198",
+    "subclass_seventy_two_changes_l3_uuid": "e0a353ec-f991-4d09-ae43-b05c05284f9c",
+    "subclass_seventy_two_changes_l6_uuid": "2e0fec3c-9a74-4bbd-ae40-a81828a06f95",
+    "subclass_seventy_two_changes_l10_uuid": "bd2f234d-447e-4247-a68a-faf9d90451c8",
+    "passive_seventy_two_changes_l3_uuid": "ad021658-4d80-420f-8bc2-5cfb706ba5a1",
+    "passive_seventy_two_changes_l6_uuid": "2d9e2c5b-53a2-468a-9099-81a43654d036",
+    "passive_seventy_two_changes_l10_uuid": "86987252-cd91-4024-a946-16dccf7a4734",
+    "spell_transform_spider_uuid": "cc48629e-d715-4131-9dbc-e8356b68ff52",
+    "spell_transform_panther_uuid": "e568ccb0-0359-427c-9935-bc9179bcb733",
+    "spell_transform_owlbear_uuid": "34132a9d-776c-4aea-836b-4b76577dde46",
+    "spell_transform_dilophosaurus_uuid": "d989bf07-ccfc-498c-8016-8621c173f02c",
+    "status_transform_spider_uuid": "21c69f87-3ad2-4105-862a-ec88492b848e",
+    "status_transform_panther_uuid": "911eef5b-3292-4e42-80f1-d908db96693e",
+    "status_transform_owlbear_uuid": "d568ba09-ce8e-4218-a506-740222b8c7a2",
+    "status_transform_dilophosaurus_uuid": "0c0f3ea2-3f00-4a3b-9f9e-23c7d96b2c24"
   }
 }
