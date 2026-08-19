@@ -1,0 +1,32 @@
+// V0.2 transform prototypes.
+// These entries intentionally retain TODO_TOOLKIT_CLONE placeholders until the
+// corresponding vanilla SpellData + POLYMORPHED StatusData + RootTemplate have
+// been cloned and verified inside BG3 Toolkit.
+
+new entry "QTD_Transform_Insect"
+type "SpellData"
+using "TODO_TOOLKIT_CLONE_WILDSHAPE_CAT_SPELL"
+data "Level" "0"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
+data "DisplayName" "QTD_Transform_Insect_DisplayName"
+data "Description" "QTD_Transform_Insect_Description"
+
+new entry "QTD_Transform_Eagle"
+type "SpellData"
+using "TODO_TOOLKIT_CLONE_WILDSHAPE_DIRE_RAVEN_SPELL"
+data "Level" "0"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:1"
+data "DisplayName" "QTD_Transform_Eagle_DisplayName"
+data "Description" "QTD_Transform_Eagle_Description"
+
+new entry "QTD_Transform_Tiger"
+type "SpellData"
+using "TODO_TOOLKIT_CLONE_WILDSHAPE_SABRETOOTH_SPELL"
+data "Level" "0"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:2"
+data "DisplayName" "QTD_Transform_Tiger_DisplayName"
+data "Description" "QTD_Transform_Tiger_Description"
+
+// Do not author guessed POLYMORPHED StatusData by hand.
+// Toolkit clone must preserve the validated polymorph status groups, stack/revert
+// behavior and RootTemplate relationship of each vanilla reference before QTD edits.
