@@ -1,0 +1,24 @@
+ID,Priority,TargetVersion,Area,TechName,UnlockLevel,Subclass,ActionCost,SageQiCost,RuntimeState,PrimaryGate,IssueNumber,ReleaseBlocking
+INT-001,P0,V0.1,Class,QTD_GreatSage,1,Base,Passive,0,toolkit-object-pending,ClassDescriptions and Progressions real Toolkit rows plus Basic_Level_A,1,yes
+INT-002,P0,V0.1,Resource,QTD_SageQi,1,Base,Passive,0,toolkit-resource-pending,ActionResourceDefinitions serialization and short-rest recovery,2,yes
+INT-003,P0,V0.1,Passive,QTD_Passive_MonkeyAgility,1,Base,Passive,0,mechanics-incomplete,Unarmored AC and fall-damage behavior,1,yes
+INT-004,P0,V0.1,Passive,QTD_Passive_RuyiMastery,1,Base,Passive,0,mechanics-incomplete,Quarterstaff and Ruyi STR-DEX weapon condition,3,yes
+INT-005,P0,V0.1,Passive,QTD_Passive_CopperHeadIronArm,2,Base,Reaction,0,mechanics-incomplete,Validated reaction physical-damage reduction chain,2,yes
+INT-006,P0,V0.1,Spell,Target_QTD_SomersaultCloud,2,Base,BonusAction,1,parent-aligned-draft,Cloud Momentum plus level range scaling and targeting flags,2,yes
+INT-007,P0,V0.1,Spell,Zone_QTD_SeaCalmingStrike,3,Base,Action,2,verified-functor-draft,Weapon damage component plus zone geometry and scaling,2,yes
+INT-008,P0,V0.1,Spell,Target_QTD_FieryGoldenEyes,6,Base,BonusAction,1,mechanics-incomplete,Anti-invisibility plus AC penalty plus attacker-specific advantage,2,yes
+INT-009,P0,V0.1,Weapon,WPN_QTD_RuyiJinguBang,1,Base,Passive,0,toolkit-parent-pending,Quarterstaff Parent plus Finesse reach and real weapon-hit behavior,3,yes
+INT-010,P0,V0.1,Armor,ARM_QTD_GoldenArmor,1,Base,Passive,0,toolkit-parent-pending,Armor Parent RootTemplate and mitigation behavior,3,yes
+INT-011,P0,V0.1,Boots,BOOTS_QTD_CloudWalking,1,Base,Passive,0,toolkit-parent-pending,Boots Parent RootTemplate and free-cloud cooldown,3,yes
+INT-012,P0,V0.2,Transform,QTD_TransformContainer,3,Base,BonusAction,1-2,container-wired-draft,AddChildren revert equipment hotbar and multiplayer isolation,4,yes
+INT-013,P0,V0.2,Summon,Target_QTD_HairClones,6,Base,BonusAction,3,toolkit-root-pending,Four clone RootTemplates double summon and owner-stack behavior,5,yes
+INT-014,P0,V0.2,Weapon,WPN_QTD_HairCloneStaff,6,Base,Passive,0,toolkit-root-pending,Shared clone weapon RootTemplate and level scaling,6,yes
+INT-015,P1,V0.2,Defense,QTD_Passive_GreatSageEvasion+QTD_Passive_DiamondBody,7/9,Base,Passive,0,pattern-aligned-draft,Runtime damage saves and CopperHead interaction,7,conditional
+INT-016,P1,V0.3,Feature,QTD_ThreeHeadsSixArms,10,Base,BonusAction,4,active-status-draft,ExtraAttack_2 with Haste ActionSurge polymorph and clones,8,conditional
+INT-017,P1,V0.3,Subclass,QTD_VictoriousBuddha,3,VictoriousBuddha,Mixed,2,subclass-wired-draft,Subclass UI AC negative boost and future weapon restriction,11,conditional
+INT-018,P1,V0.3,Subclass,QTD_SeventyTwoChanges,3,SeventyTwoChanges,BonusAction,1-3,subclass-wired-draft,Four form helper statuses revert and shared container,12,conditional
+INT-019,P1,V0.3,Subclass,QTD_SpiritualStoneMonkey,3,SpiritualStoneMonkey,Action/BonusAction,2-3,subclass-wired-draft,Teleport SELF timing Chromatic children and no slots or Ki,13,conditional
+INT-020,P2,V0.4,Feature,QTD_FaTianXiangDi,11,Base,Action,5,active-giant-form-draft,Giant collision 9m reach weapon empowerment and camera,9,no
+INT-021,P2,V1.0,Feature,QTD_QitianDasheng,12,Base,Passive,0,capstone-passive-draft,Qi cap Respec and mental immunities,10,no
+INT-022,P0,V0.3,Release,TRUNK_RELEASE_SCOPE,All,All,Passive,0,release-policy-pending,Main already wires V0.4 and V1.0 so choose preview trunk or release slicing,14,yes
+INT-023,P2,V0.3,Visual,QTD_VISUAL_POLISH,All,All,Passive,0,visual-polish-pending,Icons VFX custom meshes and future transformation visuals,14,no

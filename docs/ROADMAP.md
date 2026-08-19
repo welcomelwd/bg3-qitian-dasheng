@@ -1,5 +1,12 @@
 # Roadmap
 
+## 当前整合门禁
+- 暂停继续增加基础职业/子职业核心机制，优先关闭 `data/runtime_validation_matrix.csv` 中的 P0。
+- P0 顺序：职业/仙力 → V0.1 核心被动与装备 Parent → 核心技能 → 七十二变恢复链 → 四档分身 RootTemplate。
+- P1 再做三个子职业、L7/L9 防御、三头六臂的组合回归。
+- `main` 当前是前向 trunk，已经包含 V0.4/V1.0 规划能力；V0.3 打包前必须确定 preview trunk 或真正 release slicing。
+- 详见 `docs/V01_V03_INTEGRATION_AUDIT.md`。
+
 ## V0.1 — 大圣初现
 - 独立职业
 - 仙力
@@ -24,10 +31,10 @@
 - `QTD_SeventyTwoChanges` 七十二变：L3 蜘蛛、L6 黑豹、L10 枭熊/双脊龙已接入
 - `QTD_SpiritualStoneMonkey` 灵明石猴：L3 灵台悟法/三昧真火、L6 风雷云遁/掌心雷、L10 五行仙法已接入
 - 三个子职业均使用独立 Progression Table，并在主职业 L3 同时开放
-- 扩展巨猿、石像、妖王等更高阶视觉变化
 - 三头六臂
-- 武器专属动作与强化 VFX
-- 筋斗云落点 VFX / Cloud Momentum 完整联动
+- V0.3 发布前先通过整合审计 P0/P1 门禁
+- P0/P1 通过后再继续武器专属 VFX、筋斗云落点 VFX / Cloud Momentum 视觉抛光
+- 扩展巨猿、石像、妖王等高阶视觉变化放入后续非阻塞阶段
 
 ## V0.4 — 法天象地
 - 法天象地
