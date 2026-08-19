@@ -8,9 +8,9 @@ subclasses:
 
   - tech_name: QTD_SeventyTwoChanges
     display_name: 七十二变
-    target_version: V0.3+
+    target_version: V0.3
     unlock_level: 3
-    status: planned
+    status: subclass-wired-draft
     role: transformation_control
 
   - tech_name: QTD_SpiritualStoneMonkey
