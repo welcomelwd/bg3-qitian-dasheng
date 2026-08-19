@@ -91,7 +91,7 @@ L12 的 `QTD_Passive_QitianDasheng` 再增加 2，当前 trunk 预期总上限�
 - L3 `QTD_SpellList_L3` → `Zone_QTD_SeaCalmingStrike`
 - L6 `QTD_SpellList_L6` → `Target_QTD_FieryGoldenEyes;Target_QTD_HairClones`
 
-不要再使用旧的 `Shout_QTD_SomersaultCloud`。
+不要再使用旧的 Shout 版本名称。
 
 ## 6. Toolkit 实际 UUID 回填
 
