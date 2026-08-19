@@ -40,19 +40,37 @@ spells:
     display_name: 定海一棒
     level: 3
     v0_1: true
+    runtime_state: weapon-zone-scaling-draft
+    parent_reference: Zone_Cleave
     action_cost: Action
     sage_qi_cost: 2
-    radius_m: 3
+    geometry:
+      shape: Cone
+      range_m: 3
+      angle_deg: 120
+      target: Enemy character
     save: Strength
-    damage:
-      target: "Weapon Damage + 2d8 Thunder"
-      current_stats_draft: "2d8 Thunder; half on successful save"
-      level_5: "Weapon Damage + 3d8 Thunder"
-      level_11: "Weapon Damage + 4d8 Thunder"
+    weapon_component:
+      damage: MainMeleeWeapon
+      damage_type: MainWeaponDamageType
+      weapon_functors: GROUND:ExecuteWeaponFunctors(MainHand)
+      applies_on_save_success: true
+    thunder_scaling:
+      level_3: 2d8
+      level_5: 3d8
+      level_11: 4d8
+      successful_save: half thunder damage
     on_failed_save:
-      - Prone
+      - Prone 1 turn
       - Knockback 3m
-    note: "Weapon-damage component remains a Toolkit validation gate."
+    runtime_controls:
+      - confirm main-hand weapon damage applies once per affected target
+      - confirm main-hand weapon functors do not duplicate unexpectedly across multiple targets
+      - confirm successful Strength save keeps full weapon damage but halves only Thunder damage
+      - confirm failed Strength save applies Prone and 3m knockback
+      - confirm level bands are exactly L3-4 2d8, L5-10 3d8, L11-12 4d8
+      - confirm unarmed or invalid-main-hand behavior is acceptable or add a weapon requirement gate
+    implementation_note: "继承 Zone_Cleave 的成熟武器扇区链，使用 MainMeleeWeapon + MainWeaponDamageType，并保留 GROUND:ExecuteWeaponFunctors(MainHand)。再将命中判定改为 STR 豁免，并叠加等级成长的 Thunder 伤害与失败控制。实机验证由项目所有者完成。"
 
   - tech_name: Target_QTD_FieryGoldenEyes
     display_name: 火眼金睛
