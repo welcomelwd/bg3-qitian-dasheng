@@ -1,0 +1,107 @@
+// V0.4 Fa Tian Xiang Di / Law of Heaven and Earth active giant-form draft.
+// Uses verified Enlarge-style size/scale boosts, a Strength floor, temporary weapon damage,
+// and three form-only actions. True Huge collision/VFX remains a Toolkit validation gate.
+
+new entry "Shout_QTD_FaTianXiangDi"
+type "SpellData"
+data "SpellType" "Shout"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetConditions" "Self()"
+data "UseCosts" "ActionPoint:1;QTD_SageQi:5"
+data "DisplayName" "Shout_QTD_FaTianXiangDi_DisplayName"
+data "Description" "Shout_QTD_FaTianXiangDi_Description"
+data "Icon" "Spell_Transmutation_Enlarge"
+data "SpellProperties" "ApplyStatus(QTD_STATUS_FATIAN_XIANG_DI,100,3);ApplyStatus(QTD_STATUS_FATIAN_USED,100,-1)"
+data "TooltipStatusApply" "ApplyStatus(QTD_STATUS_FATIAN_XIANG_DI,100,3)"
+data "RequirementConditions" "not HasStatus('SG_Polymorph') and not HasStatus('SG_Invisible') and not HasStatus('QTD_STATUS_HAIR_CLONES_ACTIVE') and not HasStatus('QTD_STATUS_THREE_HEADS_SIX_ARMS') and not HasStatus('QTD_STATUS_FATIAN_USED')"
+
+new entry "QTD_STATUS_FATIAN_XIANG_DI"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_FATIAN_XIANG_DI_DisplayName"
+data "Description" "QTD_STATUS_FATIAN_XIANG_DI_Description"
+data "Icon" "Spell_Transmutation_Enlarge"
+data "StackId" "QTD_FATIAN_XIANG_DI"
+data "Boosts" "ObjectSize(+1);ScaleMultiplier(1.33);AbilityOverrideMinimum(Strength,25);Advantage(Ability,Strength);Advantage(SavingThrow,Strength);CharacterWeaponDamage(2d8,Force);CharacterWeaponDamage(2d8,Thunder);CarryCapacityMultiplier(2);StatusImmunity(SG_Frightened);UnlockSpell(Zone_QTD_FaTian_Quake);UnlockSpell(Zone_QTD_FaTian_Sweep);UnlockSpell(Target_QTD_FaTian_Pillar)"
+
+new entry "QTD_STATUS_FATIAN_USED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "QTD_FATIAN_USED"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator;RemoveOnLongRest"
+
+new entry "Zone_QTD_FaTian_Quake"
+type "SpellData"
+using "Zone_Thunderwave"
+data "SpellType" "Zone"
+data "Level" "0"
+data "SpellSchool" "None"
+data "Cooldown" "OncePerTurn"
+data "UseCosts" "ActionPoint:1"
+data "DisplayName" "Zone_QTD_FaTian_Quake_DisplayName"
+data "Description" "Zone_QTD_FaTian_Quake_Description"
+data "Icon" "Spell_Evocation_Thunderwave"
+data "SpellRoll" "not SavingThrow(Ability.Strength, SourceSpellDC())"
+data "SpellSuccess" "IF(not Self()):DealDamage(4d8,Thunder,Magical);IF(not Self()):ApplyStatus(PRONE,100,1);IF(not Self()):Force(3,OriginToEntity,Aggressive,true)"
+data "SpellFail" "IF(not Self()):DealDamage(2d8,Thunder,Magical)"
+data "TooltipDamageList" "DealDamage(4d8,Thunder)"
+data "TooltipAttackSave" "Strength"
+data "TargetConditions" "not Self() and Enemy() and not Dead()"
+data "RequirementConditions" "HasStatus('QTD_STATUS_FATIAN_XIANG_DI')"
+data "Shape" "Cone"
+data "Range" "6"
+data "Angle" "120"
+
+new entry "Zone_QTD_FaTian_Sweep"
+type "SpellData"
+using "Zone_Cleave"
+data "SpellType" "Zone"
+data "Level" "0"
+data "SpellSchool" "None"
+data "Cooldown" "OncePerTurn"
+data "UseCosts" "ActionPoint:1"
+data "DisplayName" "Zone_QTD_FaTian_Sweep_DisplayName"
+data "Description" "Zone_QTD_FaTian_Sweep_Description"
+data "Icon" "Action_GargantuanCleave"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);GROUND:ExecuteWeaponFunctors(MainHand);IF(not Self()):Force(3,OriginToEntity,Aggressive,true)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
+data "TooltipAttackSave" "MeleeWeaponAttack"
+data "TargetConditions" "not Self() and Enemy() and not Dead()"
+data "RequirementConditions" "HasStatus('QTD_STATUS_FATIAN_XIANG_DI')"
+data "Range" "6"
+data "Angle" "120"
+
+new entry "Target_QTD_FaTian_Pillar"
+type "SpellData"
+using "Target_MainHandAttack"
+data "SpellType" "Target"
+data "Level" "0"
+data "SpellSchool" "None"
+data "Cooldown" "OncePerTurn"
+data "TargetRadius" "9"
+data "UseCosts" "ActionPoint:1"
+data "DisplayName" "Target_QTD_FaTian_Pillar_DisplayName"
+data "Description" "Target_QTD_FaTian_Pillar_Description"
+data "Icon" "Action_GargantuanCleave"
+data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand);Force(6,OriginToEntity,Aggressive,true)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)"
+data "TooltipAttackSave" "MeleeWeaponAttack"
+data "TargetConditions" "not Self() and Enemy() and not Dead()"
+data "RequirementConditions" "HasStatus('QTD_STATUS_FATIAN_XIANG_DI')"
+
+// Verified source patterns:
+// - vanilla ENLARGE uses ObjectSize(+1), ScaleMultiplier(1.33), Strength advantage and weapon damage.
+// - public BG3 data uses AbilityOverrideMinimum(Strength,18), so this draft uses a Strength floor of 25.
+// - base Rush weapon actions use DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType)
+//   plus ExecuteWeaponFunctors(MainHand).
+// - Zone_Cleave derivatives use MainMeleeWeapon damage in a multi-target weapon action.
+// - RemoveOnLongRest is a verified StatusPropertyFlags value.
+//
+// Toolkit gates:
+// - ObjectSize(+1) is the verified safe size increment; true Huge collision/footprint is not claimed yet.
+// - TargetRadius 9 on the Pillar strike must be tested with inherited melee targeting flags.
+// - CharacterWeaponDamage currently enhances all weapon hits while the form is active; restrict to the
+//   Ruyi Jingu Bang later only if a reliable weapon/tag condition is verified.
+// - geometry, animation, camera and VFX must be tuned locally.
