@@ -29,3 +29,7 @@ QTD_Passive_TransformUnlock_L3_DisplayName	七十二变	Seventy-Two Transformati
 QTD_Passive_TransformUnlock_L3_Description	领悟变化之术，获得七十二变菜单并解锁小虫变化。	Learn the art of transformation, gaining the Seventy-Two Transformations menu and Tiny Creature form.
 QTD_Passive_TransformUnlock_L5_DisplayName	七十二变·进境	Seventy-Two Transformations: Advancement
 QTD_Passive_TransformUnlock_L5_Description	变化之术更进一步，解锁苍鹰变化与猛虎变化。	Advance your transformation art, unlocking Eagle and Tiger forms.
+Target_QTD_HairClones_DisplayName	身外身法	Body Outside the Body
+Target_QTD_HairClones_Description	拔下毫毛，唤出两具战斗分身，持续3回合。分身使用弱化棍法，并与本体的部分被动事件联动。	Pluck enchanted hairs to summon two combat clones for 3 rounds. They use weakened staff techniques and can interact with some caster passive events.
+QTD_STATUS_HAIR_CLONE_DisplayName	毫毛化身	Hair Clone
+QTD_STATUS_HAIR_CLONE_Description	由大圣毫毛变化而成的短暂战斗分身。	A temporary combat clone formed from the Great Sage's enchanted hair.

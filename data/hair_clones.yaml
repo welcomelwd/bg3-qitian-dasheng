@@ -1,0 +1,70 @@
+system:
+  feature: QTD_HairClones
+  spell: Target_QTD_HairClones
+  unlock_level: 6
+  resource: QTD_SageQi
+  sage_qi_cost: 3
+  action_cost: BonusActionPoint:1
+  summon_count: 2
+  lifetime_rounds: 3
+  no_script_extender_required: true
+  use_caster_passives: true
+  recast_replaces_existing_pair: true
+
+prototype:
+  root_template_name: QTD_HairClone_Root_L6
+  root_template_uuid: 8c17bf83-fc1d-4143-b555-46b38003bb49
+  character_stats: QTD_HairCloneCharacter_L6
+  base_character_stats: Human_Commoner
+  stack_ids:
+    - QTD_HairClone_A
+    - QTD_HairClone_B
+  summon_status: QTD_STATUS_HAIR_CLONE
+  target_radius_m: 9
+  target_condition: CanStand
+  equipment:
+    weapon: weak_quarterstaff_toolkit_assignment
+    armor: none
+  appearance:
+    phase_1: toolkit humanoid monkey-like prototype
+    phase_2: dedicated Wukong clone visual
+  balance:
+    level: 6
+    vitality: 24
+    armor: 14
+    strength: 16
+    dexterity: 16
+    constitution: 12
+    intelligence: 8
+    wisdom: 12
+    charisma: 8
+    movement: 9
+    extra_attack: false
+
+summon_functor:
+  lifetime: 3
+  extend_concentration: false
+  late_join_penalty: false
+  use_caster_passives: true
+  status_slots:
+    - QTD_STATUS_HAIR_CLONE
+  note: Two Summon functors use separate StackIDs so recasting replaces the prior pair.
+
+scaling_plan:
+  level_9:
+    state: planned
+    options:
+      - increase_clone_vitality
+      - improve_clone_staff
+  level_12:
+    state: planned
+    summon_count: 4
+    balance_rule: four_clones_should_be_weaker_than_two_clone_version
+
+compatibility:
+  do_not_clone_story_companion_templates: true
+  do_not_copy_inventory_at_runtime_in_v02: true
+  do_not_copy_unique_items: true
+  do_not_require_bg3se_for_base_prototype: true
+  root_template_uuid_must_be_verified_in_local_toolkit: true
+  if_double_summon_collides_split_into_two_child_target_spells: true

@@ -1,4 +1,4 @@
 Name,UUID,Spells,GrantedAtLevel
 QTD_SpellList_L2,94df744f-3f21-4f27-9585-4893be7529c3,Target_QTD_SomersaultCloud,2
 QTD_SpellList_L3,0ccd84c3-24f1-4d09-b9f7-47ef1e40a11f,Zone_QTD_SeaCalmingStrike,3
-QTD_SpellList_L6,986ba61c-a6cf-4b9e-be8e-075148e5f853,Target_QTD_FieryGoldenEyes,6
+QTD_SpellList_L6,986ba61c-a6cf-4b9e-be8e-075148e5f853,Target_QTD_FieryGoldenEyes;Target_QTD_HairClones,6

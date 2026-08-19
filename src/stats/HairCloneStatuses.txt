@@ -1,0 +1,11 @@
+// Identification status applied by Summon() for the lifetime of each hair clone.
+
+new entry "QTD_STATUS_HAIR_CLONE"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_HAIR_CLONE_DisplayName"
+data "Description" "QTD_STATUS_HAIR_CLONE_Description"
+data "Properties" "DisableOverhead;DisableCombatlog"
+
+// Keep this status mechanically light in the first prototype.
+// Damage/HP/action economy belong to the clone Character/RootTemplate, not to guessed boosts.

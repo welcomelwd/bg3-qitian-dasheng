@@ -1,0 +1,27 @@
+// V0.2 fixed-stat clone prototype.
+// A fixed Character stat is intentionally used instead of dynamically copying the caster.
+// Dynamic HP/inventory/appearance copying is deferred until the no-SE version is proven stable.
+
+new entry "QTD_HairCloneCharacter_L6"
+type "Character"
+using "Human_Commoner"
+data "Level" "6"
+data "Strength" "16"
+data "Dexterity" "16"
+data "Constitution" "12"
+data "Intelligence" "8"
+data "Wisdom" "12"
+data "Charisma" "8"
+data "Armor" "14"
+data "Vitality" "24"
+data "SpellCastingAbility" "Wisdom"
+data "ActionResources" "ActionPoint:1;BonusActionPoint:1;Movement:9;ReactionActionPoint:1"
+data "DefaultBoosts" "DialogueBlock()"
+data "Passives" "AttackOfOpportunity"
+data "DifficultyStatuses" "STATUS_EASY:PLAYER_BONUSES_EASYMODE"
+
+// Toolkit RootTemplate plan:
+// - Create QTD_HairClone_Root_L6 and set its Stats to QTD_HairCloneCharacter_L6.
+// - Assign a weak quarterstaff in the template equipment/inventory.
+// - Use a generic humanoid/monkey-like visual only for prototype validation.
+// - Do not derive the template from a story companion or origin character.

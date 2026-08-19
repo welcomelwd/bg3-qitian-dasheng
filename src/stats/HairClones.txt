@@ -1,0 +1,22 @@
+// V0.2 Hair Clone / "Body Outside the Body" prototype.
+// Uses the documented Summon() functor twice with separate StackIDs.
+// Runtime readiness still depends on creating/verifying QTD_HairClone_Root_L6 in Toolkit.
+
+new entry "Target_QTD_HairClones"
+type "SpellData"
+data "SpellType" "Target"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetRadius" "9"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:3"
+data "DisplayName" "Target_QTD_HairClones_DisplayName"
+data "Description" "Target_QTD_HairClones_Description"
+data "TargetConditions" "CanStand('8c17bf83-fc1d-4143-b555-46b38003bb49')"
+data "SpellProperties" "GROUND:Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_A',QTD_STATUS_HAIR_CLONE,,,,false,true);GROUND:Summon(8c17bf83-fc1d-4143-b555-46b38003bb49,3,,false,'QTD_HairClone_B',QTD_STATUS_HAIR_CLONE,,,,false,true)"
+
+// Toolkit validation gates:
+// - QTD_HairClone_Root_L6 must exist and point to QTD_HairCloneCharacter_L6.
+// - Verify whether two summons can resolve around one selected point without collision.
+// - If they overlap/fail, split this action into a linked container with two child target spells.
+// - Verify the inherited/selected humanoid visual can equip and animate a quarterstaff.
+// - bUseCasterPassives=true is intentional; it does not mean every caster passive is copied.
