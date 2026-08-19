@@ -41,6 +41,10 @@ passives:
   - tech_name: QTD_Passive_FaTianXiangDi
     display_name: 法天象地
     v0_1: false
+    unlock_level: 11
+    unlocks: Shout_QTD_FaTianXiangDi
+    target_version: V0.4
+    implementation_note: "巨化机制位于 src/stats/FaTianXiangDi.txt；首版使用 Enlarge 同源 ObjectSize(+1)/ScaleMultiplier(1.33)，真正 Huge 碰撞需 Toolkit 验证。"
   - tech_name: QTD_Passive_QitianDasheng
     display_name: 齐天大圣
     v0_1: false
