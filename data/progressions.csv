@@ -1,7 +1,7 @@
 Name,UUID,TableUUID,Level,ProgressionType,AllowImprovement,Boosts,PassivesAdded,Selectors,SubClasses,Notes
 QTD_GreatSage_1,335a76f6-1e0e-405e-ab3c-bd3af45bbe27,8b1758f9-46a7-4865-8c49-d7283fb5f456,1,0,No,"ActionResource(QTD_SageQi,2,0)",QTD_Passive_MonkeyAgility;QTD_Passive_RuyiMastery,,,建立仙力池；资源序列化参数需在 Toolkit 中最终确认。
 QTD_GreatSage_2,a18427c7-cfcf-4852-8cf9-5ce4b6e705e4,8b1758f9-46a7-4865-8c49-d7283fb5f456,2,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_CopperHeadIronArm,AddSpells(94df744f-3f21-4f27-9585-4893be7529c3),,
-QTD_GreatSage_3,4529b727-e392-477d-bff3-573773f30fdc,8b1758f9-46a7-4865-8c49-d7283fb5f456,3,0,No,,QTD_Passive_TransformUnlock_L3,AddSpells(0ccd84c3-24f1-4d09-b9f7-47ef1e40a11f),QTD_VictoriousBuddha,解锁七十二变入口与小虫变化，并开放首个子职业：斗战胜佛。
+QTD_GreatSage_3,4529b727-e392-477d-bff3-573773f30fdc,8b1758f9-46a7-4865-8c49-d7283fb5f456,3,0,No,,QTD_Passive_TransformUnlock_L3,AddSpells(0ccd84c3-24f1-4d09-b9f7-47ef1e40a11f),QTD_VictoriousBuddha;QTD_SeventyTwoChanges,解锁七十二变入口与小虫变化，并开放斗战胜佛与七十二变子职业。
 QTD_GreatSage_4,53c107ab-75b6-4cd3-9497-e51068329f86,8b1758f9-46a7-4865-8c49-d7283fb5f456,4,0,Yes,,,,,
 QTD_GreatSage_5,9f3cb3a9-a35f-40f0-87c5-4ac528c4a192,8b1758f9-46a7-4865-8c49-d7283fb5f456,5,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_ExtraAttack;QTD_Passive_TransformUnlock_L5,,,七十二变新增苍鹰与猛虎。
 QTD_GreatSage_6,e30d790b-750c-4191-938c-6d0206e90693,8b1758f9-46a7-4865-8c49-d7283fb5f456,6,0,No,,,AddSpells(986ba61c-a6cf-4b9e-be8e-075148e5f853),,
@@ -14,3 +14,6 @@ QTD_GreatSage_12,0435bb9c-eb3e-4843-8b70-aa7265341e10,8b1758f9-46a7-4865-8c49-d7
 QTD_VictoriousBuddha_3,bceac8d9-93ea-465e-b70c-7fb522d450f6,7761cb09-7c56-4ff5-b4eb-8860683eed61,3,1,No,,QTD_Passive_VictoriousBuddha_StaffFury,,,斗战棍法：近战武器暴击额外增加 1 个武器伤害骰。
 QTD_VictoriousBuddha_6,f90480a9-21db-41dc-bc73-413e444d91f8,7761cb09-7c56-4ff5-b4eb-8860683eed61,6,1,No,,QTD_Passive_VictoriousBuddha_ImprovedCritical,,,战意无双：暴击阈值降低 1，目标为 19-20 暴击。
 QTD_VictoriousBuddha_10,5f2c06ed-c39e-4190-948d-ddcaeef75916,7761cb09-7c56-4ff5-b4eb-8860683eed61,10,1,No,,QTD_Passive_VictoriousBuddha_HeavenBreaker,,,解锁破天一棒：消耗 2 仙力的单体武器终结技。
+QTD_SeventyTwoChanges_3,e0a353ec-f991-4d09-ae43-b05c05284f9c,4d2f7b28-c2a8-4bde-9df1-04e2e6c6c1b5,3,1,No,,QTD_Passive_SeventyTwoChanges_L3,,,变化入微：七十二变菜单新增蜘蛛变化。
+QTD_SeventyTwoChanges_6,2e0fec3c-9a74-4bbd-ae40-a81828a06f95,4d2f7b28-c2a8-4bde-9df1-04e2e6c6c1b5,6,1,No,,QTD_Passive_SeventyTwoChanges_L6,,,千变万化：七十二变菜单新增黑豹变化。
+QTD_SeventyTwoChanges_10,bd2f234d-447e-4247-a68a-faf9d90451c8,4d2f7b28-c2a8-4bde-9df1-04e2e6c6c1b5,10,1,No,,QTD_Passive_SeventyTwoChanges_L10,,,万象随心：七十二变菜单新增枭熊与双脊龙变化。
