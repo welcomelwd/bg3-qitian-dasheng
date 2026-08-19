@@ -1,0 +1,21 @@
+subclasses:
+  - tech_name: QTD_VictoriousBuddha
+    display_name: 斗战胜佛
+    target_version: V0.3
+    unlock_level: 3
+    status: subclass-wired-draft
+    role: melee_staff_critical
+
+  - tech_name: QTD_SeventyTwoChanges
+    display_name: 七十二变
+    target_version: V0.3+
+    unlock_level: 3
+    status: planned
+    role: transformation_control
+
+  - tech_name: QTD_SpiritualStoneMonkey
+    display_name: 灵明石猴
+    target_version: V0.3+
+    unlock_level: 3
+    status: planned
+    role: wisdom_immortal_arts
