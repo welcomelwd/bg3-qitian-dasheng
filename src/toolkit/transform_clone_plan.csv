@@ -1,0 +1,4 @@
+QTDTechName,DisplayName,PrototypeRole,VanillaReference,PrimaryValidation,SageQiCost,CloneStatus
+QTD_Transform_Insect,小虫变化,exploration,Wild Shape Cat,Tiny body / interaction / revert,1,needs-toolkit-clone
+QTD_Transform_Eagle,苍鹰变化,mobility,Wild Shape Dire Raven,Fly / vertical navigation / revert,1,needs-toolkit-clone
+QTD_Transform_Tiger,猛虎变化,combat,Wild Shape Sabre-Toothed Tiger,combat HP / attacks / zero-HP revert,2,needs-toolkit-clone
