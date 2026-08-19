@@ -64,6 +64,16 @@
     "fa_tian_quake_uuid": "da75352c-7bfb-4acb-962f-d923ef737bd4",
     "fa_tian_sweep_uuid": "fb182794-1cb0-454f-ac30-3de41d259ac5",
     "fa_tian_pillar_uuid": "8d7392e5-e842-45e6-952d-6daac48ed364",
-    "status_hair_clones_active_uuid": "08136129-7ecc-401d-81bb-6829c2af1434"
+    "status_hair_clones_active_uuid": "08136129-7ecc-401d-81bb-6829c2af1434",
+    "subclass_victorious_buddha_table_uuid": "7761cb09-7c56-4ff5-b4eb-8860683eed61",
+    "subclass_victorious_buddha_classdesc_uuid": "56103a0f-a220-43a0-882a-35890a8fd849",
+    "subclass_victorious_buddha_l3_uuid": "bceac8d9-93ea-465e-b70c-7fb522d450f6",
+    "subclass_victorious_buddha_l6_uuid": "f90480a9-21db-41dc-bc73-413e444d91f8",
+    "subclass_victorious_buddha_l10_uuid": "5f2c06ed-c39e-4190-948d-ddcaeef75916",
+    "passive_victorious_staff_fury_uuid": "3844f0df-40c8-49f0-bfbd-c7fbd739f23f",
+    "passive_victorious_improved_critical_uuid": "c12ba497-5a60-45b7-a0b3-9584dae947f6",
+    "passive_victorious_heaven_breaker_uuid": "13876870-a52d-4a2d-a4ba-4d50405e437e",
+    "spell_heaven_breaking_strike_uuid": "9bef5fb8-0cb9-4e7d-8031-e496a835dc68",
+    "status_heaven_break_armor_uuid": "bdd23c78-eb83-4e5f-924d-698bbd410cd4"
   }
 }
