@@ -13,10 +13,15 @@ type "StatusData"
 data "StatusType" "BOOST"
 data "DisplayName" "QTD_STATUS_DEMON_REVEALED_DisplayName"
 data "Description" "QTD_STATUS_DEMON_REVEALED_Description"
-data "Properties" "DisableOverhead"
-data "Boosts" "AC(-2)"
+data "StackId" "QTD_STATUS_DEMON_REVEALED"
+data "Boosts" "AC(-2);StatusImmunity(SG_Invisible)"
+data "OnApplyFunctors" "RemoveStatus(SG_Invisible)"
+data "StatusPropertyFlags" "DisableOverhead"
 
 // Cloud Momentum is intentionally narrow: only melee attacks receive Advantage.
 // A hidden passive removes the status on the first melee attack event; ranged attacks do not consume it.
-// Patch 8 Toolkit must confirm OnAttack cleanup occurs after the roll has read the Advantage boost.
-// Demon Revealed still needs validated invisibility suppression and attacker-specific Advantage semantics.
+// QTD_STATUS_DEMON_REVEALED removes the SG_Invisible group on application and blocks new
+// SG_Invisible statuses while the 3-turn reveal remains active.
+// Attacker-specific Advantage is not granted by the target status itself; it is handled by the
+// Great Sage hidden passive QTD_Passive_FieryGoldenEyes_TargetAdvantage using status-source matching.
+// Runtime verification is intentionally left to the project owner.
