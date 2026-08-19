@@ -35,6 +35,9 @@ jobs:
       - name: Validate Three Heads Six Arms
         run: python scripts/validate_three_heads_six_arms.py
 
+      - name: Validate Victorious Buddha subclass
+        run: python scripts/validate_victorious_buddha.py
+
       - name: Validate Fa Tian Xiang Di
         run: python scripts/validate_fa_tian_xiang_di.py
 
