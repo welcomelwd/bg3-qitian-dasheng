@@ -1,0 +1,41 @@
+// V0.3 Three Heads, Six Arms active combat-form draft.
+// Mechanically implemented as a 3-round BOOST status, not a body/weapon-slot rewrite.
+// This keeps V0.3 independent from Script Extender and custom skeleton work.
+
+new entry "Shout_QTD_ThreeHeadsSixArms"
+type "SpellData"
+data "SpellType" "Shout"
+data "Level" "0"
+data "SpellSchool" "None"
+data "TargetConditions" "Self()"
+data "UseCosts" "BonusActionPoint:1;QTD_SageQi:4"
+data "DisplayName" "Shout_QTD_ThreeHeadsSixArms_DisplayName"
+data "Description" "Shout_QTD_ThreeHeadsSixArms_Description"
+data "Icon" "PassiveFeature_ExtraAttack"
+data "SpellProperties" "ApplyStatus(QTD_STATUS_THREE_HEADS_SIX_ARMS,100,3)"
+data "TooltipStatusApply" "ApplyStatus(QTD_STATUS_THREE_HEADS_SIX_ARMS,100,3)"
+
+new entry "QTD_STATUS_THREE_HEADS_SIX_ARMS"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_THREE_HEADS_SIX_ARMS_DisplayName"
+data "Description" "QTD_STATUS_THREE_HEADS_SIX_ARMS_Description"
+data "Icon" "PassiveFeature_ExtraAttack"
+data "StackId" "QTD_THREE_HEADS_SIX_ARMS"
+data "Boosts" "AC(2);Advantage(SavingThrow,Strength);Advantage(SavingThrow,Dexterity);StatusImmunity(SG_Frightened)"
+data "Passives" "ExtraAttack_2"
+
+// Expected result while the status is active:
+// - Attack action reaches the ExtraAttack_2 tier (three weapon attacks total).
+// - +2 AC.
+// - Advantage on Strength and Dexterity saving throws only.
+// - immunity to the SG_Frightened status group.
+// - no extra ActionPoint, no free spell-casting action, no ExtraAttack_3.
+//
+// VFX gate:
+// Keep the mechanics independent from visuals. Add translucent extra-arm/head VFX only
+// after a known-good Toolkit effect resource has been selected and tested.
+//
+// Reach gate:
+// Do not add a guessed generic melee-reach Boost in V0.3 draft. If a supported vanilla
+// reach pattern is verified later, add it as a separate tested change.
