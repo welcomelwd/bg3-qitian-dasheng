@@ -32,6 +32,9 @@ jobs:
       - name: Validate Copper Head Iron Arm
         run: python scripts/validate_copper_head_iron_arm.py
 
+      - name: Validate Somersault Cloud
+        run: python scripts/validate_somersault_cloud.py
+
       - name: Validate Stats drafts
         run: python scripts/validate_stats_drafts.py
 
