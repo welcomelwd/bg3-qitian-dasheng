@@ -42,6 +42,12 @@ Feature,QTD_ThreeHeadsSixArms,V0.3,active-status-draft
 Passive,QTD_Passive_ThreeHeadsSixArms,V0.3,unlock-passive-draft
 Spell,Shout_QTD_ThreeHeadsSixArms,V0.3,verified-applystatus-draft
 Status,QTD_STATUS_THREE_HEADS_SIX_ARMS,V0.3,extraattack2-status-draft
+Subclass,QTD_VictoriousBuddha,V0.3,subclass-progression-draft
+Passive,QTD_Passive_VictoriousBuddha_StaffFury,V0.3,verified-critical-dice-pattern-draft
+Passive,QTD_Passive_VictoriousBuddha_ImprovedCritical,V0.3,base-passive-aligned
+Passive,QTD_Passive_VictoriousBuddha_HeavenBreaker,V0.3,unlock-passive-draft
+Spell,Target_QTD_HeavenBreakingStrike,V0.3,mainhand-finisher-draft
+Status,QTD_STATUS_HEAVEN_BREAK_ARMOR,V0.3,negative-ac-toolkit-gate
 Feature,QTD_FaTianXiangDi,V0.4,active-giant-form-draft
 Passive,QTD_Passive_FaTianXiangDi,V0.4,unlock-passive-draft
 Spell,Shout_QTD_FaTianXiangDi,V0.4,active-form-spell-draft
