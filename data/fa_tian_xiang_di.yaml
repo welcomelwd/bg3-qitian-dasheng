@@ -1,0 +1,56 @@
+feature: QTD_FaTianXiangDi
+display_name: 法天象地
+target_version: V0.4
+unlock_level: 11
+activation_spell: Shout_QTD_FaTianXiangDi
+sage_qi_cost: 5
+action_cost: Action
+duration_rounds: 3
+once_per_long_rest: true
+cooldown_model:
+  used_status: QTD_STATUS_FATIAN_USED
+  reset_flag: RemoveOnLongRest
+form_status: QTD_STATUS_FATIAN_XIANG_DI
+giant_form:
+  object_size_delta: 1
+  scale_multiplier: 1.33
+  strength_floor: 25
+  strength_ability_advantage: true
+  strength_save_advantage: true
+  carry_capacity_multiplier: 2
+  fear_immunity: true
+weapon_empowerment:
+  force_damage: 2d8
+  thunder_damage: 2d8
+  applies_to: all_weapon_hits_in_first_draft
+  future_gate: restrict_to_ruyi_jingu_bang_only_if_reliable_weapon_condition_is_verified
+exclusive_with:
+  - SG_Polymorph
+  - SG_Invisible
+  - QTD_STATUS_HAIR_CLONES_ACTIVE
+  - QTD_STATUS_THREE_HEADS_SIX_ARMS
+actions:
+  - tech_name: Zone_QTD_FaTian_Quake
+    display_name: 撼地
+    role: wide_thunder_control
+    damage: 4d8 Thunder
+    save: Strength
+    on_failed_save:
+      - Prone
+      - Force 3m
+  - tech_name: Zone_QTD_FaTian_Sweep
+    display_name: 横扫千军
+    role: wide_weapon_sweep
+    base_damage: MainMeleeWeapon
+    knockback_m: 3
+  - tech_name: Target_QTD_FaTian_Pillar
+    display_name: 擎天一柱
+    role: long_reach_single_target_weapon_strike
+    target_radius_m: 9
+    base_damage: MainMeleeWeapon
+    knockback_m: 6
+safety:
+  do_not_grant_extra_action_point: true
+  do_not_grant_extra_attack_2: true
+  do_not_claim_true_huge_collision_before_toolkit_test: true
+  no_script_extender_required: true
