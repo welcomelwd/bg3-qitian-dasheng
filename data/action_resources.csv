@@ -1,0 +1,2 @@
+Name,UUID,DisplayName,Description,MaxLevel,Recovery,ShowOnActionResourcePanel,Notes
+QTD_SageQi,6f5c2546-8f73-4599-b918-28402c673e08,仙力 / Sage Qi,齐天大圣施展仙术、棒法与神通所消耗的职业资源。,0,ShortRest,Yes,建议短休全恢复；具体 ActionResourceDefinitions 字段以当前 Toolkit UI 为准。

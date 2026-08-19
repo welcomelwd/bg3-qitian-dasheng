@@ -1,0 +1,31 @@
+items:
+  - tech_name: WPN_QTD_RuyiJinguBang
+    display_name: 如意金箍棒
+    rarity: Legendary
+    type: Quarterstaff
+    v0_1: true
+    enhancement: 2
+    damage:
+      one_handed: "1d8 Bludgeoning + 1d4 Force"
+      two_handed: "1d10 Bludgeoning + 1d4 Force"
+    intent:
+      - Strength +1
+      - Jump +1.5m
+      - Reach +1.5m
+      - 后续增加 Target_QTD_RuyiExtend
+    asset_plan: "V0.1 复用现有 Quarterstaff mesh；自定义 3D 延后。"
+
+  - tech_name: ARM_QTD_GoldenArmor
+    display_name: 锁子黄金甲
+    rarity: VeryRare
+    v0_1: true
+    asset_plan: "先复用现有 armour mesh，完成数值与职业联动。"
+
+  - tech_name: BOOTS_QTD_CloudWalking
+    display_name: 藕丝步云履
+    rarity: VeryRare
+    v0_1: true
+    intent:
+      - Movement +3m
+      - Jump Distance +50%
+      - 每短休一次免费筋斗云（可在后续平衡调整）

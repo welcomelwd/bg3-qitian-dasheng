@@ -1,0 +1,9 @@
+statuses:
+  - tech_name: QTD_STATUS_CLOUD_MOMENTUM
+    display_name: 云势
+    duration: 1_turn
+    intent: "下一次近战攻击获得 Advantage，命中后移除。"
+  - tech_name: QTD_STATUS_DEMON_REVEALED
+    display_name: 妖邪显形
+    duration: 3_turns
+    intent: "移除/阻止隐形，AC -2，齐天大圣对目标攻击获得 Advantage。"

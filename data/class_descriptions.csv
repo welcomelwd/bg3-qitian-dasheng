@@ -1,0 +1,3 @@
+Name,UUID,ProgressionTableUUID,DisplayName,Description,PrimaryAbility,SpellCastingAbility,LearningStrategy,MustPrepareSpells,CanLearnSpells,BaseHp,HPPerLevel,CommonHotbarColumns,ClassHotbarColumns,ItemsHotbarColumns,IsMulticlass,ClassEquipment,CharacterCreationPose,Notes
+QTD_GreatSage,db08d3bc-52c1-4141-a7fb-65bc4a2a155f,8b1758f9-46a7-4865-8c49-d7283fb5f456,齐天大圣 / Great Sage,灵明石猴，通变化，识天时，知地利，移星换斗。,Strength,Wisdom,AllChildren,No,No,10,6,9,5,2,No,EQP_CC_QTD_GreatSage,0f07ec6e-4ef0-434e-9a51-1353260ccff8,主职业行
+QTD_GreatSage,a75d7530-9ac4-443d-bb4a-3d9b0a50768b,8b1758f9-46a7-4865-8c49-d7283fb5f456,齐天大圣 / Great Sage,灵明石猴，通变化，识天时，知地利，移星换斗。,Strength,Wisdom,AllChildren,No,No,10,6,9,5,2,Yes,EQP_CC_QTD_GreatSage,0f07ec6e-4ef0-434e-9a51-1353260ccff8,多职业入口，UUID 必须独立

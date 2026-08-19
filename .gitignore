@@ -1,0 +1,17 @@
+# BG3 / Toolkit generated or local files
+*.pak
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor backups / local exports
+backup/
+backups/
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

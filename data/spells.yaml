@@ -1,0 +1,47 @@
+spells:
+  - tech_name: Shout_QTD_SomersaultCloud
+    display_name: 筋斗云
+    level: 2
+    v0_1: true
+    action_cost: BonusAction
+    sage_qi_cost: 1
+    range_m: 12
+    intent:
+      - 传送到可见地点
+      - 获得 QTD_STATUS_CLOUD_MOMENTUM 1 回合
+      - Cloud Momentum 使下一次近战攻击获得 Advantage
+    scaling:
+      5: 15
+      9: 18
+      12: 21
+
+  - tech_name: Zone_QTD_SeaCalmingStrike
+    display_name: 定海一棒
+    level: 3
+    v0_1: true
+    action_cost: Action
+    sage_qi_cost: 2
+    radius_m: 3
+    save: Strength
+    damage:
+      base: "Weapon Damage + 2d8 Thunder"
+      level_5: "Weapon Damage + 3d8 Thunder"
+      level_11: "Weapon Damage + 4d8 Thunder"
+    on_failed_save:
+      - Prone
+      - Knockback 3m
+
+  - tech_name: Target_QTD_FieryGoldenEyes
+    display_name: 火眼金睛
+    level: 6
+    v0_1: true
+    action_cost: BonusAction
+    sage_qi_cost: 1
+    range_m: 18
+    duration_turns: 3
+    target_status: QTD_STATUS_DEMON_REVEALED
+    intent:
+      - 显形/反隐身
+      - 目标 AC -2
+      - 本体攻击目标获得 Advantage
+      - 对指定妖邪类型预留 +1d6 Radiant 扩展

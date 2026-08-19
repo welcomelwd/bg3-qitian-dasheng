@@ -1,0 +1,22 @@
+class:
+  QTD_GreatSage:
+    name: 齐天大圣
+    description: 灵明石猴，通变化，识天时，知地利，移星换斗。
+resource:
+  QTD_SageQi:
+    name: 仙力
+    description: 施展仙术、棒法与神通所消耗的力量。
+spells:
+  Shout_QTD_SomersaultCloud:
+    name: 筋斗云
+  Zone_QTD_SeaCalmingStrike:
+    name: 定海一棒
+  Target_QTD_FieryGoldenEyes:
+    name: 火眼金睛
+items:
+  WPN_QTD_RuyiJinguBang:
+    name: 如意金箍棒
+  ARM_QTD_GoldenArmor:
+    name: 锁子黄金甲
+  BOOTS_QTD_CloudWalking:
+    name: 藕丝步云履
