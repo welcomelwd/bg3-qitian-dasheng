@@ -2,7 +2,12 @@ statuses:
   - tech_name: QTD_STATUS_CLOUD_MOMENTUM
     display_name: 云势
     duration: 1_turn
-    intent: "下一次近战攻击获得 Advantage，命中后移除。"
+    runtime_state: next-melee-advantage-draft
+    boosts:
+      - IF(IsMeleeAttack()):Advantage(AttackRoll)
+    helper_passive: QTD_Passive_CloudMomentum_Consume
+    intent: "下一次近战攻击获得 Advantage；首次近战攻击事件后移除。远程攻击不会消耗云势。"
+    toolkit_gate: "确认 OnAttack cleanup 在攻击骰读取 Advantage 后触发，且命中/未命中都会消费。"
   - tech_name: QTD_STATUS_DEMON_REVEALED
     display_name: 妖邪显形
     duration: 3_turns
