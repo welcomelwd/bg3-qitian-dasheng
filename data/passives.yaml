@@ -68,6 +68,40 @@ passives:
       - verify ordering with L9 Diamond Body resistance
     implementation_note: "使用 OnPreDamage YesNoDecision Interrupt，在接受时临时施加只含 Bludgeoning/Piercing/Slashing DamageReduction 的 BOOST 状态；OnDamaged/OnDamagedPrevented 后清理。仍需 Patch 8 Toolkit 实机验证。"
 
+  - tech_name: QTD_Passive_CloudMomentum_Consume
+    display_name: 云势消费 helper
+    v0_1: true
+    runtime_state: onattack-cleanup-draft
+    properties: IsHidden
+    context: OnAttack
+    condition: IsMeleeAttack()
+    effect: RemoveStatus(SELF,QTD_STATUS_CLOUD_MOMENTUM)
+    implementation_note: "只在首次近战攻击事件后消费云势；必须在 Patch 8 Toolkit 确认 Advantage 已在 cleanup 前被攻击骰读取。"
+
+  - tech_name: QTD_Passive_SomersaultCloud_Range_L5
+    display_name: 筋斗云距离成长 L5
+    v0_1: true
+    runtime_state: spell-variant-range-draft
+    properties: IsHidden
+    unlock_level: 5
+    modifier: ModifyTargetRadius(Multiplicative,1.25)
+
+  - tech_name: QTD_Passive_SomersaultCloud_Range_L9
+    display_name: 筋斗云距离成长 L9
+    v0_1: true
+    runtime_state: spell-variant-range-draft
+    properties: IsHidden
+    unlock_level: 9
+    modifier: ModifyTargetRadius(Multiplicative,1.2)
+
+  - tech_name: QTD_Passive_SomersaultCloud_Range_L12
+    display_name: 筋斗云距离成长 L12
+    v0_1: true
+    runtime_state: spell-variant-range-draft
+    properties: IsHidden
+    unlock_level: 12
+    modifier: ModifyTargetRadius(Multiplicative,1.1666667)
+
   - tech_name: QTD_Passive_ExtraAttack
     display_name: 额外攻击
     v0_1: true
