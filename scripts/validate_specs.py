@@ -13,21 +13,46 @@ for key, value in manifest["uuids"].items():
 
 with (ROOT / "data/progressions.csv").open(encoding="utf-8-sig") as f:
     rows = list(csv.DictReader(f))
-levels = [int(r["Level"]) for r in rows]
-if levels != list(range(1, 13)):
-    errors.append(f"Progression levels must be 1..12, got {levels}")
 
-tables = {r["TableUUID"] for r in rows}
-if len(tables) != 1:
-    errors.append(f"All class levels must share one TableUUID, got {tables}")
+main_rows = [r for r in rows if r["ProgressionType"] == "0"]
+subclass_rows = [r for r in rows if r["ProgressionType"] == "1"]
+other_types = sorted({r["ProgressionType"] for r in rows} - {"0", "1"})
+if other_types:
+    errors.append(f"Unexpected ProgressionType values: {other_types}")
+
+levels = [int(r["Level"]) for r in main_rows]
+if levels != list(range(1, 13)):
+    errors.append(f"Main class progression levels must be 1..12, got {levels}")
+
+main_tables = {r["TableUUID"] for r in main_rows}
+if len(main_tables) != 1:
+    errors.append(f"All main class levels must share one TableUUID, got {main_tables}")
 
 row_uuids = [r["UUID"] for r in rows]
 if len(row_uuids) != len(set(row_uuids)):
-    errors.append("Progression row UUIDs must be unique")
+    errors.append("Progression row UUIDs must be unique across class and subclasses")
 
-feat_levels = {int(r["Level"]) for r in rows if r["AllowImprovement"] == "Yes"}
+feat_levels = {int(r["Level"]) for r in main_rows if r["AllowImprovement"] == "Yes"}
 if feat_levels != {4, 8, 12}:
-    errors.append(f"Feat levels expected 4,8,12; got {sorted(feat_levels)}")
+    errors.append(f"Main class feat levels expected 4,8,12; got {sorted(feat_levels)}")
+
+subclass_tables = {}
+for row in subclass_rows:
+    subclass_tables.setdefault(row["TableUUID"], []).append(row)
+for table_uuid, group in subclass_tables.items():
+    group_levels = [int(r["Level"]) for r in group]
+    if group_levels != sorted(group_levels):
+        errors.append(f"Subclass progression {table_uuid} levels are not sorted: {group_levels}")
+    if not group_levels or group_levels[0] < 3:
+        errors.append(f"Subclass progression {table_uuid} must start at level 3 or later")
+    if any(r["AllowImprovement"] == "Yes" for r in group):
+        errors.append(f"Subclass progression {table_uuid} must not duplicate main-class Feat rows")
+
+victorious = [r for r in subclass_rows if r["Name"].startswith("QTD_VictoriousBuddha_")]
+if [int(r["Level"]) for r in victorious] != [3, 6, 10]:
+    errors.append("QTD_VictoriousBuddha progression expected levels 3,6,10")
+if victorious and len({r["TableUUID"] for r in victorious}) != 1:
+    errors.append("QTD_VictoriousBuddha rows must share one TableUUID")
 
 if errors:
     print("SPEC VALIDATION FAILED")
@@ -35,4 +60,4 @@ if errors:
         print("-", e)
     sys.exit(1)
 print("SPEC VALIDATION OK")
-print(f"Validated {len(rows)} progression rows and {len(manifest['uuids'])} UUIDs.")
+print(f"Validated {len(main_rows)} main progression rows, {len(subclass_rows)} subclass rows and {len(manifest['uuids'])} UUIDs.")
