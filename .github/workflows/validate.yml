@@ -38,6 +38,9 @@ jobs:
       - name: Validate Victorious Buddha subclass
         run: python scripts/validate_victorious_buddha.py
 
+      - name: Validate Seventy-Two Changes subclass
+        run: python scripts/validate_seventy_two_changes.py
+
       - name: Validate Fa Tian Xiang Di
         run: python scripts/validate_fa_tian_xiang_di.py
 
