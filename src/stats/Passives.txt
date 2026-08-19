@@ -54,6 +54,14 @@ data "Icon" "PassiveFeature_ExtraAttack"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockSpell(Shout_QTD_ThreeHeadsSixArms)"
 
+new entry "QTD_Passive_FaTianXiangDi"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_FaTianXiangDi_DisplayName"
+data "Description" "QTD_Passive_FaTianXiangDi_Description"
+data "Icon" "Spell_Transmutation_Enlarge"
+data "Properties" "Highlighted"
+data "Boosts" "UnlockSpell(Shout_QTD_FaTianXiangDi)"
+
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
 // V0.2 defense source alignment:
@@ -63,6 +71,9 @@ data "Boosts" "UnlockSpell(Shout_QTD_ThreeHeadsSixArms)"
 // V0.3 Three Heads, Six Arms source alignment:
 // - public BOOST statuses can attach Passives such as ExtraAttack_2.
 // - ExtraAttack_2 is the improved martial extra-attack chain used by level-11 multiattack creatures.
+// V0.4 Fa Tian Xiang Di source alignment:
+// - vanilla ENLARGE uses ObjectSize(+1) and ScaleMultiplier(1.33).
+// - the active form is unlocked by this passive; its cooldown and giant mechanics live in FaTianXiangDi.txt.
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
 
