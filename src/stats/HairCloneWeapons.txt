@@ -1,0 +1,31 @@
+// V0.2 summon-only weak Jingu-Bang analogue for Hair Clones.
+// One shared Weapon Stats entry scales from the clone's own Character level.
+// This avoids four separate weapon Stats/RootTemplate maintenance tracks.
+
+new entry "WPN_QTD_HairCloneStaff"
+type "Weapon"
+using "WPN_Quarterstaff"
+data "RootTemplate" "757f581b-683f-40ac-8051-47c10ef651a2"
+data "Rarity" "Uncommon"
+data "PassivesOnEquip" ""
+data "Weapon Properties" "Melee;Dippable;Versatile;Magical"
+data "DefaultBoosts" "WeaponProperty(Magical);IF(CharacterLevelGreaterThan(7) and not CharacterLevelGreaterThan(9)):WeaponEnchantment(1);IF(CharacterLevelGreaterThan(9) and not CharacterLevelGreaterThan(11)):WeaponEnchantment(1);IF(CharacterLevelGreaterThan(9) and not CharacterLevelGreaterThan(11)):WeaponDamage(1d4,Force);IF(CharacterLevelGreaterThan(11)):WeaponEnchantment(2);IF(CharacterLevelGreaterThan(11)):WeaponDamage(1d4,Force)"
+
+// Effective tiers for clone Character levels:
+// L6-7   -> +0 magical quarterstaff
+// L8-9   -> +1 magical quarterstaff
+// L10-11 -> +1 magical quarterstaff + 1d4 Force
+// L12    -> +2 magical quarterstaff + 1d4 Force
+//
+// Deliberate restrictions:
+// - inherited WeaponMasteryTopple is cleared via PassivesOnEquip=""
+// - no Ruyi Extension or other active Jingu Bang skills
+// - no Strength/Dexterity bonus copied from the real WPN_QTD_RuyiJinguBang
+// - no runtime caster-equipment duplication
+//
+// Toolkit gate:
+// Create QTD_HairCloneStaff_Root with planning UUID
+// 757f581b-683f-40ac-8051-47c10ef651a2 and Stats = WPN_QTD_HairCloneStaff.
+// Assign this same item RootTemplate to all four QTD_HairClone_Root_L* templates.
+// If Toolkit generates a different UUID, update HairCloneWeapons.txt,
+// data/hair_clones.yaml, data/uuid_manifest.json and the validator together.

@@ -16,6 +16,7 @@ The project no longer targets 100% runtime duplication of the caster. HP, equipm
 - Recast: replaces the previous pair through `QTD_HairClone_A` / `QTD_HairClone_B`
 - Script Extender: not required
 - Scaling: fixed RootTemplate tiers selected by `QTD_GreatSage` class level
+- Weapon: one shared `WPN_QTD_HairCloneStaff` that scales from the summoned clone's own Character level
 
 ## Level scaling
 
@@ -27,6 +28,21 @@ The project no longer targets 100% runtime duplication of the caster. HP, equipm
 | 12 | `QTD_HairCloneCharacter_L12` | 48 | 17 | 20 | 20 | 14 | No |
 
 The clones intentionally never gain Extra Attack in this V0.2 track. Their number, duration and Sage Qi cost also stay fixed, so scaling improves survivability and accuracy/damage without multiplying the action economy.
+
+## Clone weapon scaling
+
+All four clone RootTemplates equip the same item RootTemplate: `QTD_HairCloneStaff_Root` (planning UUID `757f581b-683f-40ac-8051-47c10ef651a2`). Its Stats entry is `WPN_QTD_HairCloneStaff`, inherited from the vanilla `WPN_Quarterstaff`.
+
+| Clone level | Weapon result |
+|---|---|
+| 6-7 | +0 magical quarterstaff |
+| 8-9 | +1 magical quarterstaff |
+| 10-11 | +1 magical quarterstaff + 1d4 Force |
+| 12 | +2 magical quarterstaff + 1d4 Force |
+
+The weapon uses conditional `DefaultBoosts` driven by the summoned clone's Character level. This pattern is used by existing BG3 weapon mods and keeps the equipment graph small: one Weapon Stats entry and one item RootTemplate instead of four copies.
+
+`WPN_QTD_HairCloneStaff` explicitly clears the base quarterstaff's `PassivesOnEquip` so the clones do not inherit Weapon Mastery: Topple. It also does not receive Ruyi Extension, the real Jingu Bang's Strength bonus, jump bonus, or any active legendary weapon skill.
 
 ## RootTemplate tiers
 
@@ -50,11 +66,16 @@ L12
   QTD_HairClone_Root_L12
   UUID b3368e82-088a-46fb-b8ec-dbc5dc5d4fe0
   -> QTD_HairCloneCharacter_L12
+
+Shared equipment
+  QTD_HairCloneStaff_Root
+  UUID 757f581b-683f-40ac-8051-47c10ef651a2
+  -> WPN_QTD_HairCloneStaff
 ```
 
-All four RootTemplates should use the same visual family, collision footprint and weak-quarterstaff equipment setup. This lets `CanStand()` use the L6 template as a single placement probe.
+All four character RootTemplates should use the same visual family, collision footprint and shared staff equipment. This lets `CanStand()` use the L6 template as a single placement probe.
 
-Planning UUIDs are not authoritative. If BG3 Toolkit generates different UUIDs, update the manifest, YAML, SpellData and validator together.
+Planning UUIDs are not authoritative. If BG3 Toolkit generates different UUIDs, update the manifest, YAML, SpellData/Weapon Stats and validator together.
 
 ## Summon selection
 
@@ -75,14 +96,7 @@ The exact condition token is drafted as `ClassLevelHigherOrEqualThan(...,'QTD_Gr
 
 Runtime duplication would require synchronizing changing player state such as current HP, equipment, unique items, appearance, status effects and arbitrary passives. That creates far more failure modes than this feature needs.
 
-The level-tier model gives us:
-
-1. deterministic balance,
-2. no inventory duplication bugs,
-3. no unique-item duplication,
-4. no dependency on BG3 Script Extender,
-5. easy testing at four checkpoints,
-6. simple future tuning through Character Stats only.
+The level-tier model gives us deterministic balance, no inventory or unique-item duplication, no Script Extender dependency, four clear test checkpoints, and simple future tuning through Character/Weapon Stats only.
 
 ## Future scope
 
@@ -92,12 +106,13 @@ The level-tier model gives us:
 
 - Create the four `QTD_HairClone_Root_L*` templates.
 - Point each RootTemplate to its matching Character Stats entry.
-- Keep all four RootTemplates on the same physical footprint.
-- Give each one the same weak quarterstaff equipment setup.
+- Create `QTD_HairCloneStaff_Root` and set Stats to `WPN_QTD_HairCloneStaff`.
+- Equip that same staff RootTemplate on all four clone RootTemplates.
+- Keep all four clone RootTemplates on the same physical footprint.
+- Verify the staff shows +0 / +1 / +1+1d4 Force / +2+1d4 Force at clone levels 6 / 8 / 10 / 12.
+- Verify the staff does not expose Topple or Ruyi Jingu Bang active abilities.
 - Verify the internal custom class token used by `ClassLevelHigherOrEqualThan`.
-- Test at Great Sage levels 6, 8, 10 and 12.
-- Confirm exactly two clones spawn at every tier.
-- Confirm clones expire after exactly 3 rounds.
+- Confirm exactly two clones spawn at every tier and expire after exactly 3 rounds.
 - Confirm recast replaces A/B across tier boundaries.
 - Confirm caster death unsummons them.
 - Confirm `bUseCasterPassives=true` does not create passive loops.

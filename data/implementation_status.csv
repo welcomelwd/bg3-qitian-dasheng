@@ -23,13 +23,15 @@ Transform,QTD_Transform_Tiger,V0.2,container-wired-draft
 Status,QTD_POLYMORPH_TIGER,V0.2,base-chain-aligned
 Passive,QTD_Passive_TransformUnlock_L3,V0.2,container-wired-draft
 Passive,QTD_Passive_TransformUnlock_L5,V0.2,container-wired-draft
-Feature,QTD_HairClones,V0.2,level-scaling-draft
-Spell,Target_QTD_HairClones,V0.2,level-scaling-draft
+Feature,QTD_HairClones,V0.2,level-scaling-weapon-draft
+Spell,Target_QTD_HairClones,V0.2,level-scaling-weapon-draft
 Status,QTD_STATUS_HAIR_CLONE,V0.2,summon-functor-draft
 Character,QTD_HairCloneCharacter_L6,V0.2,level-scaling-draft
 Character,QTD_HairCloneCharacter_L8,V0.2,level-scaling-draft
 Character,QTD_HairCloneCharacter_L10,V0.2,level-scaling-draft
 Character,QTD_HairCloneCharacter_L12,V0.2,level-scaling-draft
+Weapon,WPN_QTD_HairCloneStaff,V0.2,level-scaling-weapon-draft
+RootTemplate,QTD_HairCloneStaff_Root,V0.2,toolkit-object-pending
 RootTemplate,QTD_HairClone_Root_L6,V0.2,toolkit-object-pending
 RootTemplate,QTD_HairClone_Root_L8,V0.2,toolkit-object-pending
 RootTemplate,QTD_HairClone_Root_L10,V0.2,toolkit-object-pending

@@ -26,7 +26,9 @@ prototype:
   target_radius_m: 9
   target_condition: CanStand
   equipment:
-    weapon: weak_quarterstaff_toolkit_assignment
+    weapon_stats: WPN_QTD_HairCloneStaff
+    weapon_root_template_name: QTD_HairCloneStaff_Root
+    weapon_root_template_uuid: 757f581b-683f-40ac-8051-47c10ef651a2
     armor: none
   appearance:
     phase_1: toolkit humanoid monkey-like prototype
@@ -77,6 +79,30 @@ scaling_tiers:
     constitution: 14
     extra_attack: false
 
+weapon_scaling:
+  stats: WPN_QTD_HairCloneStaff
+  root_template_name: QTD_HairCloneStaff_Root
+  root_template_uuid: 757f581b-683f-40ac-8051-47c10ef651a2
+  base: WPN_Quarterstaff
+  shared_across_all_clone_tiers: true
+  weapon_mastery_removed: true
+  levels_6_7:
+    enchantment: 0
+    magical: true
+    force_damage: none
+  levels_8_9:
+    enchantment: 1
+    magical: true
+    force_damage: none
+  levels_10_11:
+    enchantment: 1
+    magical: true
+    force_damage: 1d4
+  level_12:
+    enchantment: 2
+    magical: true
+    force_damage: 1d4
+
 balance_invariants:
   summon_count_stays_two_through_level_12: true
   lifetime_stays_three_rounds: true
@@ -85,6 +111,8 @@ balance_invariants:
   no_runtime_inventory_copy: true
   no_runtime_hp_copy: true
   no_runtime_appearance_copy: true
+  one_shared_scaling_clone_weapon: true
+  clone_weapon_has_no_active_ruyi_skills: true
   keep_clone_damage_below_main_character: true
 
 summon_functor:
@@ -108,4 +136,5 @@ compatibility:
   do_not_require_bg3se_for_base_prototype: true
   root_template_uuids_must_be_verified_in_local_toolkit: true
   all_tier_root_templates_must_share_footprint: true
+  shared_weapon_root_template_must_be_verified_in_local_toolkit: true
   if_double_summon_collides_split_into_two_child_target_spells: true
