@@ -6,6 +6,8 @@ system:
   revert_on_zero_hp: true
   manual_revert: true
   required_status_group: SG_Polymorph_BeastShape
+  shared_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+  shared_rules_name: WildShapeKeepName
 
 unlock_passives:
   level_3: QTD_Passive_TransformUnlock_L3
@@ -21,13 +23,19 @@ prototypes:
     sage_qi_cost: 1
     role: exploration
     vanilla_reference: Wild Shape Cat
-    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    base_spell: Shout_WildShape_Combat_Cat
+    base_status: WILDSHAPE_CAT_PLAYER
+    qtd_status: QTD_POLYMORPH_INSECT
+    base_template_id: 398887ea-5013-4c9b-8f89-37f44efef8dc
+    base_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+    clone_strategy: inherit_base_spell_and_status_without_overriding_vanilla
     visual_phase_1: Cat technical placeholder
     visual_phase_2: insect_or_tiny_creature_root_template_after_toolkit_validation
     validation_targets:
       - tiny_body_size
       - pathing_through_small_spaces
       - manual_revert
+      - zero_hp_revert
       - gear_restore
       - hotbar_restore
     combat_priority: low
@@ -38,7 +46,12 @@ prototypes:
     sage_qi_cost: 1
     role: mobility
     vanilla_reference: Wild Shape Dire Raven
-    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    base_spell: Shout_WildShape_Combat_Raven
+    base_status: WILDSHAPE_RAVEN_PLAYER
+    qtd_status: QTD_POLYMORPH_EAGLE
+    base_template_id: 6c2fc745-20b3-44c0-9032-97e97a5368eb
+    base_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+    clone_strategy: inherit_base_spell_and_status_without_overriding_vanilla
     visual_phase_1: Dire Raven technical placeholder
     visual_phase_2: Giant Eagle root template if polymorph animations and interactions validate
     validation_targets:
@@ -46,6 +59,7 @@ prototypes:
       - vertical_navigation
       - landing
       - manual_revert
+      - zero_hp_revert
       - gear_restore
       - hotbar_restore
     combat_priority: medium
@@ -56,12 +70,18 @@ prototypes:
     sage_qi_cost: 2
     role: combat
     vanilla_reference: Wild Shape Sabre-Toothed Tiger
-    clone_strategy: clone_spell_status_root_template_then_replace_qtd_refs
+    base_spell: Shout_Wildshape_Combat_SaberTooth_Tiger
+    base_status: WILDSHAPE_SABERTOOTH_TIGER_PLAYER
+    qtd_status: QTD_POLYMORPH_TIGER
+    base_template_id: 007a0a64-d763-4daf-9697-21765a4c2d4d
+    base_rules_uuid: 9c580a1d-dab9-4b17-b0da-b16c7d7360e0
+    clone_strategy: inherit_base_spell_and_status_without_overriding_vanilla
     visual_phase_1: Sabre-Toothed Tiger
     visual_phase_2: custom tiger presentation without changing QTD spell/status tech names
     validation_targets:
       - transformed_hp
       - melee_attacks
+      - regeneration_cleanup
       - zero_hp_revert
       - gear_restore
       - status_cleanup
@@ -89,3 +109,5 @@ compatibility:
   never_override_shared_wildshape_spell: true
   never_override_shared_polymorph_status: true
   qitian_entries_use_own_uuids: true
+  inherit_vanilla_effective_chain: true
+  final_truth_is_local_patch8_toolkit: true
