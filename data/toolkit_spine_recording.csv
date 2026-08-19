@@ -1,0 +1,19 @@
+ObjectType,TechName,PlannedUUID,ToolkitUUID,TableUUID,Level,ProgressionType,ExpectedBehavior,LocalState,Notes
+ClassDescriptions,QTD_GreatSage,db08d3bc-52c1-4141-a7fb-65bc4a2a155f,,8b1758f9-46a7-4865-8c49-d7283fb5f456,,0,Primary class row,pending-toolkit-entry,IsMulticlass=No
+ClassDescriptions,QTD_GreatSage_Multiclass,a75d7530-9ac4-443d-bb4a-3d9b0a50768b,,8b1758f9-46a7-4865-8c49-d7283fb5f456,,0,Multiclass entry row,pending-toolkit-entry,IsMulticlass=Yes and UUID must differ from primary row
+ActionResource,QTD_SageQi,6f5c2546-8f73-4599-b918-28402c673e08,,,,,Short-rest full recovery,pending-toolkit-entry,Toolkit serialization is authoritative
+Progression,QTD_GreatSage_1,335a76f6-1e0e-405e-ab3c-bd3af45bbe27,,8b1758f9-46a7-4865-8c49-d7283fb5f456,1,0,Sage Qi +2 and L1 passives,pending-toolkit-entry,
+Progression,QTD_GreatSage_2,a18427c7-cfcf-4852-8cf9-5ce4b6e705e4,,8b1758f9-46a7-4865-8c49-d7283fb5f456,2,0,Sage Qi +1 and L2 SpellList,pending-toolkit-entry,
+Progression,QTD_GreatSage_3,4529b727-e392-477d-bff3-573773f30fdc,,8b1758f9-46a7-4865-8c49-d7283fb5f456,3,0,L3 SpellList plus three subclasses,pending-toolkit-entry,
+Progression,QTD_GreatSage_4,53c107ab-75b6-4cd3-9497-e51068329f86,,8b1758f9-46a7-4865-8c49-d7283fb5f456,4,0,Feat,pending-toolkit-entry,
+Progression,QTD_GreatSage_5,9f3cb3a9-a35f-40f0-87c5-4ac528c4a192,,8b1758f9-46a7-4865-8c49-d7283fb5f456,5,0,Sage Qi +1 plus Extra Attack,pending-toolkit-entry,
+Progression,QTD_GreatSage_6,e30d790b-750c-4191-938c-6d0206e90693,,8b1758f9-46a7-4865-8c49-d7283fb5f456,6,0,L6 SpellList,pending-toolkit-entry,
+Progression,QTD_GreatSage_7,436e6e36-3f26-47de-8188-5d907c595cf5,,8b1758f9-46a7-4865-8c49-d7283fb5f456,7,0,Great Sage Evasion,pending-toolkit-entry,
+Progression,QTD_GreatSage_8,02fddda5-7ba2-4ada-bb8c-2745012b9f2a,,8b1758f9-46a7-4865-8c49-d7283fb5f456,8,0,Feat plus Sage Qi +1,pending-toolkit-entry,
+Progression,QTD_GreatSage_9,a05ddb26-9839-4fba-959d-3eb26b5cd1a1,,8b1758f9-46a7-4865-8c49-d7283fb5f456,9,0,Diamond Body,pending-toolkit-entry,
+Progression,QTD_GreatSage_10,43e16943-0803-4fa1-b003-0f4b05c9f69a,,8b1758f9-46a7-4865-8c49-d7283fb5f456,10,0,Three Heads Six Arms,pending-toolkit-entry,
+Progression,QTD_GreatSage_11,f6f89583-9fe4-4bb1-8b3d-0623f93fa6ec,,8b1758f9-46a7-4865-8c49-d7283fb5f456,11,0,Sage Qi +1 plus forward-trunk Fa Tian preview,pending-toolkit-entry,
+Progression,QTD_GreatSage_12,0435bb9c-eb3e-4843-8b70-aa7265341e10,,8b1758f9-46a7-4865-8c49-d7283fb5f456,12,0,Feat plus Qitian Dasheng capstone,pending-toolkit-entry,
+SpellList,QTD_SpellList_L2,94df744f-3f21-4f27-9585-4893be7529c3,,,2,,Target_QTD_SomersaultCloud,pending-toolkit-entry,
+SpellList,QTD_SpellList_L3,0ccd84c3-24f1-4d09-b9f7-47ef1e40a11f,,,3,,Zone_QTD_SeaCalmingStrike,pending-toolkit-entry,
+SpellList,QTD_SpellList_L6,986ba61c-a6cf-4b9e-be8e-075148e5f853,,,6,,Fiery Golden Eyes plus Hair Clones,pending-toolkit-entry,
