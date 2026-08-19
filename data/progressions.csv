@@ -10,4 +10,4 @@ QTD_GreatSage_8,02fddda5-7ba2-4ada-bb8c-2745012b9f2a,8b1758f9-46a7-4865-8c49-d72
 QTD_GreatSage_9,a05ddb26-9839-4fba-959d-3eb26b5cd1a1,8b1758f9-46a7-4865-8c49-d7283fb5f456,9,0,No,,QTD_Passive_DiamondBody,,,非魔法钝击/穿刺/挥砍抗性；体质豁免优势。
 QTD_GreatSage_10,43e16943-0803-4fa1-b003-0f4b05c9f69a,8b1758f9-46a7-4865-8c49-d7283fb5f456,10,0,No,,QTD_Passive_ThreeHeadsSixArms,,,解锁三头六臂：消耗 4 仙力，持续 3 回合的近战强化形态。
 QTD_GreatSage_11,f6f89583-9fe4-4bb1-8b3d-0623f93fa6ec,8b1758f9-46a7-4865-8c49-d7283fb5f456,11,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_FaTianXiangDi,,,解锁法天象地：Action + 5 仙力，持续 3 回合，每长休一次的巨化战斗形态。
-QTD_GreatSage_12,0435bb9c-eb3e-4843-8b70-aa7265341e10,8b1758f9-46a7-4865-8c49-d7283fb5f456,12,0,Yes,,QTD_Passive_QitianDasheng,,,
+QTD_GreatSage_12,0435bb9c-eb3e-4843-8b70-aa7265341e10,8b1758f9-46a7-4865-8c49-d7283fb5f456,12,0,Yes,,QTD_Passive_QitianDasheng,,,齐天大圣封顶：仙力上限 +2（预期总上限 8）、移动 +3m，并免疫魅惑与恐惧；仍保留 L12 Feat。
