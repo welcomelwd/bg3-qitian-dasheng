@@ -14,7 +14,7 @@ Passive,QTD_Passive_CloudMomentum_Consume,V0.1,onattack-cleanup-draft
 Passive,QTD_Passive_SomersaultCloud_Range_L5,V0.1,spell-variant-range-draft
 Passive,QTD_Passive_SomersaultCloud_Range_L9,V0.1,spell-variant-range-draft
 Passive,QTD_Passive_SomersaultCloud_Range_L12,V0.1,spell-variant-range-draft
-Spell,Zone_QTD_SeaCalmingStrike,V0.1,verified-functor-draft
+Spell,Zone_QTD_SeaCalmingStrike,V0.1,weapon-zone-scaling-draft
 Spell,Target_QTD_FieryGoldenEyes,V0.1,stats-draft
 Item,WPN_QTD_RuyiJinguBang,V0.1,stats-draft
 Item,ARM_QTD_GoldenArmor,V0.1,stats-draft
