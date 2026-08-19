@@ -1,0 +1,7 @@
+ObjectType,TechName,PlanningUUID,VanillaCloneSource,ToolkitUUID,RuntimeStatus,Notes
+RootTemplate,QTD_RuyiJinguBang_Root,521284c4-3d7b-4642-9c26-3677198f5a69,96e2abaf-78ff-4dcb-a6a3-a5f0c348bd9f,,PENDING,"Clone vanilla Quarterstaff root; set Stats=WPN_QTD_RuyiJinguBang; reuse visual/physics for V0.1."
+WeaponStats,WPN_QTD_RuyiJinguBang,,WPN_Quarterstaff,,DRAFT,"1d8/1d10, +2, +1d4 Force, STR +1, WeaponRange 300, Reach, jump x1.5."
+Spell,Target_QTD_RuyiExtend,,, ,DRAFT,"9m main-hand weapon attack unlocked by the staff; owner runtime validation pending."
+RootTemplate,QTD_GoldenArmor_Root,08f9068f-e067-442c-9fc6-1fcc5af7ef4a,,,PENDING,"Choose and clone the final vanilla armour source in the next equipment pass."
+RootTemplate,QTD_CloudWalking_Root,a4650270-0cd2-431c-b22c-e929019916f0,,,PENDING,"Choose and clone the final vanilla boots source in the next equipment pass."
+Equipment,EQP_CC_QTD_GreatSage,3dc9d807-9227-4cbb-a5c1-47c868b6af12,,,PENDING,"Bind the three final custom equipment roots through the Toolkit Equipment/ClassEquipment workflow."
