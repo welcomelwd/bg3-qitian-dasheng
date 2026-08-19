@@ -31,11 +31,30 @@ data "Description" "QTD_Passive_TransformUnlock_L5_Description"
 data "Properties" "Highlighted"
 data "Boosts" "UnlockSpell(QTD_Transform_Eagle,AddChildren,1f3a673b-dc8b-4eca-9097-c6605a3de947);UnlockSpell(QTD_Transform_Tiger,AddChildren,1f3a673b-dc8b-4eca-9097-c6605a3de947)"
 
+new entry "QTD_Passive_GreatSageEvasion"
+type "PassiveData"
+using "Evasion"
+data "DisplayName" "QTD_Passive_GreatSageEvasion_DisplayName"
+data "Description" "QTD_Passive_GreatSageEvasion_Description"
+data "Properties" "Highlighted"
+
+new entry "QTD_Passive_DiamondBody"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_DiamondBody_DisplayName"
+data "Description" "QTD_Passive_DiamondBody_Description"
+data "Icon" "GenericIcon_DamageType_Physical"
+data "Properties" "Highlighted"
+data "Boosts" "Resistance(Slashing, ResistantToNonMagical);Resistance(Piercing, ResistantToNonMagical);Resistance(Bludgeoning, ResistantToNonMagical);Advantage(SavingThrow, Constitution)"
+
 // Verified pattern source: vanilla-derived Stats uses UnlockSpell(<spell>,AddChildren,<GUID>)
 // to add a child spell to a linked container.
+// V0.2 defense source alignment:
+// - Monk_7_Evasion and Rogue_7_Evasion inherit the vanilla Evasion passive.
+// - public BG3 data uses Resistance(<Physical>, ResistantToNonMagical).
+// - public BG3 item data uses Advantage(SavingThrow, Constitution).
 // IMPORTANT: 1f3a673b-dc8b-4eca-9097-c6605a3de947 is a project planning UUID. When Toolkit creates the real
 // container UUID, replace this GUID everywhere if Toolkit assigns a different value.
 
 // TODO_TOOLKIT_CLONE: finalize armour conditions, AC calculation and physical
-// mitigation by cloning known-good base-game passives.
+// mitigation for Copper Head / Iron Arm by cloning known-good base-game passives.
 // TODO_TOOLKIT_CLONE: finalize quarterstaff STR/DEX ability selection for Ruyi Mastery.

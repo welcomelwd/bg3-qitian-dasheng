@@ -12,7 +12,8 @@ Item,WPN_QTD_RuyiJinguBang,V0.1,stats-draft
 Item,ARM_QTD_GoldenArmor,V0.1,stats-draft
 Item,BOOTS_QTD_CloudWalking,V0.1,stats-draft
 Equipment,EQP_CC_QTD_GreatSage,V0.1,toolkit-definition-ready
-Passive,QTD_Passive_GreatSageEvasion,V0.2,planned
+Passive,QTD_Passive_GreatSageEvasion,V0.2,base-passive-aligned
+Passive,QTD_Passive_DiamondBody,V0.2,verified-boost-draft
 Feature,QTD_SeventyTwoTransformations,V0.2,container-wired-draft
 SpellContainer,QTD_TransformContainer,V0.2,container-wired-draft
 Transform,QTD_Transform_Insect,V0.2,container-wired-draft

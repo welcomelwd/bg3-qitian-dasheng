@@ -29,5 +29,8 @@ jobs:
       - name: Validate hair clone prototype
         run: python scripts/validate_hair_clone_specs.py
 
+      - name: Validate defense passives
+        run: python scripts/validate_defense_passives.py
+
       - name: Check cross-file consistency
         run: python scripts/check_consistency.py

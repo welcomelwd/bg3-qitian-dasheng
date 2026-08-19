@@ -33,3 +33,7 @@ Target_QTD_HairClones_DisplayName	身外身法	Body Outside the Body
 Target_QTD_HairClones_Description	拔下毫毛，唤出两具战斗分身，持续3回合。分身使用弱化棍法，并与本体的部分被动事件联动。	Pluck enchanted hairs to summon two combat clones for 3 rounds. They use weakened staff techniques and can interact with some caster passive events.
 QTD_STATUS_HAIR_CLONE_DisplayName	毫毛化身	Hair Clone
 QTD_STATUS_HAIR_CLONE_Description	由大圣毫毛变化而成的短暂战斗分身。	A temporary combat clone formed from the Great Sage's enchanted hair.
+QTD_Passive_GreatSageEvasion_DisplayName	大圣闪避	Great Sage Evasion
+QTD_Passive_GreatSageEvasion_Description	面对可通过敏捷豁免减半的伤害时，豁免成功则不受伤害，失败也只承受一半伤害。	When a Dexterity saving throw would halve damage, take no damage on a success and only half damage on a failure.
+QTD_Passive_DiamondBody_DisplayName	金刚不坏	Diamond Body
+QTD_Passive_DiamondBody_Description	仙躯愈发坚不可摧：获得对非魔法钝击、穿刺与挥砍伤害的抗性，并在体质豁免中获得优势。	Your immortal body hardens: gain resistance to non-magical Bludgeoning, Piercing, and Slashing damage, and Advantage on Constitution saving throws.

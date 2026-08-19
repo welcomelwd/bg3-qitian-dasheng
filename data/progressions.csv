@@ -5,9 +5,9 @@ QTD_GreatSage_3,4529b727-e392-477d-bff3-573773f30fdc,8b1758f9-46a7-4865-8c49-d72
 QTD_GreatSage_4,53c107ab-75b6-4cd3-9497-e51068329f86,8b1758f9-46a7-4865-8c49-d7283fb5f456,4,0,Yes,,,,,
 QTD_GreatSage_5,9f3cb3a9-a35f-40f0-87c5-4ac528c4a192,8b1758f9-46a7-4865-8c49-d7283fb5f456,5,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_ExtraAttack;QTD_Passive_TransformUnlock_L5,,,七十二变新增苍鹰与猛虎。
 QTD_GreatSage_6,e30d790b-750c-4191-938c-6d0206e90693,8b1758f9-46a7-4865-8c49-d7283fb5f456,6,0,No,,,AddSpells(986ba61c-a6cf-4b9e-be8e-075148e5f853),,
-QTD_GreatSage_7,436e6e36-3f26-47de-8188-5d907c595cf5,8b1758f9-46a7-4865-8c49-d7283fb5f456,7,0,No,,QTD_Passive_GreatSageEvasion,,,V0.2 实现。
+QTD_GreatSage_7,436e6e36-3f26-47de-8188-5d907c595cf5,8b1758f9-46a7-4865-8c49-d7283fb5f456,7,0,No,,QTD_Passive_GreatSageEvasion,,,继承原版 Evasion：敏捷豁免成功免伤，失败半伤。
 QTD_GreatSage_8,02fddda5-7ba2-4ada-bb8c-2745012b9f2a,8b1758f9-46a7-4865-8c49-d7283fb5f456,8,0,Yes,"ActionResource(QTD_SageQi,1,0)",,,,
-QTD_GreatSage_9,a05ddb26-9839-4fba-959d-3eb26b5cd1a1,8b1758f9-46a7-4865-8c49-d7283fb5f456,9,0,No,,QTD_Passive_DiamondBody,,,V0.2 实现。
+QTD_GreatSage_9,a05ddb26-9839-4fba-959d-3eb26b5cd1a1,8b1758f9-46a7-4865-8c49-d7283fb5f456,9,0,No,,QTD_Passive_DiamondBody,,,非魔法钝击/穿刺/挥砍抗性；体质豁免优势。
 QTD_GreatSage_10,43e16943-0803-4fa1-b003-0f4b05c9f69a,8b1758f9-46a7-4865-8c49-d7283fb5f456,10,0,No,,QTD_Passive_ThreeHeadsSixArms,,,V0.3 实现。
 QTD_GreatSage_11,f6f89583-9fe4-4bb1-8b3d-0623f93fa6ec,8b1758f9-46a7-4865-8c49-d7283fb5f456,11,0,No,"ActionResource(QTD_SageQi,1,0)",QTD_Passive_FaTianXiangDi,,,V0.4 实现。
 QTD_GreatSage_12,0435bb9c-eb3e-4843-8b70-aa7265341e10,8b1758f9-46a7-4865-8c49-d7283fb5f456,12,0,Yes,,QTD_Passive_QitianDasheng,,,
