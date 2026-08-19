@@ -1,0 +1,60 @@
+// V0.3 Victorious Fighting Buddha subclass draft.
+// L3: stronger melee criticals. L6: wider critical range. L10: Heaven-Breaking Strike.
+// Uses public BG3-derived patterns for CriticalHitExtraDice and ReduceCriticalAttackThreshold.
+
+new entry "QTD_Passive_VictoriousBuddha_StaffFury"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_VictoriousBuddha_StaffFury_DisplayName"
+data "Description" "QTD_Passive_VictoriousBuddha_StaffFury_Description"
+data "Icon" "PassiveFeature_SavageAttacks"
+data "Properties" "Highlighted"
+data "Boosts" "CriticalHitExtraDice(1,MeleeWeaponAttack)"
+
+new entry "QTD_Passive_VictoriousBuddha_ImprovedCritical"
+type "PassiveData"
+using "ImprovedCritical"
+data "DisplayName" "QTD_Passive_VictoriousBuddha_ImprovedCritical_DisplayName"
+data "Description" "QTD_Passive_VictoriousBuddha_ImprovedCritical_Description"
+data "Properties" "Highlighted"
+
+new entry "QTD_Passive_VictoriousBuddha_HeavenBreaker"
+type "PassiveData"
+data "DisplayName" "QTD_Passive_VictoriousBuddha_HeavenBreaker_DisplayName"
+data "Description" "QTD_Passive_VictoriousBuddha_HeavenBreaker_Description"
+data "Icon" "Action_GargantuanCleave"
+data "Properties" "Highlighted"
+data "Boosts" "UnlockSpell(Target_QTD_HeavenBreakingStrike)"
+
+new entry "Target_QTD_HeavenBreakingStrike"
+type "SpellData"
+using "Target_MainHandAttack"
+data "SpellType" "Target"
+data "Level" "0"
+data "SpellSchool" "None"
+data "Cooldown" "OncePerTurn"
+data "UseCosts" "ActionPoint:1;QTD_SageQi:2"
+data "DisplayName" "Target_QTD_HeavenBreakingStrike_DisplayName"
+data "Description" "Target_QTD_HeavenBreakingStrike_Description"
+data "Icon" "Action_GargantuanCleave"
+data "SpellRoll" "Attack(AttackType.MeleeWeaponAttack)"
+data "SpellSuccess" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);ExecuteWeaponFunctors(MainHand);DealDamage(2d8,Force,Magical);ApplyStatus(QTD_STATUS_HEAVEN_BREAK_ARMOR,100,2)"
+data "TooltipDamageList" "DealDamage(MainMeleeWeapon, MainMeleeWeaponDamageType);DealDamage(2d8,Force)"
+data "TooltipAttackSave" "MeleeWeaponAttack"
+data "TargetConditions" "not Self() and Enemy() and not Dead()"
+
+new entry "QTD_STATUS_HEAVEN_BREAK_ARMOR"
+type "StatusData"
+data "StatusType" "BOOST"
+data "DisplayName" "QTD_STATUS_HEAVEN_BREAK_ARMOR_DisplayName"
+data "Description" "QTD_STATUS_HEAVEN_BREAK_ARMOR_Description"
+data "Icon" "Status_ArmorOfAgathys"
+data "StackId" "QTD_HEAVEN_BREAK_ARMOR"
+data "Boosts" "AC(-2)"
+
+// Source alignment:
+// - SavageAttacks uses CriticalHitExtraDice(1,MeleeWeaponAttack).
+// - ImprovedCritical uses ReduceCriticalAttackThreshold(1), inherited here instead of duplicated.
+// - Target_MainHandAttack + ExecuteWeaponFunctors(MainHand) is already used by this project for weapon-action drafts.
+// Toolkit gate:
+// - AC(-2) is the signed form of the verified AC(n) Boost family; test the negative value in Patch 8 Toolkit before marking runtime-verified.
+// - L3 currently applies to all melee weapon attacks. Restrict to quarterstaff/Ruyi only after a reliable weapon-type condition is verified.
