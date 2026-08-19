@@ -8,7 +8,12 @@ Passive,QTD_Passive_CopperHeadIronArm,V0.1,interrupt-pattern-aligned-draft
 Interrupt,QTD_Interrupt_CopperHeadIronArm,V0.1,onpredamage-reaction-draft
 Status,QTD_STATUS_COPPER_HEAD_IRON_ARM_REDUCTION,V0.1,physical-flat-reduction-draft
 Passive,QTD_Passive_ExtraAttack,V0.1,spec-ready
-Spell,Target_QTD_SomersaultCloud,V0.1,parent-aligned-draft
+Spell,Target_QTD_SomersaultCloud,V0.1,momentum-range-scaling-draft
+Status,QTD_STATUS_CLOUD_MOMENTUM,V0.1,next-melee-advantage-draft
+Passive,QTD_Passive_CloudMomentum_Consume,V0.1,onattack-cleanup-draft
+Passive,QTD_Passive_SomersaultCloud_Range_L5,V0.1,spell-variant-range-draft
+Passive,QTD_Passive_SomersaultCloud_Range_L9,V0.1,spell-variant-range-draft
+Passive,QTD_Passive_SomersaultCloud_Range_L12,V0.1,spell-variant-range-draft
 Spell,Zone_QTD_SeaCalmingStrike,V0.1,verified-functor-draft
 Spell,Target_QTD_FieryGoldenEyes,V0.1,stats-draft
 Item,WPN_QTD_RuyiJinguBang,V0.1,stats-draft
