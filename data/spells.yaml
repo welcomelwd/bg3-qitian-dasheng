@@ -3,18 +3,38 @@ spells:
     display_name: 筋斗云
     level: 2
     v0_1: true
+    runtime_state: momentum-range-scaling-draft
     action_cost: BonusAction
     sage_qi_cost: 1
-    range_m: 12
+    base_range_m: 12
     parent_reference: Target_MistyStep
-    intent:
-      - 选择可见落点并传送至该位置
-      - 后续补充 QTD_STATUS_CLOUD_MOMENTUM 1 回合
-      - Cloud Momentum 使下一次近战攻击获得 Advantage
+    spell_properties:
+      - TeleportSource()
+      - ApplyStatus(SELF,QTD_STATUS_CLOUD_MOMENTUM,100,1)
+    cloud_momentum:
+      status: QTD_STATUS_CLOUD_MOMENTUM
+      duration_turns: 1
+      effect: 下一次近战攻击获得 Advantage
+      consume_event: first melee OnAttack
+      ranged_attacks_do_not_consume: true
     scaling:
+      2: 12
       5: 15
       9: 18
       12: 21
+    scaling_implementation:
+      level_5_passive: QTD_Passive_SomersaultCloud_Range_L5
+      level_5_multiplier: 1.25
+      level_9_passive: QTD_Passive_SomersaultCloud_Range_L9
+      level_9_multiplier: 1.2
+      level_12_passive: QTD_Passive_SomersaultCloud_Range_L12
+      level_12_multiplier: 1.1666667
+      mechanism: UnlockSpellVariant + ModifyTargetRadius(Multiplicative,...)
+    toolkit_gates:
+      - confirm TeleportSource then ApplyStatus(SELF) timing
+      - confirm Cloud Momentum Advantage is read before OnAttack cleanup removes the status
+      - confirm range multipliers stack to 12/15/18/21m without duplicate hotbar variants
+      - verify inherited Misty Step floor targeting flags, animation and VFX
 
   - tech_name: Zone_QTD_SeaCalmingStrike
     display_name: 定海一棒
