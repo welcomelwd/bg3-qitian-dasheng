@@ -102,6 +102,17 @@ passives:
     unlock_level: 12
     modifier: ModifyTargetRadius(Multiplicative,1.1666667)
 
+  - tech_name: QTD_Passive_FieryGoldenEyes_TargetAdvantage
+    display_name: 火眼金睛来源绑定优势 helper
+    v0_1: true
+    runtime_state: source-bound-target-advantage-draft
+    properties: IsHidden
+    unlock_level: 6
+    context: OnAttack
+    condition: "HasStatus('QTD_STATUS_DEMON_REVEALED',context.Target,context.Source)"
+    effect: Advantage(AttackRoll)
+    implementation_note: "沿用 Hunter's Mark / True Strike 的 HasStatus(status,target,source) 语义。只有当前攻击者本身是显形状态来源时才获得 Advantage，避免全队共享火眼金睛优势。"
+
   - tech_name: QTD_Passive_ExtraAttack
     display_name: 额外攻击
     v0_1: true
